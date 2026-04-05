@@ -448,7 +448,9 @@
 
 "EMBER.DEITY": {
   "SECTIONS": {
-    "magic": "Magic and Metaphysics"
+    "magic": "Magic and Metaphysics",
+    "basic": "Basic Configuration",
+    "related": "Related Content"
   },
   "FIELDS": {
     "banner": {
@@ -499,10 +501,6 @@
       "label": "Sorcerous Origins",
       "hint": "Sorcerous Origins which are typically associated with this deity, if any. Sorcerers with these origins of their power may attribute it to this deity."
     }
-  },
-  "SECTIONS": {
-    "basic": "Basic Configuration",
-    "related": "Related Content"
   }
 },
 
