@@ -1,0 +1,8 @@
+@font-face {
+    font-family: "Pirate Scroll PL";
+    src: url('../PIRATESCROLLPL.ttf');
+}
+
+.ember {
+    --font-header: "Pirate Scroll PL", "Pirate Scroll", serif;
+}

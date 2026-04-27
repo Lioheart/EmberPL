@@ -1,6 +1,6 @@
 {
   "id": "lang-pl-ember",
-  "title": "Polskie tłumaczenie Ember",
+  "title": "Polskia wersja Ember",
   "description": "Polskie tłumaczenie do Ember",
   "version": "vDev",
   "compatibility": {
@@ -12,6 +12,7 @@
     "babele-register.js"
   ],
   "styles": [
+    "styles/lang-pl-ember.css"
   ],
   "relationships": {
     "requires": [
