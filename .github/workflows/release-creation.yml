@@ -15,24 +15,24 @@ jobs:
       - uses: actions/checkout@v5
 
       - name: Populate Versioned keys in Manifest
-  env:
-    RELEASE_TAG: ${{ github.event.release.tag_name }}
-    REPOSITORY: ${{ github.repository }}
-  run: |
-    VERSION="${RELEASE_TAG#v}"
+        env:
+          RELEASE_TAG: ${{ github.event.release.tag_name }}
+          REPOSITORY: ${{ github.repository }}
+        run: |
+          VERSION="${RELEASE_TAG#v}"
 
-    jq \
-      --arg version "$VERSION" \
-      --arg url "https://github.com/$REPOSITORY" \
-      --arg manifest "https://github.com/$REPOSITORY/releases/latest/download/module.json" \
-      --arg download "https://github.com/$REPOSITORY/releases/download/$RELEASE_TAG/module.zip" \
-      '.version = $version
-       | .url = $url
-       | .manifest = $manifest
-       | .download = $download' \
-      module.json > module.tmp.json
+          jq \
+            --arg version "$VERSION" \
+            --arg url "https://github.com/$REPOSITORY" \
+            --arg manifest "https://github.com/$REPOSITORY/releases/latest/download/module.json" \
+            --arg download "https://github.com/$REPOSITORY/releases/download/$RELEASE_TAG/module.zip" \
+            '.version = $version
+             | .url = $url
+             | .manifest = $manifest
+             | .download = $download' \
+            module.json > module.tmp.json
 
-    mv module.tmp.json module.json
+          mv module.tmp.json module.json
 
       - name: Create Module Archive
         run: |
