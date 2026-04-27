@@ -39,15 +39,14 @@ jobs:
           zip --recurse-paths ./module.zip \
             module.json babele-register.js PIRATESCROLLPL.ttf lang/ styles/
 
-      - name: Update Release with Files
-        id: create_version_release
-        uses: ncipollo/release-action@v1
-        with:
-          allowUpdates: true
-          name: ${{ github.event.release.name }}
-          draft: ${{ github.event.release.draft }}
-          prerelease: ${{ github.event.release.prerelease }}
-          token: ${{ secrets.GITHUB_TOKEN }}
-          artifacts: './module.json, ./module.zip'
-          tag: ${{ github.event.release.tag_name }}
-          body: ${{ github.event.release.body }}
+      - name: Upload Files to Published Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ github.event.release.tag_name }}
+          REPOSITORY: ${{ github.repository }}
+        run: |
+          gh release upload "$RELEASE_TAG" \
+            module.json \
+            module.zip \
+            --repo "$REPOSITORY" \
+            --clobber
