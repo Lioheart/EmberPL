@@ -1,0 +1,934 @@
+{
+"TYPES.JournalEntryPage.ember.ancestry": "Pochodzenie Ember",
+"TYPES.JournalEntryPage.ember.biome": "Biom Ember",
+"TYPES.JournalEntryPage.ember.characterClass": "Klasa postaci Ember",
+"TYPES.JournalEntryPage.ember.culture": "Kultura Ember",
+"TYPES.JournalEntryPage.ember.cosmos": "Kosmos Ember",
+"TYPES.JournalEntryPage.ember.deity": "Wiara Ember",
+"TYPES.JournalEntryPage.ember.location": "Lokalizacja Ember",
+"TYPES.JournalEntryPage.ember.lore": "Wiedza Ember",
+"TYPES.JournalEntryPage.ember.organization": "Organizacja Ember",
+"TYPES.JournalEntryPage.ember.quest": "Przegląd zadań Ember",
+"TYPES.JournalEntryPage.ember.questEvent": "Wydarzenie specjalne Ember",
+"TYPES.JournalEntryPage.ember.questFlowchart": "Schemat przebiegu zadania Ember",
+"TYPES.JournalEntryPage.ember.standaloneEvent": "Wydarzenie niezależne Ember",
+
+"TYPES.RegionBehavior.ember.trapTrigger": "Wyzwalacz pułapki",
+"TYPES.RegionBehavior.ember.areaEffect": "Obszar działania",
+"TYPES.RegionBehavior.ember.footstepSurface": "Powierzchnia do chodzenia",
+
+"TABLE.ACTIONS.Draw": "Wynik",
+
+"ACTOR": {
+  "CONTROLS": {
+    "EmberToken": "Token dynamiczny Ember",
+    "EmberFlags": "Flagi aktora Ember"
+  }
+},
+
+"EMBER.ACTOR_FLAGS": {
+  "FIELDS": {
+    "discoverable": {
+      "label": "Wyszukiwalny",
+      "hint": "Czy tę postać można znaleźć w Kodeksie Ember jako stworzenie lub postać?",
+      "creature": "Stworzenie",
+      "character": "Postać"
+    },
+    "character": {
+      "ancestry": {
+        "label": "Pochodzenie",
+        "hint": "Identyfikator elementu pochodzenia lub nazwa pochodzenia Ember."
+      },
+      "culture": {
+        "label": "Kultura",
+        "hint": "Identyfikator elementu kultury lub nazwa kultury Ember."
+      },
+      "path": {
+        "label": "Ścieżka",
+        "hint": "Niestandardowy ciąg znaków opisujący zawód lub przeszłość tej postaci."
+      },
+      "pronouns": {
+        "label": "Zaimki"
+      }
+    },
+    "portrait": {
+      "width": {
+        "label": "Szerokość"
+      },
+      "height": {
+        "label": "Wysokość"
+      },
+      "anchorX": {
+        "label": "X"
+      },
+      "anchorY": {
+        "label": "Y"
+      },
+      "flip": {
+        "label": "Odwróć w poziomie",
+        "hint": "Portrety powinny być skierowane przodem lub w lewo. Jeśli portret jest przedstawiony w pozycji skierowanej w prawo, zaznacz to pole, aby go obrócić w Perspektywie."
+      },
+      "artist": {
+        "label": "Nazwa wykonawcy"
+      }
+    },
+    "pronunciation": {
+      "label": "Wymowa",
+      "hint": "Wyjaśnienie fonetyczne dotyczące wymowy imienia tej postaci."
+    },
+    "combatTheme": {
+      "label": "Motyw walki",
+      "hint": "Skonfiguruj tę postać tak, aby preferowała motyw walki odbiegający od standardowego dla jej kategorii."
+    }
+  },
+  "SHEET": {
+    "CHARACTER": "Postać",
+    "COMBAT": "Starcie bojowe",
+    "DISCOVERABLE": "Wyszukiwalny",
+    "PORTRAIT": "Portret"
+  }
+},
+
+"EMBER.ADVENTURE": {
+  "WARNINGS": {
+    "IMPORT_REQUIRED": "Moduł Ember jest aktywny, ale jego zawartość nie została jeszcze zaimportowana. Zaimportuj przygodę Ember, aby kontynuować.",
+    "IMPORT_UNDERWAY": "Trwa wczytywanie Ember, prosimy o cierpliwość. Po zakończeniu gra zostanie automatycznie odświeżona.",
+    "REIMPORT_REQUIRED": "Należy ponownie zaimportować przygodę Ember, aby uwzględnić istotne aktualizacje w wersji Ember {version}.",
+    "EVENT_ACTIVE": "Przed zaimportowaniem przygody musisz zakończyć lub anulować aktualnie aktywne wydarzenie w grze Ember."
+  }
+},
+
+"EMBER.ATTUNEMENT": {
+  "Attunement": "Dostrajanie",
+  "Amount": "Ilość",
+  "Identifier": "Identyfikator nagrody",
+  "IdentifierHint": "Unikalny ciąg znaków identyfikujący tę konkretną nagrodę za osiągnięcie poziomu.",
+  "Progress": "Postęp",
+  "Tab": "Dostrojenia",
+  "Type": "Rodzaj dostrojenia",
+  "Rank": "Ranga",
+  "CurrentTooltip": "Zdobyte punkty dostrojenia",
+  "NextTooltip": "Wymagane do awansu na następną rangę"
+},
+
+"EMBER.CALENDAR": {
+  "ADVANCE": "Naprzód",
+  "REWIND": "Wstecz",
+  "WORLD": "Mapa świata",
+  "COSMOS": "Mapa kosmosu",
+  "REGION": "Mapa regionu",
+  "EXPAND": "Rozwiń kalendarz",
+  "COLLAPSE": "Zwiń kalendarz",
+  "PARTY": "Karta drużyny",
+  "CODEX": "Kodeks",
+  "SEASONS": {
+    "STILLING": "Zastój",
+    "SEEDING": "Siew",
+    "BLOOMING": "Kwitnienie",
+    "STEADING": "Dojrzałość",
+    "GLEANING": "Pokłosie",
+    "WITHERING": "Więdnięcie"
+  }
+},
+
+"EMBER.CODEX": {
+  "TABS": "Nawigacja po zakładkach Kodeksu",
+  "JOURNAL": "Dziennik",
+  "QUESTS": "Dziennik zadań",
+  "DISCOVERIES": "Odkrycia",
+  "BESTIARY": "Bestiariusz",
+  "CHARACTERS": "Postacie",
+  "DISCOVERED_COUNT": "Liczba odkryć",
+  "ENCOUNTERED": "{name} został odkryty {time}.",
+  "ENCOUNTERED_LOCATION": "{name} został odkryty {time} w {location}.",
+  "NOT_ENCOUNTERED": "{name} nie został jeszcze odkryty.",
+  "DISCOVERY_RECORD": "Zanotuj Odkrycie",
+  "DISCOVERY_RESET": "Zresetuj Odkrycie"
+},
+
+"EMBER.CONTROLS": {
+  "CycleSlice": "Poziom wysokości cyklu",
+  "TerrainToggle": "Przełącz nakładkę terenu",
+  "WeatherToggle": "Przełącz nakładkę pogody",
+  "ClockToggle": "Przełącz zegar globalny",
+  "EventsHUD": "Przełącz panel HUD wydarzeń",
+  "InteractionToggle": "Interakcja z obiektami",
+  "HexHUD": "Przełącz HUD heksu",
+  "SpawnsToggle": "Wizualizacja obszarów pojawiania się",
+  "Teleport": "Teleport Tokena",
+  "VistaConfig": "Konfiguracja Perspektywy",
+  "VistaComposition": "Zmiana kompozycji"
+},
+
+"EMBER.CREATION": {
+  "TABS": "Nawigacja po zakładkach tworzenia postaci",
+  "MESSAGES": {
+    "CompleteAddParty": "{userName} zakończył tworzenie postaci {actorLink}! Czy chcesz dodać tę postać do drużyny?"
+  }
+},
+
+"EMBER.ManagerTitle": "Menedżer kampanii Ember",
+"EMBER.ManagerTabObjectives": "Cele",
+"EMBER.ManagerTabDiscoveries": "Odkrycia",
+"EMBER.ManagerTabEvents": "Wydarzenia",
+"EMBER.ManagerTabChoices": "Wybory",
+"EMBER.ManagerTabFactions": "Frakcje",
+
+"EMBER.MovementMiles": "W grze Ember prędkość ruchu grupy musi być podana w milach.",
+
+"EMBER.MILESTONE": {
+  "Award": {
+    "NewLevel": "Dzięki tej nagrodzie za osiągnięcie kolejnego etapu drużyna awansowała na poziom {level}!",
+    "Warning": "Dla identyfikatora '{id}' przyznano już kamień milowy."
+  },
+  "CanLevel": "Ta postać może awansować na wyższy poziom.",
+  "Dialog": {
+    "Identifier": {
+      "Error": "Należy podać unikalny identyfikator.",
+      "Hint": "Unikalny ciąg znaków identyfikujący to ważne wydarzenie.",
+      "Label": "Identyfikator",
+      "Placeholder": "unikalnyIdentyfikatorKamieniaMilowego"
+    },
+    "Legend": "Punkty",
+    "Points": {
+      "Label": "Nagroda"
+    },
+    "Submit": {
+      "Award": "Nagroda",
+      "Revoke": "Wycofaj"
+    },
+    "Title": {
+      "Award": "Nagroda kamieni milowych",
+      "Revoke": "Wycofaj kamienie milowe"
+    }
+  },
+  "Points": {
+    "Label": "Punkty kamieni milowych"
+  },
+  "Revoke": {
+    "Warning": "Próbowano cofnąć nagrodę za kamień milowy dotyczący nieistniejącego zdarzenia '{id}'."
+  }
+},
+
+"EMBER.SoundscapeMoodCalm": "Spokój",
+"EMBER.SoundscapeMoodTension": "Napięcie",
+"EMBER.SoundscapeMoodCombat": "Starcie bojowe",
+
+"EMBER.EventTagExploration": "Wydarzenie eksploracyjne",
+"EMBER.EventTagCombat": "Wydarzenie bojowe",
+"EMBER.EventTagSocial": "Wydarzenie społeczne",
+"EMBER.EventTagGlobal": "Wydarzenie o zasięgu globalnym",
+"EMBER.EventTagUnique": "Wyjątkowe wydarzenie",
+
+"EMBER.EventActionBegin": "Rozpocznij wydarzenie",
+"EMBER.EventActionCancel": "Anuluj wydarzenie",
+"EMBER.EventActionDecline": "Odrzucenie wydarzenia",
+"EMBER.EventActionReroll": "Zaproponuj alternatywę",
+"EMBER.EventActionComplete": "Zakończ wydarzenie",
+"EMBER.EventActionDiscoveryComplete": "Zakończ odkrycie",
+"EMBER.EventActionDiscoveryDecline": "Odrzucenie odkrycia",
+
+"EMBER.EmberStorylineLegend.Title": "Wątki fabularne",
+"EMBER.EmberStorylineLegend.StateNone": "Ukryte",
+"EMBER.EmberStorylineLegend.StateOpen": "Otwórz wydarzenia",
+"EMBER.EmberStorylineLegend.StateAll": "Wszystkie wydarzenia",
+
+"EMBER.EVENTS.Undiscovered": "Nie napotkano",
+"EMBER.EVENTS.Available": "Nie rozpoczęto",
+"EMBER.EVENTS.Active": "Aktywne",
+"EMBER.EVENTS.Repeating": "Powtórzenie",
+"EMBER.EVENTS.Completed": "Zakończono",
+"EMBER.EVENTS.Milestone": "Nagrody kamieni milowych",
+"EMBER.EVENTS.NoExposition": "Nie określono prezentacji dla tego wydarzenia!",
+"EMBER.EVENTS.NoOverview": "Nie określono przeglądu dla tego wydarzenia!",
+"EMBER.EVENTS.NoSummary": "Nie określono podsumowania dziennika dla tego wydarzenia!",
+"EMBER.EVENTS.QuestEvent": "Wydarzenie specjalne",
+"EMBER.EVENTS.StandaloneEvent": "Wydarzenie niezależne",
+
+"EMBER.ANCESTRY": {
+  "FIELDS": {
+    "color": {
+      "label": "Kolor UI",
+      "hint": "Kolor wykorzystywany jako element graficzny do przedstawienia pochodzenia w interfejsie tworzenia postaci."
+    },
+    "icon": {
+      "label": "Ikona pochodzenia",
+      "hint": "Ikona używana do przedstawienia tego pochodzenia podczas tworzenia postaci oraz w innych miejscach."
+    },
+    "item": {
+      "label": "Przedmiot rasy pochodzenia",
+      "hint": "Przedmiot związany z rasą w systemie gry D&D 5E."
+    },
+    "height": {
+      "label": "Wysokość",
+      "hint": "Określ typowy wzrost dorosłych osób o tym pochodzeniu."
+    },
+    "lifespan": {
+      "label": "Długość życia",
+      "hint": "Określ typową długość życia tego przodka."
+    },
+    "origin": {
+      "label": "Źródło pochodzenia",
+      "hint": "Proszę krótko opisać kosmologiczne źródło pochodzenia przodków. Wyłącznie do użytku wewnętrznego."
+    },
+    "portrait": {
+      "label": "Portret",
+      "hint": "Portret przykładowej postaci z tego pochodzenia."
+    },
+    "rarity": {
+      "label": "Rzadkość",
+      "hint": "Określ poziom rzadkości tego pochodzenia."
+    }
+  },
+  "SECTIONS": {
+    "gameplay": "Cechy rozgrywki"
+  }
+},
+
+"EMBER.BIOME": {
+  "SECTIONS": {
+    "basic": "Konfiguracja podstawowa",
+    "related": "Powiązane treści",
+    "events": "Prawdopodobieństwo wydarzenia",
+    "ambience": "Dźwięki otoczenia",
+    "music": "Muzyka",
+    "visibility": "Widoczność"
+  },
+  "FIELDS": {
+    "biomeId": {
+      "label": "ID biomu",
+      "hint": "Wymagany unikalny identyfikator biomu. Identyfikator ten musi dokładnie odpowiadać identyfikatorowi skonfigurowanemu w danych strefy zaplecza."
+    },
+    "creatures": {
+      "label": "Stworzenia",
+      "hint": "Skonfiguruj stworzenia zamieszkujące ten biom, wpisując identyfikator UUID obiektu lub korzystając z funkcji „przeciągnij i upuść”."
+    },
+    "events": {
+      "coefficients": {
+        "label": "Współczynniki wydarzeń",
+        "hint": "Skonfiguruj współczynniki i wagi, które określają prawdopodobieństwo wystąpienia wydarzeń w tym biomie."
+      }
+    },
+    "exposition": {
+      "label": "Wprowadzenie do sceny",
+      "hint": "Tekst do odczytania na głos, zawierający wprowadzenie do biomu. Ten tekst wprowadzający jest widoczny zarówno dla Mistrza Gry, jak i dla graczy."
+    },
+    "fillColor": {
+      "label": "Kolor",
+      "hint": "Kolor używany do oznaczenia tego biomu na mapie regionu."
+    },
+    "overview": {
+      "label": "Przegląd biomu",
+      "hint": "Akapit (lub więcej) zawierający ogólne informacje o biomie przeznaczone dla graczy."
+    },
+    "regionId": {
+      "label": "ID regionu",
+      "hint": "Określ, w którym regionie świata gry Ember znajduje się ta lokacja."
+    },
+    "scenes": {
+      "area": {
+        "label": "Mapa okolicy",
+        "hint": "Wybierz mapę obszaru, która ma służyć do przedstawienia tego biomu."
+      },
+      "vista": {
+        "label": "Perspektywa",
+        "hint": "Wybierz perspektywę, który będzie reprezentowała ten biom."
+      }
+    },
+    "sounds": {
+      "environment": {
+        "soundscape": {
+          "label": "Dźwięki środowiska",
+          "hint": "Skonfiguruj domyślną oprawę dźwiękową i aranżacje wykorzystywane do odtworzenia atmosfery otoczenia w tym biomie."
+        },
+        "arrangements": {
+          "day": {
+            "label": "Dzień"
+          },
+          "night": {
+            "label": "Noc"
+          }
+        },
+        "surface": {
+          "label": "Substancja powierzchniowa",
+          "hint": "Identyfikator substancji powierzchniowej używany podczas określania dźwięku przemieszczania się na mapie regionu."
+        }
+      },
+      "music": {
+        "soundscape": {
+          "label": "Pejzaż muzyczny",
+          "hint": "Skonfiguruj dźwięki i aranżacje wykorzystywane w muzyce w grze w tym biomie."
+        },
+        "arrangements": {
+          "day": {
+            "label": "Dzień"
+          },
+          "night": {
+            "label": "Noc"
+          },
+          "tension": {
+            "label": "Napięcie"
+          }
+        }
+      }
+    },
+    "terrain": {
+      "label": "Teren",
+      "hint": "Określ domyślny typ terenu dla heksów w tym biomie."
+    },
+    "visibility": {
+      "distance": {
+        "label": "Odległość"
+      },
+      "limit": {
+        "label": "Limit",
+        "hint": "W jaki sposób widoczność ulega ograniczeniu po wejściu na pola tego biomu?"
+      }
+    }
+  }
+},
+
+"EMBER.CHARACTER_CLASS": {
+  "FIELDS": {
+    "color": {
+      "label": "Kolor UI",
+      "hint": "Kolor wykorzystywany jako element graficzny do przedstawienia klasy w interfejsie tworzenia postaci."
+    },
+    "icon": {
+      "label": "Ikona klasy",
+      "hint": "Ikona używana do przedstawienia tej klasy podczas tworzenia postaci oraz w innych miejscach."
+    },
+    "overview": {
+      "label": "Przegląd klasy",
+      "hint": "Akapit zawierający podstawowe informacje o klasie, wyświetlany podczas tworzenia postaci."
+    }
+  }
+},
+
+"EMBER.CULTURE": {
+  "FIELDS": {
+    "color": {
+      "label": "Kolor UI",
+      "hint": "Kolor wykorzystywany jako element graficzny do przedstawienia kultury w interfejsie tworzenia postaci."
+    },
+    "icon": {
+      "label": "Ikona kultury",
+      "hint": "Ikona używana do przedstawienia tej kultury podczas tworzenia postaci oraz w innych miejscach."
+    },
+    "item": {
+      "label": "Przedmiot przeszłości kultury",
+      "hint": "Przedmiot związany z przeszłością w systemie gry D&D 5E."
+    }
+  }
+},
+
+"EMBER.COSMOS": {
+  "FIELDS": {
+    "color": {
+      "label": "Kolor UI",
+      "hint": "Kolor wykorzystywany jako element graficzny w celu przedstawienia tego dostrojenia kosmologicznego w interfejsie tworzenia postaci."
+    },
+    "icon": {
+      "label": "Ikona",
+      "hint": "Ikona używana do przedstawienia tego dostrojenia kosmologicznego podczas tworzenia postaci oraz w innych miejscach."
+    },
+    "item": {
+      "label": "Przedmiot przeszłości",
+      "hint": "Przedmiot związany z przeszłością w systemie gry D&D 5E."
+    },
+    "portrait": {
+      "label": "Zdjęcie portretowe",
+      "hint": "Obrazek używany do przedstawienia elementu kosmologicznego podczas tworzenia postaci oraz w innych kontekstach."
+    }
+  },
+  "SECTIONS": {
+    "gameplay": "Integracja rozgrywki"
+  }
+},
+
+"EMBER.DEITY": {
+  "SECTIONS": {
+    "magic": "Magia i metafizyka",
+    "basic": "Konfiguracja podstawowa",
+    "related": "Powiązane treści"
+  },
+  "FIELDS": {
+    "banner": {
+      "label": "Sztandar bóstwa",
+      "hint": "Baner przedstawiający bóstwo lub inne materiały informacyjne dotyczące tego bóstwa."
+    },
+    "caption": {
+      "label": "Podpis pod banerem",
+      "hint": "Opcjonalny podpis wyświetlany pod obrazem banera."
+    },
+    "pronunciation": {
+      "label": "Wymowa",
+      "hint": "Opcjonalna fonetyczna wymowa imienia tego bóstwa."
+    },
+    "category": {
+      "label": "Kategoria",
+      "hint": "Wybierz kategorię w pasku bocznym, w której ma zostać umieszczony ten wpis dotyczący bóstwa."
+    },
+    "edict": {
+      "label": "Edykt",
+      "hint": "Proszę sformułować jednozdaniowe hasło, które podsumowuje misję lub cele tej bóstwa."
+    },
+    "overview": {
+      "label": "Przegląd bóstwa",
+      "hint": "Przedstaw w skrócie (w 2–3 zdaniach) opis bóstwa, jego rolę w kosmosie oraz podstawowe dogmaty."
+    },
+    "organizations": {
+      "label": "Powiązane organizacje",
+      "hint": "Organizacje z całego świata, które mają szczególny związek z tym bóstwem."
+    },
+    "locations": {
+      "label": "Ważne miejsca",
+      "hint": "Miejsca na świecie, które mają szczególny związek z tym bóstwem."
+    },
+    "followers": {
+      "label": "Ważni wyznawcy",
+      "hint": "Postacie lub istoty związane z tym bóstwem, które są jego znanymi wyznawcami."
+    },
+    "clerics": {
+      "label": "Boskie domeny",
+      "hint": "Domeny boskie, które zazwyczaj kojarzone są z tym bóstwem, o ile takie istnieją. Kapłani czczący to bóstwo zazwyczaj praktykują jedną z tych domen."
+    },
+    "warlocks": {
+      "label": "Pakty Czarownika",
+      "hint": "Ewentualne pakty czarowników, które zazwyczaj kojarzone są z tym bóstwem. Czarownicy, którym bóstwo to obdarzyło mocą, przestrzegają jednego z tych paktów."
+    },
+    "sorcerers": {
+      "label": "Źródła mocy magicznej",
+      "hint": "Źródła mocy magicznej, które zazwyczaj kojarzone są z tym bóstwem, o ile takie istnieją. Magowie, których moc wywodzi się z tych źródeł, mogą przypisywać ją temu bóstwu."
+    }
+  }
+},
+
+"EMBER.DEVELOPMENT": {
+  "FIELDS": {
+    "development": {
+      "status": {
+        "label": "Stan realizacji",
+        "hint": "Zapisz aktualny stan realizacji tej treści."
+      },
+      "notes": {
+        "label": "Uwagi deweloperskie",
+        "hint": "Dodawaj krótkie notatki opisujące aktualny stan prac lub kolejne kroki. Obsługiwane są adresy URL."
+      },
+      "secrets": {
+        "label": "Sekretna wiedza",
+        "hint": "Dodatkowe informacje dotyczące świata gry lub kompendium wiedzy na ten temat, które nie są przeznaczone do publicznej wiadomości (ani dla Mistrza Gry, ani dla graczy)."
+      }
+    }
+  }
+},
+
+"EMBER.EVENT": {
+  "SECTIONS": {
+    "basic": "Konfiguracja podstawowa",
+    "location": "Miejsce wydarzenia",
+    "probability": "Prawdopodobieństwo wydarzenia",
+    "activation": "Aktywacja wydarzenia"
+  },
+  "FIELDS": {
+    "biomes": {
+      "label": "Biomy wydarzenia",
+      "hint": "Skonfiguruj to zdarzenie tak, aby występowało we wszystkich polach należących do określonego zestawu biomów."
+    },
+    "coefficients": {
+      "label": "Współczynniki wydarzeń",
+      "hint": "Skonfiguruj współczynniki i wagi, które określają prawdopodobieństwo wystąpienia tego zdarzenia. Jest to zaawansowana konfiguracja i należy ją przeprowadzać wyłącznie z zachowaniem ostrożności oraz po zapoznaniu się z zasadami działania modułu obliczającego prawdopodobieństwo zdarzeń."
+    },
+    "eventId": {
+      "label": "ID wydarzenia",
+      "hint": "Wymagany unikalny identyfikator wydarzenia. Zgodnie z przyjętą konwencją identyfikator ten powinien być alfanumeryczny, zapisany wielkimi i małymi literami (camel case) oraz zaczynać się małą literą. Na przykład „mojeWydarzenieNiezależne3”."
+    },
+    "encounter": {
+      "label": "Konfiguracja spotkania",
+      "hint": "Konfiguracja spotkań to zaawansowana funkcja i należy ją stosować z rozwagą oraz po konsultacji z Andrew."
+    },
+    "global": {
+      "label": "Globalne",
+      "hint": "Zdarzenia globalne mogą mieć miejsce w dowolnym polu na mapie świata."
+    },
+    "hexes": {
+      "label": "Konkretne heksy",
+      "hint": "Skonfiguruj to wydarzenie tak, aby miało miejsce w określonym punkcie o współrzędnych heksa."
+    },
+    "type": {
+      "label": "Rodzaj wydarzenia",
+      "hint": "Wskaż główny rodzaj rozgrywki dla tego wydarzenia. Obecnie można wybrać tylko jeden rodzaj, ale w przyszłości będzie można zaznaczyć wiele motywów rozgrywki."
+    },
+    "locations": {
+      "label": "Miejsca wydarzeń",
+      "hint": "Skonfiguruj to wydarzenie tak, aby miało miejsce w określonej grupie lokalizacji."
+    },
+    "milestone": {
+      "label": "Nagrody kamieni milowych",
+      "hint": "Proszę zaznaczyć, czy po ukończeniu tego zadania przyznawana jest nagroda kamienia milowego."
+    },
+    "prerequisite": {
+      "label": "Warunek wstępny",
+      "hint": "Skonfiguruj stan wydarzeń nadrzędnych, które są wymagane do odblokowania tego wydarzenia."
+    },
+    "regionId": {
+      "label": "Region świata",
+      "hint": "Wybierz region świata, w którym odbywa się to wydarzenie."
+    },
+    "scene": {
+      "label": "Aktywna scena",
+      "hint": "Ustal, które sceny mają być używane dla tego wydarzenia.",
+      "active": {
+        "id": {
+          "label": "Aktywna scena",
+          "hint": "Ta scena zostanie uruchomiona po rozpoczęciu tego wydarzenia. Jeśli pole pozostanie puste, wydarzenie odbędzie się w ramach bieżącej sceny, a nie spowoduje przejścia do innej."
+        },
+        "level": {
+          "label": "Aktywny poziom"
+        }
+      },
+      "complete": {
+        "id": {
+          "label": "Scena po zakończeniu",
+          "hint": "Ta scena zostanie uruchomiona po zakończeniu tego wydarzenia. Jeśli pole pozostaje puste, uruchomiona zostanie scena, która była aktywna przed rozpoczęciem wydarzenia."
+        },
+        "level": {
+          "label": "Poziom po zakończeniu"
+        }
+      }
+    },
+    "unique": {
+      "label": "Wyjątkowe",
+      "hint": "Wyjątkowe wydarzenia mają miejsce tylko raz, w przeciwnym razie mogą się powtarzać."
+    },
+    "overview": {
+      "label": "W skrócie",
+      "hint": "Krótkie (1-2 zdania) wprowadzenie, widoczne wyłącznie dla Mistrza Gry, podsumowujące przebieg rozgrywki podczas wydarzenia."
+    },
+    "exposition": {
+      "label": "Wprowadzenie do sceny",
+      "hint": "Tekst do odczytania na głos, zawierający opis wydarzenia. Ten tekst wprowadzający jest widoczny zarówno dla Mistrza Gry, jak i dla graczy."
+    },
+    "summary": {
+      "label": "Podsumowanie dziennika",
+      "hint": "Proszę podać krótki wpis do dziennika (1-3 zdania), który zostanie zapisany w menedżerze kampanii po zakończeniu tego wydarzenia. Należy go sformułować z perspektywy drużyny w pierwszej osobie liczby mnogiej, na przykład: „Na drodze spotkaliśmy dziwnego podróżnika...”."
+    }
+  },
+  "MESSAGES": {
+    "CHANGE_OUTCOME": "<p>Czy na pewno chcesz wykonać {action} w związku z wynikiem <strong>{label}</strong>?</p>",
+    "CHANGE_RESET": "zresetuj",
+    "CHANGE_SELECT": "wybierz"
+  },
+  "WARNINGS": {
+    "NotRegistered": "Wydarzenie o identyfikatorze \"{eventId}\" nie zostało jeszcze zarejestrowane jako aktywne wydarzenie w grze. Wynika to albo z tego, że zostało ono dopiero co utworzone, albo z tego, że należy do nadrzędnego wpisu dziennika, który nie jest zarejestrowany jako źródło wydarzeń niezależnych. Ponowne załadowanie gry (klawisz F5) może rozwiązać ten problem."
+  }
+},
+
+"EMBER.LOCATION": {
+  "SECTIONS": {
+    "basic": "Konfiguracja podstawowa",
+    "related": "Powiązane treści",
+    "events": "Prawdopodobieństwo wydarzenia",
+    "ambience": "Dźwięki otoczenia",
+    "music": "Muzyka",
+    "visibility": "Widoczność"
+  },
+  "FIELDS": {
+    "creatures": {
+      "label": "Stworzenia",
+      "hint": "Skonfiguruj stworzenia zamieszkujące tą lokację, wpisując identyfikator UUID obiektu lub korzystając z funkcji „przeciągnij i upuść”."
+    },
+    "events": {
+      "coefficients": {
+        "label": "Współczynniki wydarzeń",
+        "hint": "Skonfiguruj współczynniki i wagi, które określają prawdopodobieństwo wystąpienia wydarzeń w tej lokacji."
+      }
+    },
+    "discoveryHexes": {
+      "label": "Odkrywanie heksów",
+      "hint": "Heksy inne niż te, w których znajduje się ta lokacja, z których lokacja ta zostanie odkryta."
+    },
+    "exposition": {
+      "label": "Wprowadzenie do sceny",
+      "hint": "Tekst do odczytania na głos, zawierający wprowadzenie do lokacji. Ten tekst wprowadzający jest widoczny zarówno dla Mistrza Gry, jak i dla graczy."
+    },
+    "locationId": {
+      "label": "ID lokacji",
+      "hint": "Wymagany unikalny identyfikator lokacji. Zgodnie z przyjętą konwencją identyfikator ten powinien być alfanumeryczny, zapisany wielkimi i małymi literami (camel case) oraz zaczynać się małą literą. Na przykład „mojaWłasnaLokacja4”."
+    },
+    "overview": {
+      "label": "Przegląd lokacji",
+      "hint": "Akapit (lub więcej) zawierający ogólne informacje o lokacji przeznaczone dla graczy."
+    },
+    "regionId": {
+      "label": "ID regionu",
+      "hint": "Określ, w którym regionie świata gry Ember znajduje się ta lokacja."
+    },
+    "hexes": {
+      "label": "Konkretne heksy",
+      "hint": "Skonfiguruj zestaw heksów, w których znajduje się ta lokacja."
+    },
+    "scenes": {
+      "area": {
+        "label": "Mapa okolicy",
+        "hint": "Wybierz mapę obszaru, która ma służyć do przedstawienia tej lokacji."
+      },
+      "vista": {
+        "label": "Perspektywa",
+        "hint": "Wybierz perspektywę, który będzie reprezentowała tą lokację."
+      }
+    },
+    "sounds": {
+      "environment": {
+        "soundscape": {
+          "label": "Dźwięki środowiska",
+          "hint": "Skonfiguruj domyślną oprawę dźwiękową i aranżacje wykorzystywane do odtworzenia atmosfery otoczenia w tej lokacji."
+        },
+        "arrangements": {
+          "day": {
+            "label": "Dzień"
+          },
+          "night": {
+            "label": "Noc"
+          }
+        },
+        "neighbors": {
+          "label": "Sąsiednie",
+          "hint": "Czy w tym miejscu na mapie regionu należy uwzględnić warstwy otoczenia z sąsiednich heksów?"
+        }
+      },
+      "music": {
+        "soundscape": {
+          "label": "Pejzaż muzyczny",
+          "hint": "Skonfiguruj dźwięki i aranżacje wykorzystywane w muzyce w grze w tej lokacji."
+        },
+        "arrangements": {
+          "day": {
+            "label": "Dzień"
+          },
+          "night": {
+            "label": "Noc"
+          },
+          "tension": {
+            "label": "Napięcie"
+          }
+        }
+      }
+    },
+    "terrain": {
+      "label": "Teren",
+      "hint": "Określ rodzaj terenu dla heksów w tej lokacji."
+    },
+    "visibility": {
+      "distance": {
+        "label": "Odległość"
+      },
+      "limit": {
+        "label": "Limit",
+        "hint": "W jaki sposób ograniczana jest widoczność heksów w tej lokacji?"
+      }
+    }
+  }
+},
+
+"EMBER.LORE": {
+  "SECTIONS": {
+    "basic": "Konfiguracja podstawowa",
+    "related": "Powiązane treści"
+  },
+  "FIELDS": {
+    "banner": {
+      "img": {
+        "label": "Obrazek banera",
+        "hint": "Obraz banera wyświetlany w nagłówku strony poświęconej temu tematowi."
+      },
+      "caption": {
+        "label": "Podpis pod banerem",
+        "hint": "Opcjonalny podpis wyświetlany pod obrazem banera."
+      }
+    },
+    "content": {
+      "overview": {
+        "label": "Przegląd tematu",
+        "hint": "Krótki (2–3 zdania) przegląd tego tematu fabularnego, podsumowujący jego treść."
+      },
+      "gamemaster": {
+        "label": "Informacje przeznaczone wyłącznie dla Mistrza Gry",
+        "hint": "Dodatkowe informacje na ten temat, dostępne wyłącznie dla Mistrzów Gry."
+      }
+    },
+    "identifier": {
+      "label": "Identyfikator tematu",
+      "hint": "Unikalny ciąg znaków służący jako identyfikator tego tematu w sekcji Wiedzy."
+    },
+    "pronunciation": {
+      "label": "Wymowa",
+      "hint": "Opcjonalna fonetyczna wymowa imienia tego tematu."
+    },
+    "subtitle": {
+      "label": "Podtytuł",
+      "hint": "Podtytuł, tytuł dodatkowy, pseudonim lub przydomek używany w odniesieniu do tego tematu."
+    },
+    "concepts": {
+      "label": "Powiązane zagadnienia",
+      "hint": "Powiązane zagadnienia (strony dziennika) związane z tym tematem."
+    },
+    "characters": {
+      "label": "Powiązane postacie",
+      "hint": "Postacie powiązane (aktorzy) związane z tym tematem."
+    }
+  }
+},
+
+"EMBER.ORGANIZATION": {
+  "FIELDS": {
+    "banner": {
+      "label": "Obrazek banera",
+      "hint": "Opcjonalny obrazek banera służący do przedstawienia tej organizacji."
+    },
+    "caption": {
+      "label": "Podpis pod banerem",
+      "hint": "Opcjonalny podpis wyświetlany pod obrazem banera."
+    },
+    "pronunciation": {
+      "label": "Wymowa",
+      "hint": "Opcjonalna fonetyczna wymowa imienia tej organizacji."
+    },
+    "color": {
+      "label": "Kolor UI",
+      "hint": "Kolor wykorzystywany jako element graficzny kojarzący się z tą organizacją."
+    },
+    "icon": {
+      "label": "Ikona organizacji",
+      "hint": "Ikona służąca do przedstawiania tej organizacji."
+    },
+    "locations": {
+      "label": "Lokacje",
+      "hint": "Powiązane lokacje (strony w spisie miejsc), które są związane z tą organizacją."
+    },
+    "overview": {
+      "label": "Przegląd organizacji",
+      "hint": "Opisz krótko (w 2–3 zdaniach) organizację, podając jej rolę i historię."
+    },
+    "characters": {
+      "label": "Postacie",
+      "hint": "Postacie powiązane (aktorzy) związane z tą organizacją."
+    }
+  }
+},
+
+"EMBER.QUEST": {
+  "FIELDS": {
+    "questId": {
+      "label": "ID zadania",
+      "hint": "Wymagany unikalny identyfikator zadania. Identyfikator zadania powinien być alfanumeryczny, zapisany w stylu camel case i zaczynać się małą literą. Na przykład \"specjalneZadanie3\"."
+    },
+    "regionId": {
+      "label": "ID regionu",
+      "hint": "Ustal, z którym regionem świata gry to zadanie jest przede wszystkim powiązane."
+    },
+    "color": {
+      "label": "Kolor zadania",
+      "hint": "Wybierz kolor, który będzie reprezentował to zadanie w legendzie mapy regionu oraz w menedżerze kampanii."
+    },
+    "overview": {
+      "label": "W skrócie",
+      "hint": "Jednoakapitowy opis zadania, widoczny wyłącznie dla Mistrza Gry, zawierający podsumowanie głównych elementów rozgrywki i motywów przewodnich zadania."
+    }
+  },
+  "SECTIONS": {
+    "basic": "Konfiguracja podstawowa"
+  }
+},
+
+"EMBER.CONST": {
+  "TRAVEL": {
+    "fast": "Szybko",
+    "hidden": "Skrycie",
+    "normal": "Normalnie",
+    "reckless": "Nieostrożnie",
+    "slow": "Pomału"
+  },
+  "VISIBILITY": {
+    "BACK": "Tył",
+    "FRONT": "Przód",
+    "NONE": "Brak"
+  }
+},
+
+"EMBER.JournalEventPageSheet": "Wydarzenie fabularne Ember",
+"EMBER.JournalEventPageSheetContent": "Treść strony",
+"EMBER.JournalEventPageSheetConfig": "Konfiguracja wydarzenia",
+"EMBER.JournalEventPageSheetOutcomes": "Wyniki wyboru",
+
+"EMBER.SHEETS": {
+  "GazetteerSheet": "Katalog geograficzny Ember",
+  "JournalEntrySheet": "Wpis do dziennika Ember",
+  "QuestSheet": "Karta zadania Ember",
+  "TextSheet": "Tekst Ember"
+},
+
+"EMBER.JOURNAL_ENTRY_PAGE": {
+  "TABS": {
+    "content": "Treść",
+    "secondary": "Dodatkowe",
+    "config": "Konfiguracja",
+    "development": "Opracowanie",
+    "hooks": "Uchwyty",
+    "outcomes": "Wyniki"
+  }
+},
+
+"EMBER.MOON.PHASES": {
+  "NONE": "Nów",
+  "WAXING": "Przybywający",
+  "WANING": "Ubywający",
+  "FULL": "Pełnia"
+},
+"EMBER.SUN.PHASES": {
+  "NIGHT": "Noc",
+  "DAWN": "Świt",
+  "DAY": "Dzień",
+  "DUSK": "Zmierzch"
+},
+
+"EMBER.REGION": {
+  "MOVEMENT": {
+    "Impossible": "Niemożliwe",
+    "Unknown": "Nieznany",
+    "Mile": {
+      "one": "Mila",
+      "other": "Mile"
+    }
+  }
+},
+
+"EMBER.VISTA": {
+  "COMPOSITIONS": {
+    "core": "Główna kompozycja",
+    "custom": "Indywidualne kompozycje",
+    "template": "Szablon kompozycji"
+  },
+  "TABS": {
+    "placements": "Zasoby",
+    "scene": "Scena"
+  }
+},
+
+"EMBER.ThermalVision": "Termowizja",
+
+"DND5E": {
+  "ADVANCEMENT": {
+    "EmberKnowledge": {
+      "Configure": "Konfiguracja wiedzy",
+      "Hint": "Zdobądź wiedzę w oparciu o źródło.",
+      "Title": "Wiedza"
+    }
+  }
+},
+
+"SPELL.INFLECTIONS": {
+  "Glyphspeak": "Język glifów",
+  "GlyphspeakAdj": "Mowa glifów"
+}
+}
