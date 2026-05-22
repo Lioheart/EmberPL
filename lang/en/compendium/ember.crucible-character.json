@@ -3,33 +3,62 @@
     "folders": {
         "Ancestries": "Ancestries",
         "Ancestry Features": "Ancestry Features",
-        "Attunement Features": "Attunement Features",
         "Attunements": "Attunements",
         "Culture Features": "Culture Features",
         "Cultures": "Cultures",
         "Paths": "Paths",
-        "Soulbound": "Soulbound"
+        "Special": "Special"
     },
     "entries": {
-        "Abyss": {
-            "name": "Abyss",
-            "description": "<p>@Embed[JournalEntry.emberCosmos00000.JournalEntryPage.06I8t0GPggrMVnGV inline overview]</p>"
-        },
         "Abyss Attunement": {
             "name": "Abyss Attunement",
-            "description": "<p>Your soul is vacant of resonance with Ember's cosmological forces, instead you are attuned to the unsettling pull of @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.06I8t0GPggrMVnGV]{The Abyss} and its philosophical ideal of <strong>Nihilism</strong>.</p><p>You gain resistance to <strong>Void</strong> damage equal to 2 times your attunement strength.</p><p><em>Further effects will be unlocked at higher attunement ranks.</em></p>"
+            "description": "<p>Your soul is vacant of resonance with Ember's cosmological forces, instead you are attuned to the unsettling pull of @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.06I8t0GPggrMVnGV]{The Abyss} and its philosophical ideal of <strong>Nihilism</strong>.</p><p>You gain the following benefits which improve with your attunement rank.</p><ul><li><p><strong>Rank 1</strong>: You gain resistance to <strong>Void</strong> damage equal to 2 times your attunement rank.</p></li><li><p><strong>Rank 2</strong>: You unlock the @Action[Compendium.ember.crucible-character.Item.emberAbyssAttune abyssMarkUnmaking] action which allows you to recover <strong>Focus</strong> when you defeat a marked enemy.</p></li><li><p><strong>Rank 3</strong>: Your maximum Focus is increased by 1 per attunement rank above 2.</p></li><li><p><strong>Rank 4</strong>: You unlock the <strong>Abyssal</strong> spellcraft inflection which may be applied to spells that use the <strong>Oblivion</strong> rune. On a critical hit, recover the spell's focus cost plus 2 additional Focus, once per turn.</p></li><li><p><strong>Rank 5</strong>: You unlock the @Action[Compendium.ember.crucible-character.Item.emberAbyssAttune abyssUntethering] action which expends Heroism to deal massive Void damage to a single target.</p></li></ul>",
+            "actions": {
+                "Mark of Unmaking": {
+                    "name": "Mark of Unmaking",
+                    "condition": "You score a critical hit against an enemy.",
+                    "description": "<p>Apply an Abyssal mark to a target you just critically hit within 60 feet. If you subsequently cause the creature to become @Condition[weakened], @Condition[broken], or @Condition[dead] you harvest <strong>+2 Focus</strong>. The mark persists until consumed or until you apply a new mark to a different target.</p>",
+                    "effects": [
+                        {
+                            "name": "Mark of Unmaking"
+                        }
+                    ]
+                },
+                "Untethering": {
+                    "name": "Untethering",
+                    "description": "<p>You assault the <strong>Fortitude</strong> of a single creature, dealing massive <strong>Void</strong> damage. On a success, the creature's <strong>Morale</strong> is immediately reduced to zero and all damage dealt applies directly towards <strong>Madness</strong>. Additionally, the target suffers the @Condition[entropy] condition for 10 rounds. This action scales with your highest ability of <strong>Strength</strong>, <strong>Toughness</strong>, or <strong>Dexterity</strong>.</p>",
+                    "effects": [
+                        {
+                            "name": "Untethering"
+                        }
+                    ]
+                }
+            }
         },
         "Academy Dropout": {
             "name": "Academy Dropout",
             "description": "<p>The Star Academy of the Rhivan accepts students from across the world, and you can be admitted with even the barest glimmer of magical potential. Some, however, find the strict and unrelenting study unbearable and only last a short while before leaving to find their fortunes elsewhere. You likely picked up a few things, learning just enough to get by in any situation that requires magical knowledge.</p><p>You are a capable magical adept, at least from a knowledge perspective, and you are aware of numerous magical theories and phenomena.</p>"
         },
-        "Akon": {
-            "name": "Akon",
-            "description": "<p>@Embed[JournalEntry.emberCosmos00000.JournalEntryPage.3Oywe0peo57dQT9j inline overview]</p>"
-        },
         "Akon Attunement": {
             "name": "Akon Attunement",
-            "description": "<p>Your soul resonates with attunement to @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.3Oywe0peo57dQT9j]{Akon}, The Shattered Moon, and its philosophical ideal of <strong>Discipline</strong>.</p><p>You gain resistance to <strong>Bludgeoning</strong>, <strong>Piercing</strong>, and <strong>Slashing </strong>damage equal to your attunement strength.</p><p><em>Further effects will be unlocked at higher attunement ranks.</em></p>"
+            "description": "<p>Your soul resonates with attunement to @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.3Oywe0peo57dQT9j]{Akon}, The Shattered Moon, and its philosophical ideal of <strong>Discipline</strong>.</p><p>You gain the following benefits which improve with your attunement rank.</p><ul><li><p><strong>Rank 1</strong>: You gain resistance to <strong>Piercing</strong> damage equal to 2 times your attunement rank.</p></li><li><p><strong>Rank 2</strong>: You unlock the @Action[Compendium.ember.crucible-character.Item.emberAkonAttunem akonForesight] reaction which lets you predict the outcome of a roll and recover <strong>Focus</strong> when correct.</p></li><li><p><strong>Rank 3</strong>: Your <strong>Parry</strong> defense is increased by 1 per attunement rank above 2.</p></li><li><p><strong>Rank 4</strong>: You unlock the <strong>Akonic</strong> spellcraft inflection which may be applied to spells that use the <strong>Kinesis</strong> rune. The spell automatically deals whichever physical damage type the enemy is most vulnerable to.</p></li><li><p><strong>Rank 5</strong>: You unlock the @Action[Compendium.ember.crucible-character.Item.emberAkonAttunem akonInevitability] reaction which marks an enemy and forces its strategy to be revealed at the start of each Round.</p></li></ul>",
+            "actions": {
+                "Foresight": {
+                    "name": "Foresight",
+                    "condition": "A creature performs the action you previously declared.",
+                    "description": "<p>Before any creature has acted in a combat round, verbally declare a specific prognostication: a named actor will perform a specific action and obtain a category of result, either <strong>Success</strong> or <strong>Failure</strong>. If the prognostication comes to pass you may use this reaction to recover <strong>+1 Focus</strong>.</p>"
+                },
+                "Inevitability": {
+                    "name": "Inevitability",
+                    "condition": "At the start of a Combat Round, before any creature has acted.",
+                    "description": "<p>At the start of a Combat Round, before any creature has acted, you declare a single visible enemy's doom. At the beginning of each subsequent Round, before you declare your <strong>Foresight</strong> prognostication, the Gamemaster must publicly announce the strategy this creature will pursue on its Turn and commit to it unless rendered impossible.</p>",
+                    "effects": [
+                        {
+                            "name": "Inevitability"
+                        }
+                    ]
+                }
+            }
         },
         "Altyra": {
             "name": "Altyra",
@@ -70,13 +99,30 @@
             "name": "Aster",
             "description": "<p>Your alteration sets you apart from others of your ancestry, You may show phsycial signs of your transformation, or your differences may lie hidden within, shaping you are at a fundamental level. No two Aster are alike, and your form is entirely your own.</p>"
         },
-        "Aura": {
-            "name": "Aura",
-            "description": "<p>@embed[JournalEntry.emberCosmos00000.JournalEntryPage.smc0OuMxsxfcSdhR inline overview]</p>"
-        },
         "Aura Attunement": {
             "name": "Aura Attunement",
-            "description": "<p>Your soul resonates with attunement to @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.smc0OuMxsxfcSdhR]{Aura}, The Hollow Moon, and its philosophical ideal of <strong>Individualism</strong>.</p><p>You gain resistance to <strong>Electricity</strong> damage equal to 2 times your attunement strength.</p><p><em>Further effects will be unlocked at higher attunement ranks.</em></p>"
+            "description": "<p>Your soul resonates with attunement to @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.smc0OuMxsxfcSdhR]{Aura}, The Hollow Moon, and its philosophical ideal of <strong>Individualism</strong>.</p><p>You gain the following benefits which improve with your attunement rank.</p><ul><li><p><strong>Rank 1</strong>: You gain resistance to <strong>Electricity</strong> damage equal to 2 times your attunement rank.</p></li><li><p><strong>Rank 2</strong>: You unlock the @Action[Compendium.ember.crucible-character.Item.emberAuraAttunem auraSlipstream] action which surrounds you with airy displacement after you move.</p></li><li><p><strong>Rank 3</strong>: Your <strong>Stride</strong> is increased by 2 per attunement rank above 2.</p></li><li><p><strong>Rank 4</strong>: You unlock the <strong>Auric</strong> spellcraft inflection which may be applied to spells that use the <strong>Lightning</strong> rune. After casting, you recover your <strong>Free Move</strong>.</p></li><li><p><strong>Rank 5</strong>: You unlock the @Action[Compendium.ember.crucible-character.Item.emberAuraAttunem auraBoundless] action which grants flight and immunity to a range of movement-impairing conditions.</p></li> </ul>",
+            "actions": {
+                "Slipstream": {
+                    "name": "Slipstream",
+                    "condition": "You used the Move action this turn.",
+                    "description": "<p>You create a slipstream that causes your form to shimmer with airy displacement. Your <strong>Dodge</strong> and <strong>Reflex</strong> defenses are both increased by +1 until the start of your next Turn. The slipstream collapses once you take damage from any source.</p>",
+                    "effects": [
+                        {
+                            "name": "Slipstream"
+                        }
+                    ]
+                },
+                "Boundless": {
+                    "name": "Boundless",
+                    "description": "<p>You can fly and cannot be afflicted by the @Condition[slowed], @Condition[prone], @Condition[restrained], @Condition[staggered], @Condition[stunned], or @Condition[paralyzed] conditions for 6 Rounds. While Boundless is active, all spells you cast with the <strong>Lightning</strong> rune are <strong>Empowered</strong>.</p>",
+                    "effects": [
+                        {
+                            "name": "Boundless"
+                        }
+                    ]
+                }
+            }
         },
         "Bejak": {
             "name": "Bejak",
@@ -128,13 +174,25 @@
                 }
             }
         },
-        "Cora": {
-            "name": "Cora",
-            "description": "<p>@embed[JournalEntry.emberCosmos00000.JournalEntryPage.5pD8lxiilJJXOgoa inline overview]</p>"
-        },
         "Cora Attunement": {
             "name": "Cora Attunement",
-            "description": "<p>Your soul resonates with attunement to @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.5pD8lxiilJJXOgoa]{Cora}, The Blasted Moon, and its philosophical ideal of <strong>Pragmatism</strong>.</p><p>You gain resistance to <strong>Acid </strong>damage equal to 2 times your attunement strength.</p><p><em>Further effects will be unlocked at higher attunement ranks.</em></p>"
+            "description": "<p>Your soul resonates with attunement to @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.5pD8lxiilJJXOgoa]{Cora}, The Blasted Moon, and its philosophical ideal of <strong>Pragmatism</strong>.</p><p>You gain the following benefits which improve with your attunement rank.</p><ul><li><p><strong>Rank 1</strong>: You gain resistance to <strong>Acid</strong> damage equal to 2 times your attunement rank.</p></li><li><p><strong>Rank 2</strong>: You unlock the @Action[Compendium.ember.crucible-character.Item.emberCoraAttunem coraAftershock] reaction which knocks an attacker back when you successfully defend a melee attack.</p></li><li><p><strong>Rank 3</strong>: Your <strong>Block</strong> defense is increased by 1 per attunement rank above 2.</p></li><li><p><strong>Rank 4</strong>: You unlock the <strong>Coran</strong> spellcraft inflection which may be applied to spells that use the <strong>Earth</strong> rune. On a critical hit, all damaged enemies are @Condition[restrained] for 1 turn.</p></li> <li><p><strong>Rank 5</strong>: You unlock the @Action[Compendium.ember.crucible-character.Item.emberCoraAttunem coraGraviturgicCrush] action which creates a gravitational vortex that pulls enemies inward.</p></li></ul>",
+            "actions": {
+                "Aftershock": {
+                    "name": "Aftershock",
+                    "condition": "You successfully defended an incoming melee Strike with Armor or Block.",
+                    "description": "<p>You retaliate with a concussive aftershock that knocks your attacker backward 3 feet. The knockback distance is doubled if the target is  @Condition[restrained] or @Condition[staggered].</p>"
+                },
+                "Graviturgic Crush": {
+                    "name": "Graviturgic Crush",
+                    "description": "<p>You create a gravitational vortex that attacks the <strong>Fortitude</strong> of all creatures within. Those who do not resist are pulled to the center, take <strong>Empowered</strong> <strong>Bludgeoning</strong> damage, and become @Condition[staggered]. This action scales with your highest ability of <strong>Strength</strong>, <strong>Toughness</strong>, or <strong>Intellect</strong>.</p>",
+                    "effects": [
+                        {
+                            "name": "Graviturgic Crush"
+                        }
+                    ]
+                }
+            }
         },
         "Cosmopolitan Fashionista": {
             "name": "Cosmopolitan Fashionista",
@@ -194,13 +252,25 @@
             "name": "Flameguard Militia",
             "description": "<p>The fight against the undead pouring from the Moiran lands and attacking the Lumek Homelands affects the entire world. Nations across the world send capable fighters and soldiers to help assist the beleaguered Flameguard. You may have never seen combat, and instead focused on organizing the defenses and training. It's likely, however, that you stood your ground against the never-ending hordes of undead on the front lines with a torch in one hand and a shield in the other.</p><p>You have some knowledge of the different types of Undead, their weaknesses, and a general ability to conduct yourself well in combat. Due to your exposure to undeath, you likely also have some extremely limited awareness of the Abyss.</p>"
         },
-        "Heart": {
-            "name": "Heart",
-            "description": "<p>@embed[JournalEntry.emberCosmos00000.JournalEntryPage.0anKTKgOav9sXox1 inline overview]</p>"
-        },
         "Heart Attunement": {
             "name": "Heart Attunement",
-            "description": "<p>Your soul resonates with the Lifeforce energy of the @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.0anKTKgOav9sXox1]{Heart of Ember} and its philosophical ideal of <strong>Vitalism</strong>.</p><p>You gain resistance to <strong>Corruption </strong>damage equal to 2 times your attunement strength.</p><p><em>Further effects will be unlocked at higher attunement ranks.</em></p>"
+            "description": "<p>Your soul resonates with the Lifeforce energy of the @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.0anKTKgOav9sXox1]{Heart of Ember} and its philosophical ideal of <strong>Vitalism</strong>.</p><p>You gain the following benefits which improve with your attunement rank.</p><ul><li><p><strong>Rank 1</strong>: You gain resistance to <strong>Corruption</strong> damage equal to 2 times your attunement rank.</p></li><li><p><strong>Rank 2</strong>: You unlock the @Action[Compendium.ember.crucible-character.Item.emberHeartAttune heartHallow] action which marks Undead and Outsider foes for radiant retribution.</p></li><li><p><strong>Rank 3</strong>: Your maximum <strong>Health</strong> is increased each level by for each attunement rank above 2 (+2 at Rank 3, +4 at Rank 4, +6 at Rank 5).</p></li><li><p><strong>Rank 4</strong>: You unlock the <strong>Ember</strong> spellcraft inflection which may be applied to spells that use the <strong>Life</strong> rune. The Life rune deals <strong>Radiant</strong> damage to enemies while still providing restoration to allies.</p></li><li><p><strong>Rank 5</strong>: You unlock the @Action[Compendium.ember.crucible-character.Item.emberHeartAttune heartSparkOfEmber] action which can resurrect the recently dead or banish Undead with radiant judgment.</p></li></ul>",
+            "actions": {
+                "Hallow": {
+                    "name": "Hallow",
+                    "condition": "You successfully affect an Undead or Outsider with a Strike or Spell.",
+                    "description": "<p>You leave a mark of Ember lifeforce upon the affected creature rendering it @Condition[exposed] for 1 round.</p>",
+                    "effects": [
+                        {
+                            "name": "Hallow"
+                        }
+                    ]
+                },
+                "Spark of Ember": {
+                    "name": "Spark of Ember",
+                    "description": "<p>You touch a creature that has recently died or is Undead. A target which is @Condition[dead] and has died within the last 24 hours becomes alive, receiving full Restoration to both <strong>Wounds</strong> and <strong>Health</strong>. If used against a target which is Undead, you make a <strong>Deadly</strong> attack which benefits from +6 <strong>Boons</strong> against its <strong>Fortitude</strong>, dealing <strong>Radiant</strong> damage.</p>"
+                }
+            }
         },
         "Hot Tempered": {
             "name": "Hot Tempered",
@@ -331,21 +401,40 @@
             "name": "Lunar Tattoos",
             "description": "<p><strong>BETA TWO</strong>: This talent is not updated with Crucible mechanics yet.</p>"
         },
-        "Luxarum": {
-            "name": "Luxarum",
-            "description": "<p>@Embed[JournalEntry.emberCosmos00000.JournalEntryPage.pPU6VZV7WFubtcSR inline overview]</p>"
-        },
         "Luxarum Attunement": {
             "name": "Luxarum Attunement",
-            "description": "<p>Your soul resonates with attunement to @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.pPU6VZV7WFubtcSR]{Luxarum}, the Realm of Endless War and its philosophical ideal of <strong>Ambition</strong>.</p><p>You gain resistance to <strong>Radiant</strong> damage equal to 2 times your attunement strength.</p><p><em>Further effects will be unlocked at higher attunement ranks.</em></p>"
-        },
-        "Mayis": {
-            "name": "Mayis",
-            "description": "<p>@embed[JournalEntry.emberCosmos00000.JournalEntryPage.RkdBtFQk7STvMbV2 inline overview]</p>"
+            "description": "<p>Your soul resonates with attunement to @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.pPU6VZV7WFubtcSR]{Luxarum}, the Realm of Endless War and its philosophical ideal of <strong>Ambition</strong>.</p><p>You gain the following benefits which improve with your attunement rank.</p><ul><li><p><strong>Rank 1</strong>: You gain resistance to <strong>Radiant</strong> damage equal to 2 times your attunement rank.</p></li><li><p><strong>Rank 2</strong>: You unlock the @Action[Compendium.ember.crucible-character.Item.emberLuxarumAttu luxarumEternalVengeance] reaction which fills you with righteous zeal when critically struck.</p></li><li><p><strong>Rank 3</strong>: Your <strong>Fortitude</strong> defense is increased by 1 per attunement rank above 2.</p></li><li><p><strong>Rank 4</strong>: You unlock the <strong>Luxaran</strong> spellcraft inflection which may be applied to spells that use the <strong>Illumination</strong> rune. Each enemy struck is illuminated and becomes @Condition[exposed] for 1 turn.</p></li><li><p><strong>Rank 5</strong>: You unlock the @Action[Compendium.ember.crucible-character.Item.emberLuxarumAttu luxarumTyraphicCrusade] action which leaps you into the sky to deliver a radiant blast and refund actions per target damaged.</p></li> </ul>",
+            "actions": {
+                "Eternal Vengeance": {
+                    "name": "Eternal Vengeance",
+                    "condition": "An incoming Strike or Spell critically succeeds against you.",
+                    "description": "<p>When you receive a critical hit from an incoming Strike or Spell, you are filled with righteous zeal and become @Condition[hastened] until the end of your next Turn.</p>",
+                    "effects": [
+                        {
+                            "name": "Eternal Vengeance"
+                        }
+                    ]
+                },
+                "Tyraphic Crusade": {
+                    "name": "Tyraphic Crusade",
+                    "description": "<p>You leap into the sky, landing at a point you can see within 120 feet. All creatures within the area of a 10-foot Blast face an <strong>Empowered</strong> attack against their <strong>Reflex</strong> dealing <strong>Radiant</strong> damage. You gain <strong>+1 Action</strong> for each target that suffers damage. Damaged targets that were already @Condition[exposed] become @Condition[stunned] for 1 round. This action scales with your highest ability of <strong>Strength</strong>, <strong>Toughness</strong>, or <strong>Dexterity</strong>.</p>"
+                }
+            }
         },
         "Mayis Attunement": {
             "name": "Mayis Attunement",
-            "description": "<p>Your soul resonates with attunement to @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.RkdBtFQk7STvMbV2]{Mayis}, The Tempest Moon, and its philosophical ideal of <strong>Patience</strong>.</p><p>You gain resistance to <strong>Cold</strong> damage equal to 2 times your attunement strength.</p><p><em>Further effects will be unlocked at higher attunement ranks.</em></p>"
+            "description": "<p>Your soul resonates with attunement to @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.RkdBtFQk7STvMbV2]{Mayis}, The Tempest Moon, and its philosophical ideal of <strong>Patience</strong>.</p><p>You gain the following benefits which improve with your attunement rank.</p><ul><li><p><strong>Rank 1</strong>: You gain resistance to <strong>Cold</strong> damage equal to 2 times your attunement rank.</p></li><li><p><strong>Rank 2</strong>: You unlock the @Action[Compendium.ember.crucible-character.Item.emberMayisAttune mayisRestorativeRedirection] reaction which redirects a resisted spell's energy to heal a nearby ally.</p></li> <li><p><strong>Rank 3</strong>: Your <strong>Healing Threshold</strong> is reduced by 1 per attunement rank above 2.</p></li><li><p><strong>Rank 4</strong>: You unlock the <strong>Mayis</strong> spellcraft inflection which may be applied to spells that use the <strong>Frost</strong> rune. The Frost rune provides Restoration to allies while still dealing <strong>Cold</strong> damage to enemies.</p></li><li><p><strong>Rank 5</strong>: You unlock the @Action[Compendium.ember.crucible-character.Item.emberMayisAttune mayisRestorationOfTheDeep] action which heals allies in an arcing surge and cleanses ongoing harm.</p></li> </ul>",
+            "actions": {
+                "Restorative Redirection": {
+                    "name": "Restorative Redirection",
+                    "condition": "You resist an incoming Spell.",
+                    "description": "<p>When you resist an incoming <strong>Spell</strong>, you redirect a portion of the resisted spell's energy toward an ally you can see within 30 feet, providing them with <strong>Weakened</strong> restoration to whichever resource was targeted by the original spell. This action scales with your highest ability of <strong>Wisdom</strong>, <strong>Presence</strong>, or <strong>Intellect</strong>.</p>"
+                },
+                "Restoration of the Deep": {
+                    "name": "Restoration of the Deep",
+                    "description": "<p>You unleash a surge of cleansing waters in a 30-foot ray that is 20 feet wide. Allies in the area receive <strong>Empowered</strong> restoration to their <strong>Health</strong> and are immediately cleansed of any effects which deal damage over time. This action scales with your highest ability of <strong>Wisdom</strong>, <strong>Presence</strong>, or <strong>Intellect</strong>.</p>"
+                }
+            }
         },
         "Maziran": {
             "name": "Maziran",
@@ -390,13 +479,29 @@
             "name": "Obsidian Antiquary",
             "description": "<p>The distant sun-bathed continent of Kessia, which lies far to the south, is a place of dangerous wonder and ancient secrets. Those who travel the windswept depths of the corrupted Obsidian Desert are brave and foolish in equal measure. You may have a fascination with ancient, terrible secrets and the artifacts unearthed in the black sands. You may have spent years traversing the desert searching for answers or collecting and studying the desert and its secrets from afar. You have likely discovered terrifying truths from your research and have been mentally scarred by their effects. </p><p>You are aware of the Abyss in an extremely limited fashion, though you likely call it by a different name. You are capable of determining the properties of some ancient magical artifacts. You are also aware of the healing and radiant energy of Lantyr that seems to oppose Abyssal energies.<br class=\"Apple-interchange-newline\" /></p>"
         },
-        "Orbis": {
-            "name": "Orbis",
-            "description": "<p>@embed[JournalEntry.emberCosmos00000.JournalEntryPage.zkmWSB32y8Fbc4UL inline overview]</p>"
-        },
         "Orbis Attunement": {
             "name": "Orbis Attunement",
-            "description": "<p>Your soul resonates with attunement to @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.zkmWSB32y8Fbc4UL]{Orbis}, The Spirit Moon, and its philosophical ideal of <strong>Spontaneity</strong>.</p><p>You gain resistance to <strong>Psychic</strong> damage equal to 2 times your attunement strength.</p><p><em>Further effects will be unlocked at higher attunement ranks.</em></p>"
+            "description": "<p>Your soul resonates with attunement to @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.zkmWSB32y8Fbc4UL]{Orbis}, The Spirit Moon, and its philosophical ideal of <strong>Spontaneity</strong>.</p><p>You gain the following benefits which improve with your attunement rank.</p><ul><li><p><strong>Rank 1</strong>: You gain resistance to <strong>Psychic</strong> damage equal to 2 times your attunement rank.</p></li><li><p><strong>Rank 2</strong>: You unlock the @Action[Compendium.ember.crucible-character.Item.emberOrbisAttune orbisChaoticRefraction] action which floods your next action with random Boons and Banes.</p></li><li><p><strong>Rank 3</strong>: Your maximum <strong>Morale</strong> is increased each level by for each attunement rank above 2 (+2 at Rank 3, +4 at Rank 4, +6 at Rank 5).</p></li><li><p><strong>Rank 4</strong>: You unlock the <strong>Orbis </strong>spellcraft inflection which may be applied to spells that use the <strong>Soul</strong> rune. The Soul rune deals <strong>Psychic</strong> damage to enemies while still providing Morale restoration to allies.</p></li><li><p><strong>Rank 5</strong>: You unlock the @Action[Compendium.ember.crucible-character.Item.emberOrbisAttune orbisPandemonium] action which assails the minds of nearby enemies with maddening psychic energy.</p></li></ul>",
+            "actions": {
+                "Chaotic Refraction": {
+                    "name": "Chaotic Refraction",
+                    "description": "<p>You harness the unpredictable spiritual currents of Orbis to affect your next action before the end of your next Turn with spontaneous surges of fortune or misfortune. Your next action gains <strong>+1d4 Boons</strong> and <strong>+1d4-1 Banes</strong>. When consuming Chaotic  Refraction against @Condition[confused] targets, only Boons apply and  Banes are discarded.</p>",
+                    "effects": [
+                        {
+                            "name": "Chaotic Refraction"
+                        }
+                    ]
+                },
+                "Pandemonium": {
+                    "name": "Pandemonium",
+                    "description": "<p>Bewildering spirits assail all enemies within the area, attacking their <strong>Willpower</strong> and inflicting <strong>Empowered </strong>Psychic damage to <strong>Morale</strong> and the @Condition[confused] condition. This action scales with your highest ability of <strong>Wisdom</strong>, <strong>Presence</strong>, or <strong>Intellect</strong>.</p>",
+                    "effects": [
+                        {
+                            "name": "Pandemonium"
+                        }
+                    ]
+                }
+            }
         },
         "Ordani": {
             "name": "Ordani",
@@ -418,21 +523,56 @@
             "name": "Primalist Disciple",
             "description": "<p>Deep beneath the colossal trees of the Corebright Forest at the center of the known world prowl the shapeshifting and nature-worshipping Primalists. You may have spent time wandering the edges of the forest, and you may have even encountered a Primalist who taught you about their beliefs and how to commune with animals in some fashion. In addition, you may have learned about the numerous ancient Leviathans that still rule over vast sections of the world, and through your connection to nature, you can sense and understand them more than the average mortal.</p><p>You are able to understand animals and beasts to some degree and have an innate connection to the natural world. In addition, you have some knowledge of Leviathans.</p><p><br class=\"Apple-interchange-newline\" /></p>"
         },
-        "Primordis": {
-            "name": "Primordis",
-            "description": "<p>@Embed[JournalEntry.emberCosmos00000.JournalEntryPage.16sqn71JsCkghaTt inline overview]</p>"
-        },
         "Primordis Attunement": {
             "name": "Primordis Attunement",
-            "description": "<p>Your soul resonates with attunement to @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.16sqn71JsCkghaTt]{Primordis}, the Realm of Capricious Sorcery, and its philosophical ideal of <strong>Cunning</strong>.</p><p>You gain resistance to <strong>Poison </strong>damage equal to 2 times your attunement strength.</p><p><em>Further effects will be unlocked at higher attunement ranks.</em></p>"
-        },
-        "Ragen": {
-            "name": "Ragen",
-            "description": "<p>@embed[JournalEntry.emberCosmos00000.JournalEntryPage.LKptgmc56euSOb0G inline overview]</p>"
+            "description": "<p>Your soul resonates with attunement to @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.16sqn71JsCkghaTt]{Primordis}, the Realm of Capricious Sorcery, and its philosophical ideal of <strong>Cunning</strong>.</p><p>You gain the following benefits which improve with your attunement rank.</p><ul><li><p><strong>Rank 1</strong>: You gain resistance to <strong>Poison</strong> damage equal to 2 times your attunement rank.</p></li><li><p><strong>Rank 2</strong>: You unlock the @Action[Compendium.ember.crucible-character.Item.emberPrimordisAt primordisSlipIntoShadow] action which lets you vanish into darkness when not engaged.</p></li><li><p><strong>Rank 3</strong>: Your <strong>Reflex</strong> defense is increased by 1 per attunement rank above 2.</p></li><li><p><strong>Rank 4</strong>: You unlock the <strong>Primordial</strong> spellcraft inflection which may be applied to spells that use the <strong>Illusion</strong> rune. On a critical hit, you become @Condition[invisible] until the start of your next turn.</p></li> <li><p><strong>Rank 5</strong>: You unlock the @Action[Compendium.ember.crucible-character.Item.emberPrimordisAt primordisPredatorsShadow] action which strikes from invisibility for devastating poisoned damage.</p></li></ul>",
+            "actions": {
+                "Slip Into Shadow": {
+                    "name": "Slip Into Shadow",
+                    "condition": "Immediately after the Move action, while within an area of darkness or dim light and not Engaged by any enemies.",
+                    "description": "<p>Immediately after you perform the Move action, if you are within an area of darkness or dim light and not Engaged by any enemies, you momentarily slip into the shadows, becoming @Condition[invisible] until you perform a <strong>Strike</strong> or <strong>Spell</strong> action or until the end of your Turn.</p>",
+                    "effects": [
+                        {
+                            "name": "Slip Into Shadow"
+                        }
+                    ]
+                },
+                "Predator's Shadow": {
+                    "name": "Predator's Shadow",
+                    "condition": "You are Invisible.",
+                    "description": "<p>While @Condition[invisible], you attack an enemy. If they do not detect you, your attack has <strong>+6 Boons</strong> and is <strong>Deadly</strong>. On a critical hit it inflicts the @Condition[poisoned] condition for 6 Rounds.</p>",
+                    "effects": [
+                        {
+                            "name": "Predator's Shadow"
+                        }
+                    ]
+                }
+            }
         },
         "Ragen Attunement": {
             "name": "Ragen Attunement",
-            "description": "<p>Your soul resonates with attunement to @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.LKptgmc56euSOb0G]{Ragen}, The Charred Moon, and its philosophical ideal of <strong>Directness</strong>.</p><p>You gain resistance to <strong>Fire</strong> damage equal to 2 times your attunement strength.</p><p><em>Further effects will be unlocked at higher attunement ranks.</em></p>"
+            "description": "<p>Your soul resonates with attunement to @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.LKptgmc56euSOb0G]{Ragen}, The Charred Moon, and its philosophical ideal of <strong>Directness</strong>.</p><p>You gain the following benefits which improve with your attunement rank.</p><ul><li><p><strong>Rank 1</strong>: You gain resistance to <strong>Fire</strong> damage equal to 2 times your attunement rank.</p></li><li><p><strong>Rank 2</strong>: You unlock the @Action[Compendium.ember.crucible-character.Item.emberRagenAttune ragenFurnaceBlast] reaction which retaliates with fire when you are critically struck.</p></li><li><p><strong>Rank 3</strong>: Your <strong>Initiative</strong> is increased by 1 per attunement rank above 2. </p></li><li><p><strong>Rank 4</strong>: You unlock the <strong>Ragen </strong>spellcraft inflection which may be applied to spells that use the <strong>Flame</strong> rune. If the spell would cause @Condition[burning] to any enemy, it causes @Condition[burning] to all enemies.</p></li> <li><p><strong>Rank 5</strong>: You unlock the @Action[Compendium.ember.crucible-character.Item.emberRagenAttune ragenImmolatingRejuvenation] action which expends your remaining Health to burn nearby enemies and gain rapid regeneration.</p></li></ul>",
+            "actions": {
+                "Furnace Blast": {
+                    "name": "Furnace Blast",
+                    "condition": "You are critically hit by a Strike or Spell.",
+                    "description": "<p>When you are critically hit by a Strike or Spell, you burst forth with the intensity of Ragen's fire, making a <strong>Weakened</strong> attack against the <strong>Fortitude</strong> of all creatures within 3 feet which deals <strong>Fire</strong> damage and causes the @Condition[disoriented] condition. Like bellows stoking a flame, any damaged target that is @Condition[burning] suffers its full remaining damage-over-time immediately and is no longer @Condition[burning]. This action scales with your highest ability of <strong>Strength</strong>, <strong>Toughness</strong>, or <strong>Dexterity</strong>.</p>",
+                    "effects": [
+                        {
+                            "name": "Furnace Blast"
+                        }
+                    ]
+                },
+                "Immolating Rejuvenation": {
+                    "name": "Immolating Rejuvenation",
+                    "description": "<p>You draw the entirety of your inner fire into a devastating attack against the <strong>Reflex</strong> defense of nearby creatures. You are reduced to <strong>0 Health</strong> and become @Condition[weakened]. The amount of Health you lose is divided equally among all targets in the area; each damaged target receives that share as bonus damage and suffers the @Condition[burning] condition. You gain the @Condition[mending] condition for 10 rounds. This action scales with your highest ability of <strong>Strength</strong>, <strong>Toughness</strong>, or <strong>Dexterity</strong>.</p>",
+                    "effects": [
+                        {
+                            "name": "Mending"
+                        }
+                    ]
+                }
+            }
         },
         "Railen": {
             "name": "Railen",
@@ -462,13 +602,25 @@
             "name": "Shard God Devotee",
             "description": "<p>Enthralled by the stories of Shards Gods who walk the world along with their followers, you have been obsessed with becoming a servant of the gods one day. You may be deeply religious and hold to the tenets and teachings of a particular deity, hailing from the commune of a distant Shard God or one of their temples. Alternatively, you may just want to worship a particular Shard God directly and meet them in the flesh, and you are searching for meaning and faith in a dangerous world.</p><p>Your faith has granted you knowledge of many different deities, god-like beings, and powerful entities, as well as their varied religious practices.</p>"
         },
-        "Signara": {
-            "name": "Signara",
-            "description": "<p>@Embed[JournalEntry.emberCosmos00000.JournalEntryPage.3OvueRrGcFnwtnmw inline overview]</p>"
-        },
         "Signara Attunement": {
             "name": "Signara Attunement",
-            "description": "<p>Your soul resonates with attunement to @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.3OvueRrGcFnwtnmw]{Signara}, the Realm of Insatiable Curiosity, and its philosophical ideal of <strong>Curiosity</strong>.</p><p>You gain resistance to <strong>Void </strong>damage equal to 2 times your attunement strength.</p><p><em>Further effects will be unlocked at higher attunement ranks.</em></p>"
+            "description": "<p>Your soul resonates with attunement to @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.3OvueRrGcFnwtnmw]{Signara}, the Realm of Insatiable Curiosity, and its philosophical ideal of <strong>Curiosity</strong>.</p><p>You gain the following benefits which improve with your attunement rank.</p><ul><li><p><strong>Rank 1</strong>: You gain resistance to <strong>Bludgeoning</strong> damage equal to 2 times your attunement rank.</p></li><li><p><strong>Rank 2</strong>: You unlock the @Action[Compendium.ember.crucible-character.Item.emberSignaraAttu signaraStudiousCounter] action which imposes a Bane on every action a known enemy takes against you.</p></li> <li><p><strong>Rank 3</strong>: Your <strong>Willpower</strong> defense is increased by 1 per attunement rank above 2.</p></li><li><p><strong>Rank 4</strong>: You unlock the <strong>Signaran</strong> spellcraft inflection which may be applied to spells that use the <strong>Control</strong> rune. On a critical hit, you immediately gain <strong>+2 Action</strong>, once per turn.</p></li><li><p><strong>Rank 5</strong>: You unlock the @Action[Compendium.ember.crucible-character.Item.emberSignaraAttu signaraImpartTruth] action which restores the lucidity of an insane creature or shatters the morale of a sane one.</p></li></ul>",
+            "actions": {
+                "Studious Counter": {
+                    "name": "Studious Counter",
+                    "condition": "You have Knowledge of the target creature's type.",
+                    "description": "<p>You direct your focus toward a specific enemy, working to counter its every maneuver. If you have <strong>Knowledge</strong> of the creature's type, any action it takes until the start of your next Turn that targets you suffers <strong>+1 Bane</strong>. Additionally, while studied, your <strong>Signaran</strong>-inflected spells and the <strong>Impart Truth</strong> action gain <strong>+1 Boon</strong> against this target.</p>",
+                    "effects": [
+                        {
+                            "name": "Studious Counter"
+                        }
+                    ]
+                },
+                "Impart Truth": {
+                    "name": "Impart Truth",
+                    "description": "<p>You connect with the mind of a creature that is @Condition[insane] and it becomes entirely lucid, receiving restoration to <strong>Madness</strong> and <strong>Morale </strong>that sets each resource to half of its maximum value. If your target was not @Condition[insane], it suffers an attack against its <strong>Willpower</strong> that, if successful, reduces it to 0 Morale and leaves it @Condition[broken]. This action scales with your highest ability of <strong>Wisdom</strong>, <strong>Presence</strong>, or <strong>Intellect</strong>, and gains <strong>+1 Boon</strong> when used on the target of your current <strong>Studious Counter</strong>.</p>"
+                }
+            }
         },
         "Signborn": {
             "name": "Signborn",

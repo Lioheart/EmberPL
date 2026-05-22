@@ -9,6 +9,7 @@
         "Constructs": "Constructs",
         "Beast": "Beast",
         "Elementals": "Elementals",
+        "Fiend": "Fiend",
         "Humanoid": "Humanoid",
         "Dragon": "Dragon",
         "Humanoids": "Humanoids",
@@ -33,7 +34,13 @@
         },
         "Abyssal Protection": {
             "name": "Abyssal Protection",
-            "description": "<p>The creature gains a +2 bonus to their <strong>Armor </strong>defense and is @Condition[guarded].</p>"
+            "description": "<p>The creature gains a +2 bonus to their <strong>Armor </strong>defense and is @Condition[guarded].</p>",
+            "effects": [
+                {
+                    "name": "Abyssal Protection",
+                    "description": "<p>The creature gains a +2 bonus to their <strong>Armor </strong>defense and is @Condition[guarded].</p>"
+                }
+            ]
         },
         "Abyssal Remains": {
             "name": "Abyssal Remains",
@@ -254,13 +261,21 @@
                 }
             }
         },
+        "Garganthus": {
+            "name": "Garganthus",
+            "description": "<p>Malicious, hulking, quadrupedal Pathways predators known for their tenebrous, scaly flesh, six limbs, vicious claws, and spear-like fangs.</p>"
+        },
+        "Gore Bird": {
+            "name": "Gore Bird",
+            "description": "<p>Swift, carnivorous carrion birds found all across Ember. Though they primarily feed on carcasses, they have been known to aggressively hunt down prey in great flocks when food is scarce.</p>"
+        },
         "Grasping Form": {
             "name": "Grasping Form",
             "description": "<p>The @ref[actor.name]{creature} causes the ground surrounding it to erupt in countless clinging and coiling tendrils of shadow that trip and slow nearby creatures.</p>",
             "actions": {
                 "Grasping Form": {
                     "name": "Grasping Form",
-                    "description": "<p>The creature grasps all nearby creatures with a myriad mass of tendrils whose touch fills you with dreadful despair dealing <strong>Cold</strong> damage to <strong>Morale</strong>. Each target must use <strong>Reflex </strong>elude their grasp or become @Condition[restrained]] (escape 4 Action or [[/skillCheck athletics 17]]).</p><p>If the creature moves while it has targets grappled in this way, those targets are also moved to remain within 15 feet of the creature.</p>",
+                    "description": "<p>The creature grasps all nearby creatures with a myriad mass of tendrils whose touch fills you with dreadful despair dealing <strong>Cold</strong> damage to <strong>Morale</strong>. Each target must use <strong>Reflex</strong> to elude their grasp or become @Condition[restrained]] (escape 4 Action or [[/skillCheck athletics 17]]).</p><p>If the creature moves while it has targets grappled in this way, those targets are also moved to remain within 15 feet of the creature.</p>",
                     "effects": [
                         {
                             "name": "Grasping Form"
@@ -301,6 +316,10 @@
             "name": "Inscrutable",
             "description": "<p>The @ref[actor.name]{creature} is an unknowable abyssal entity. It is immune to any effect or spell that would sense its emotions or read its thoughts. Any skill check to ascertain this creature's intentions is made with +4 <strong>Banes</strong>.</p>"
         },
+        "Jahud": {
+            "name": "Jahud",
+            "description": "<p>Otherworldly hunters and emissaries grown by Signaran biomancers in a laboratory environment, and their physical alterations preside on a genetic scale.</p>"
+        },
         "Jurtak": {
             "name": "Jurtak",
             "description": "<p>Saurian humanoids that have become horribly warped by abyssal energies. They possess six eyes perfectly attuned to darkness, and their slender bodies are covered in scales that allow them to easily blend into the shadows of their surroundings.</p>"
@@ -326,7 +345,12 @@
         },
         "Mutagenic Affliction": {
             "name": "Mutagenic Affliction",
-            "description": "<p>This @ref[actor.name]{creature} is afflicted by a wasting mutation that makes it  behave erratically. It is stronger and more aggressive but has been rendered @Condition[blinded].</p>"
+            "description": "<p>This @ref[actor.name]{creature} is afflicted by a wasting mutation that makes it  behave erratically. It is stronger and more aggressive but has been rendered @Condition[blinded].</p>",
+            "effects": [
+                {
+                    "name": "Mutagenic Blindness"
+                }
+            ]
         },
         "Mutagenic Blindness": {
             "name": "Mutagenic Blindness"
@@ -420,7 +444,7 @@
             "actions": {
                 "Swallowed Screams": {
                     "name": "Swallowed Screams",
-                    "description": "<p>The @ref[actor.name]{creature} attacks the <strong>Willpower</strong> defense of a single target within 30 feet, unless the attack is resisted the target becomes @Condition[silenced] for 1 minute.</p>",
+                    "description": "<p>The @ref[actor.name]{creature} makes a <strong>Performance</strong> attack against the <strong>Willpower</strong> of a single target within 30 feet, unless the attack is resisted the target becomes @Condition[silenced] for 1 minute.</p>",
                     "effects": [
                         {
                             "name": "Swallowed Screams"
@@ -448,10 +472,18 @@
         "Whisperer": {
             "name": "Whisperer",
             "description": "<p>A swirling mass of living darkness and shadow that slithers and writhes into and around itself with an unsettling impossibility.</p>"
+        },
+        "Yarnac": {
+            "name": "Yarnac",
+            "description": "<p>Huge, crest-horned creatures known as Yarnac are one of the Arctus Plateau's most reliable beasts of burden.</p>"
         }
     },
     "mapping": {
         "description": "system.description",
+        "effects": {
+            "path": "effects",
+            "converter": "embeddedEffectsConverter"
+        },
         "actions": {
             "path": "system.actions",
             "converter": "actions_converter"
