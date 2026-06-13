@@ -6,3 +6,7 @@
 .ember {
     --font-header: "Pirate Scroll PL", "Pirate Scroll", serif;
 }
+
+.crucible-fullscreen .step-selection {
+    flex: 0 0 510px;
+}
