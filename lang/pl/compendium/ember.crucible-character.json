@@ -1,0 +1,784 @@
+{
+    "label": "Opcje postaci",
+    "folders": {
+        "Ancestries": "Pochodzenia",
+        "Ancestry Features": "Zdolności pochodzenia",
+        "Attunements": "Dostrojenia",
+        "Culture Features": "Kultury pochodzenia",
+        "Cultures": "Kultury",
+        "Paths": "Ścieżki",
+        "Special": "Specjalne"
+    },
+    "entries": {
+        "Abyss Attunement": {
+            "name": "Dostrajanie Otchłani",
+            "description": "<p>Twoja dusza jest pozbawiona rezonansu z kosmologicznymi siłami Ember; zamiast tego jesteś dostrojony do niepokojącego przyciągania @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.06I8t0GPggrMVnGV]{Otchłani} i jej filozoficznego ideału <strong>Nihilizmu</strong>.</p><p>Zyskujesz następujące korzyści, które poprawiają się wraz z twoją rangą dostrojenia.</p><ul><li><p><strong>Ranga 1</strong>: Zyskujesz odporność na obrażenia od <strong>Pustki</strong> równą 2 razy twoja ranga dostrojenia.</p></li><li><p><strong>Ranga 2</strong>: Odblokowujesz akcję @Action[Compendium.ember.crucible-character.Item.emberAbyssAttune abyssMarkUnmaking], która pozwala ci odzyskać <strong>Skupienie</strong>, gdy pokonasz oznaczonego wroga.</p></li><li><p><strong>Ranga 3</strong>: Twoje maksymalne Skupienie wzrasta o 1 za każdą rangę dostrojenia powyżej 2.</p></li><li><p><strong>Ranga 4</strong>: Odblokowujesz <strong>Otchłanną</strong> fleksję Czaroznastwa, którą można zastosować do zaklęć używających runy <strong>Nicości</strong>. Przy trafieniu krytycznym odzyskujesz koszt skupienia zaklęcia oraz 2 dodatkowe punkty Skupienia, raz na turę.</p></li><li><p><strong>Ranga 5</strong>: Odblokowujesz akcję @Action[Compendium.ember.crucible-character.Item.emberAbyssAttune abyssUntethering], która wydaje Heroizm, aby zadać pojedynczemu celowi ogromne obrażenia od Pustki.</p></li></ul>",
+            "actions": {
+                "Mark of Unmaking": {
+                    "name": "Znak zniszczenia",
+                    "condition": "Zadajesz przeciwnikowi trafienie krytyczne.",
+                    "description": "<p>Nałóż znak Otchłani na cel, który właśnie trafiłeś krytycznie w promieniu 60 stóp. Jeśli następnie sprawisz, że istota znajdzie się w stanie @Condition[weakened], @Condition[broken] lub @Condition[dead], zyskujesz <strong>+2 punkty skupienia</strong>. Znak utrzymuje się do momentu jego wykorzystania lub nałożenia nowego znaku na inny cel.</p>",
+                    "effects": [
+                        {
+                            "name": "Znak zniszczenia"
+                        }
+                    ]
+                },
+                "Untethering": {
+                    "name": "Uniezależnienie",
+                    "description": "<p>Atakujesz <strong>Wytrwałość</strong> pojedynczego stworzenia, zadając mu ogromne obrażenia od <strong>pustki</strong>. W przypadku powodzenia <strong>Morale</strong> stworzenia zostaje natychmiast zredukowane do zera, a wszystkie zadane obrażenia są bezpośrednio zaliczane do <strong>Obłędu</strong>. Dodatkowo cel otrzymuje stan @Condition[entropy] na 10 rund. Działanie to skaluje się z twoją najwyższą wartością <strong>Siły</strong>, <strong>Wytrzymałości</strong> lub <strong>Zręczności</strong>.</p>",
+                    "effects": [
+                        {
+                            "name": "Uniezależnienie"
+                        }
+                    ]
+                }
+            }
+        },
+        "Academy Dropout": {
+            "name": "Wyrzutek z akademii",
+            "description": "<p>Gwiezdna Akademia w Rhivanie przyjmuje studentów z całego świata, a dostaniesz się tam nawet z najmniejszym przebłyskiem magicznego potencjału. Niektórzy jednak nie są w stanie znieść surowego i nieustępliwego trybu nauki i pozostają tam tylko przez krótki czas, po czym odchodzą, by szukać szczęścia gdzie indziej. Prawdopodobnie nauczyłeś się kilku rzeczy – wystarczająco dużo, by poradzić sobie w każdej sytuacji wymagającej wiedzy magicznej. </p><p>Jesteś zdolnym adeptem magii, przynajmniej jeśli chodzi o wiedzę, i znasz wiele teorii oraz zjawisk magicznych.</p>"
+        },
+        "Akon Attunement": {
+            "name": "Dostrajanie Akona",
+            "description": "<p>Twoja dusza rezonuje z dostrojeniem do @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.3Oywe0peo57dQT9j]{Akona}, Roztrzaskanego Księżyca, i jego filozoficznego ideału <strong>Dyscypliny</strong>.</p><p>Zyskujesz następujące korzyści, które poprawiają się wraz z twoją rangą dostrojenia.</p><ul><li><p><strong>Ranga 1</strong>: Zyskujesz odporność na obrażenia <strong>Kłute</strong> równą 2 razy twoja ranga dostrojenia.</p></li><li><p><strong>Ranga 2</strong>: Odblokowujesz reakcję @Action[Compendium.ember.crucible-character.Item.emberAkonAttunem akonForesight], która pozwala ci przewidzieć wynik rzutu i odzyskać <strong>Skupienie</strong>, jeśli masz rację.</p></li><li><p><strong>Ranga 3</strong>: Twoja obrona <strong>Parowanie</strong> wzrasta o 1 za każdą rangę dostrojenia powyżej 2.</p></li><li><p><strong>Ranga 4</strong>: Odblokowujesz <strong>Akońską</strong> fleksję Czaroznastwa, którą można zastosować do zaklęć używających runy <strong>Kinetyki</strong>. Zaklęcie automatycznie zadaje ten typ obrażeń fizycznych, na który wróg jest najbardziej podatny.</p></li><li><p><strong>Ranga 5</strong>: Odblokowujesz reakcję @Action[Compendium.ember.crucible-character.Item.emberAkonAttunem akonInevitability], która oznacza wroga i wymusza ujawnienie jego strategii na początku każdej Rundy.</p></li></ul>",
+            "actions": {
+                "Foresight": {
+                    "name": "Przewidywanie",
+                    "condition": "Stworzenie wykonuje akcję, którą wcześniej zadeklarowałeś.",
+                    "description": "<p>Zanim jakakolwiek postać wykona akcję w rundzie walki, ogłoś na głos konkretną prognozę: określona postać wykona określoną akcję i osiągnie jeden z dwóch wyników: <strong>Sukces</strong> lub <strong>Porażka</strong>. Jeśli prognoza się sprawdzi, możesz wykorzystać tę reakcję, aby odzyskać <strong>+1 punkt skupienia</strong>.</p>"
+                },
+                "Inevitability": {
+                    "name": "Nieuchronność",
+                    "condition": "Na początku rundy walki, zanim jakakolwiek istota wykona swoją akcję.",
+                    "description": "<p>Na początku rundy walki, zanim jakakolwiek istota wykona swoją akcję, ogłaszasz los jednego widocznego wroga, który ma zginąć. Na początku każdej kolejnej rundy, zanim ogłosisz swoją przepowiednię <strong>Przewidywania</strong>, Mistrz Gry musi publicznie ogłosić strategię, jaką ta istota będzie realizować w swojej turze, i trzymać się jej, o ile nie stanie się to niemożliwe.</p>",
+                    "effects": [
+                        {
+                            "name": "Nieuchronność"
+                        }
+                    ]
+                }
+            }
+        },
+        "Altyra": {
+            "name": "Altyra",
+            "description": "<p>@Embed[JournalEntry.emberAncestries0.JournalEntryPage.tkGzfnJkkLZ3cgpG inline overview]</p>"
+        },
+        "Altyra Lineage": {
+            "name": "Rodowód Altyry",
+            "description": "<p>Jesteś odporny na stan <strong>Zarażony</strong>, który w innym przypadku uniemożliwiałby ci odzyskanie <strong>Zdrowia</strong>.</p>",
+            "actions": {
+                "Tyraphic Transformation": {
+                    "name": "Transformacja tyraficzna",
+                    "description": "<p>Możesz przybrać tymczasowy wygląd i zdolności Tyrafema, przyjmując nieziemską postać. Podczas przemiany zyskujesz następujące korzyści.</p><ul><li><p>Zyskujesz odporność na <strong>obrażenia świetliste</strong> równą dwukrotności twojego poziomu.</p></li><li><p>Twoje ataki zadają dodatkowe <strong>świetliste</strong> obrażenia równe połowie twojej <strong>prezencji</strong>.</p></li><li><p>Zyskujesz <strong>+2 korzyści</strong> do użycia umiejętności <strong>zastraszania</strong>.</p></li></ul><p>Możesz zakończyć tę przemianę przed upływem pełnego czasu trwania w swojej turze bez żadnych kosztów.</p>",
+                    "effects": [
+                        {
+                            "name": "Transformacja tyraficzna"
+                        }
+                    ]
+                }
+            }
+        },
+        "Anchorite Marine": {
+            "name": "Morski pustelnik",
+            "description": "<p>Przeszedłeś szkolenie jako marynarz lub żołnierz piechoty morskiej w Marynarce Wojennej Republiki Kaskilijskiej. Dzięki temu zdobyłeś dogłębną wiedzę na temat statków i żeglugi po rozległych morzach i oceanach Emberu, a także posiadasz bogatą wiedzę z zakresu nawigacji i map morskich. W razie potrzeby potrafisz samodzielnie naprawić, a nawet zbudować niewielką łódź, która – przy wystarczającej ilości czasu – pozwoli ci przepłynąć przez mniejsze akweny, takie jak rzeki czy jeziora. Podczas służby być może walczyłeś z nieumarłymi próbującymi dokonać inwazji przez Złotą Zatokę.</p><p>Wiesz, jak w ograniczonym zakresie obsługiwać statki oceaniczne różnej wielkości, a także jak nawigować po morzach przy użyciu map. Być może posiadasz również pewną wiedzę na temat różnych rodzajów nieumarłych i ich słabości<br /></p>"
+        },
+        "Arcturian": {
+            "name": "Arkturianin",
+            "description": "<p>@embed[JournalEntry.emberCultures000.JournalEntryPage.8cGPxMRewkagoIvc inline overview]</p>"
+        },
+        "Ashka": {
+            "name": "Ashka",
+            "description": "<p>@Embed[JournalEntry.emberAncestries0.JournalEntryPage.QIC15zfqh4Ndzgha inline overview]</p>"
+        },
+        "Ashka Lineage": {
+            "name": "Rodowód Ashki",
+            "description": "<p>Twój <strong>bieg</strong> nie ulega zmniejszeniu, gdy znajdujesz się w wodzie. Pod wodą możesz wstrzymywać oddech nawet przez dwadzieścia minut.</p><p>Potrafisz precyzyjnie wykrywać subtelne różnice temperatur, co pozwala ci zlokalizować stworzenia ciepłokrwiste lub w inny sposób emitujące ciepło w odległości do 60 stóp, o ile nie znajdują się one za całkowitą osłoną, a ty nie jesteś <strong>oślepiony</strong> ani <strong>obezwładniony</strong>. Stworzenie wykryte za pomocą widzenia termicznego traktuje się jako widoczne dla celów akcji wymagających dostrzeżenia celu.</p><p><strong>ALPHA ONE: </strong>Ta funkcja nie jest jeszcze zautomatyzowana.</p>"
+        },
+        "Aster": {
+            "name": "Aster",
+            "description": "<p>Twoja przemiana odróżnia cię od innych przedstawicieli twojego pochodzenia. Być może nosisz na sobie fizyczne ślady tej przemiany, a może twoje odmienności pozostają ukryte w twoim wnętrzu, kształtując cię na poziomie fundamentalnym. Nie ma dwóch identycznych Asterów, a twoja postać jest całkowicie wyjątkowa.</p>"
+        },
+        "Aura Attunement": {
+            "name": "Dostrajanie Aury",
+            "description": "<p>Twoja dusza rezonuje z dostrojeniem do @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.smc0OuMxsxfcSdhR]{Aury}, Pustego Księżyca, i jej filozoficznego ideału <strong>Indywidualizmu</strong>.</p><p>Zyskujesz następujące korzyści, które poprawiają się wraz z twoją rangą dostrojenia.</p><ul><li><p><strong>Ranga 1</strong>: Zyskujesz odporność na obrażenia od <strong>Elektryczności</strong> równą 2 razy twoja ranga dostrojenia.</p></li><li><p><strong>Ranga 2</strong>: Odblokowujesz akcję @Action[Compendium.ember.crucible-character.Item.emberAuraAttunem auraSlipstream], która po ruchu otacza cię powietrznym przemieszczeniem.</p></li><li><p><strong>Ranga 3</strong>: Twój <strong>Bieg</strong> wzrasta o 2 za każdą rangę dostrojenia powyżej 2.</p></li><li><p><strong>Ranga 4</strong>: Odblokowujesz <strong>Auryczną</strong> fleksję Czaroznastwa, którą można zastosować do zaklęć używających runy <strong>Błyskawicy</strong>. Po rzuceniu zaklęcia odzyskujesz swój <strong>Darmowy Ruch</strong>.</p></li><li><p><strong>Ranga 5</strong>: Odblokowujesz akcję @Action[Compendium.ember.crucible-character.Item.emberAuraAttunem auraBoundless], która zapewnia lot oraz niewrażliwość na szereg stanów ograniczających ruch.</p></li> </ul>",
+            "actions": {
+                "Slipstream": {
+                    "name": "Struga powietrza",
+                    "condition": "W tej turze wykonałeś akcję Ruchu.",
+                    "description": "<p>Tworzysz strumień powietrza, który sprawia, że twoja postać mieni się, jakby unosiła się w powietrzu. Twoje <strong>Uniki</strong> i <strong>Refleks</strong> wzrastają o +1 do początku twojej następnej tury. Strumień powietrza znika, gdy tylko otrzymasz obrażenia z dowolnego źródła.</p>",
+                    "effects": [
+                        {
+                            "name": "Struga powietrza"
+                        }
+                    ]
+                },
+                "Boundless": {
+                    "name": "Bezgraniczny",
+                    "description": "<p>Przez 6 rund możesz latać i nie podlegasz stanom @Condition[slowed], @Condition[prone], @Condition[restrained], @Condition[staggered], @Condition[stunned] ani @Condition[paralyzed]. Gdy zdolność Bezgraniczny jest aktywna, wszystkie zaklęcia rzucane z użyciem runy <strong>Błyskawica</strong> są <strong>Wzmocnione</strong>.</p>",
+                    "effects": [
+                        {
+                            "name": "Bezgraniczny"
+                        }
+                    ]
+                }
+            }
+        },
+        "Bejak": {
+            "name": "Bejak",
+            "description": "<p>@Embed[JournalEntry.emberCultures000.JournalEntryPage.A1uPGhtaDifW8Sph inline overview]</p>"
+        },
+        "Caravanner": {
+            "name": "Karawaniarz",
+            "description": "<p>Handel między licznymi miastami Ember oraz między jego różnorodnymi i rozproszonymi kulturami często odbywa się dzięki nieustannemu przemarszowi różnorodnych karawan lądowych. Być może w przeszłości przemierzałeś z karawaną długie odległości, ucząc się, jak żonglować monetą w dłoni lub jak zabawiać grupę opowieściami. Prawdopodobnie masz też bystre oko, a po latach wypatrywania zagrożeń na horyzoncie potrafisz wyczuć kłopoty z daleka. </p><p>Masz bystre oko i potrafisz dostrzec ukryte zagrożenia wokół siebie, zarówno te bliskie, jak i dalekie. Masz silny instynkt przetrwania i potrafisz utrzymać się przy życiu podczas podróży po dzikich terenach.</p>"
+        },
+        "Cascilian": {
+            "name": "Kaskijczyk",
+            "description": "<p>@embed[JournalEntry.emberCultures000.JournalEntryPage.Ed7ttdIwKm95IdUG inline overview]</p>"
+        },
+        "Cindaric Initiate": {
+            "name": "Adept z Cindaru",
+            "description": "<p>Mędrcy z Cindaru w Ordain słyną z tego, że wysyłają swoich członków w świat, by nauczali innych o Sercu Ember i jego cudownej, ożywczej energii. Być może jako dziecko w swojej ojczyźnie uczył cię wędrowny mędrzec i zawsze marzyłeś o odwiedzeniu samej świątyni w Cindaru, a może twoja rodzina pochodzi z Ordain i dzięki wychowaniu masz bliskie powiązania z mędrcami. Prawdopodobnie dobrze znasz idee religijne i głęboko wierzysz, że Serce Ember jest siłą dobra, nadającą wszystkim stworzeniom życie i cel.</p><p>Twoja wiara obdarzyła cię wiedzą o Sercu Ember, o energii Życiodajnej, która tchnie życie, a być może masz również silną więź z naturą oraz cyklami życia i śmierci.<br class=\"Apple-interchange-newline\" /></p>"
+        },
+        "Cleansing Flame": {
+            "name": "Oczyszczający płomień",
+            "description": "<p>Jesteś bohaterem Lumé w niekończącej się wojnie przeciwko nieumarłym. Otrzymujesz <strong>+1 korzyści</strong> do ataku przy każdym ataku na wrogów typu <strong>Nieumarły</strong>.</p>"
+        },
+        "Constructed Companion": {
+            "name": "Sztuczny towarzysz",
+            "description": "<p>Możesz poświęcić 1 godzinę na stworzenie niewielkiego @UUID[Actor.oLu6qs3AYUu8eitR] z naturalnego materiału pochodzącego z ziemi lub na niej rosnącego, na przykład z gliny, kamienia, drewna lub słomy. Sztuczny towarzysz to ożywiona konstrukcja, która staje się stworzeniem pod twoją kontrolą i przetrwa przez 8 godzin lub do momentu, gdy jego zdrowie lub morale spadną do 0. </p><p>Gdy Sztuczny Towarzysz jest ożywiony, możesz udzielać mu podstawowych instrukcji słownych, wydając proste polecenia, takie jak „przynieś klucz”, „stój na straży” lub „ułóż kilka książek w stos”. Jeśli nie wydasz żadnych poleceń, Sztuczny Towarzysz nie będzie robił nic poza obroną przed wrogimi stworzeniami, wykonując akcję Obrona, gdy tylko będzie to stosowne. Po otrzymaniu rozkazu Towarzysz będzie go wykonywał, dopóki zadanie nie zostanie wykonane lub nie zostaną wydane inne instrukcje.</p><p>W danym momencie możesz mieć aktywnego tylko jednego Sztucznego Towarzysza; stworzenie drugiego spowoduje natychmiastowe zaniknięcie magii, która ożywiła twojego poprzedniego Sztucznego Towarzysza.</p>",
+            "actions": {
+                "Construct Companion": {
+                    "name": "Stworzenie towarzysza",
+                    "description": "<p>Poświęcasz 1 godzinę na stworzenie Sztucznego Towarzysza, który wykonuje twoje podstawowe polecenia słowne.</p>"
+                }
+            }
+        },
+        "Cor'ak": {
+            "name": "Cor'ak",
+            "description": "<p>@Embed[JournalEntry.emberAncestries0.JournalEntryPage.blm7nVaaSYLZX3C9 inline overview]</p>"
+        },
+        "Cor'ak Lineage": {
+            "name": "Rodowód Cor'ak",
+            "description": "<p>Twoja gruba i częściowo metaliczna skóra zapewnia naturalną ochronę przed uderzeniami. Gdy nie nosisz zbroi, zyskujesz premię do <strong>Pancerza</strong> równą wartości twojej cechy <strong>Wytrzymałości</strong>.</p>",
+            "actions": {
+                "Crystalize Wounds": {
+                    "name": "Krystalizacja ran",
+                    "condition": "Zostajesz osłabiony lub otrzymujesz obrażenia, gdy jesteś osłabiony.",
+                    "description": "<p>Gdy znajdziesz się w stanie <strong>osłabienia</strong> lub otrzymasz obrażenia, będąc w stanie <strong>osłabienia</strong>, na twoim ciele tworzy się krystaliczna skorupa. Przez krótki czas zyskujesz odporność na obrażenia <strong>obuchowe</strong>, <strong>kłute</strong> i <strong>cięte</strong> równą twojemu modyfikatorowi <strong>wytrzymałości</strong>. Natychmiast zyskujesz również <strong>Punkty Zdrowia</strong> równe dwukrotności twojego <strong>Poziomu</strong>.</p>",
+                    "effects": [
+                        {
+                            "name": "Krystalizacja ran"
+                        }
+                    ]
+                }
+            }
+        },
+        "Cora Attunement": {
+            "name": "Dostrajanie Kory",
+            "description": "<p>Twoja dusza rezonuje z dostrojeniem do @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.5pD8lxiilJJXOgoa]{Cory}, Spustoszonego Księżyca, i jej filozoficznego ideału <strong>Pragmatyzmu</strong>.</p><p>Zyskujesz następujące korzyści, które poprawiają się wraz z twoją rangą dostrojenia.</p><ul><li><p><strong>Ranga 1</strong>: Zyskujesz odporność na obrażenia od <strong>Kwasu</strong> równą 2 razy twoja ranga dostrojenia.</p></li><li><p><strong>Ranga 2</strong>: Odblokowujesz reakcję @Action[Compendium.ember.crucible-character.Item.emberCoraAttunem coraAftershock], która odrzuca atakującego, gdy skutecznie obronisz się przed atakiem wręcz.</p></li><li><p><strong>Ranga 3</strong>: Twoja obrona <strong>Blok</strong> wzrasta o 1 za każdą rangę dostrojenia powyżej 2.</p></li><li><p><strong>Ranga 4</strong>: Odblokowujesz <strong>Coryjską</strong> fleksję Czaroznastwa, którą można zastosować do zaklęć używających runy <strong>Ziemi</strong>. Przy trafieniu krytycznym wszyscy zranieni wrogowie stają się @Condition[restrained] na 1 turę.</p></li> <li><p><strong>Ranga 5</strong>: Odblokowujesz akcję @Action[Compendium.ember.crucible-character.Item.emberCoraAttunem coraGraviturgicCrush], która tworzy wir grawitacyjny przyciągający wrogów do środka.</p></li></ul>",
+            "actions": {
+                "Aftershock": {
+                    "name": "Wstrząs wtórny",
+                    "condition": "Pomyślnie odeprąłeś nadchodzące uderzenie wręcz dzięki pancerzowi lub blokowi.",
+                    "description": "<p>Odpowiadasz wstrząsającą falą uderzeniową, która odrzuca napastnika o 3 stopy do tyłu. Odległość odrzucenia podwaja się, jeśli cel znajduje się w stanie @Condition[restrained] lub @Condition[staggered].</p>"
+                },
+                "Graviturgic Crush": {
+                    "name": "Zmiażdżenie grawitacyjne",
+                    "description": "<p>Tworzysz wir grawitacyjny, który atakuje <strong>Wytrwałość</strong> wszystkich istot znajdujących się w jego zasięgu. Ci, którym nie powiedzie się, zostają wciągnięci do środka, otrzymują <strong>Wzmocnione</strong> <strong>Obuchowe</strong> obrażenia i otrzymują stan @Condition[staggered]. Ta akcja skaluje się z twoją najwyższą wartością <strong>Siły</strong>, <strong>Wytrzymałości</strong> lub <strong>Intelektu</strong>.</p>",
+                    "effects": [
+                        {
+                            "name": "Zmiażdżenie grawitacyjne"
+                        }
+                    ]
+                }
+            }
+        },
+        "Cosmopolitan Fashionista": {
+            "name": "Kosmopolityczny stylista",
+            "description": "<p>Spędziłeś trochę czasu we wspaniałym mieście Ordain i choć nie urodziłeś się tu, to przyzwyczaiłeś się już do jego tętniącego życiem, kosmopolitycznego klimatu i panujących tu trendów. Być może łatwiej przychodzi ci zbieranie informacji i masz doskonałą pamięć wzrokową, jeśli chodzi o otaczających cię ludzi. Masz nienaganny gust i potrafisz dostrzec najdrobniejsze szczegóły dotyczące danej osoby, po prostu obserwując ją przez chwilę. Być może chętnie angażujesz się w wydarzenia towarzyskie i wykorzystujesz zdobytą wiedzę na swoją korzyść.</p><p>Rozumiesz modę na tyle dobrze, że potrafisz odkryć osobiste szczegóły, po prostu analizując to, co ludzie mają na sobie. Być może masz talent do intryg, dyplomacji i nawiązywania kontaktów towarzyskich.</p>"
+        },
+        "Crown Apothecary": {
+            "name": "Aptekarz z Korony",
+            "description": "<p>Spędziłeś czas, odwiedzając najlepszych alchemików z Ember w Koronie na południowej wyspie Vita'ri lub ucząc się od nich. Pobyt ten pozwolił ci pogłębić wiedzę na temat odczynników, naparów i esencji niezbędnych do tworzenia silnych eliksirów alchemicznych. Twoja wiedza w tej dziedzinie pozwala ci łatwiej rozpoznawać składniki alchemiczne i ich właściwości oraz rozumieć działanie substancji wytworzonych alchemicznie.</p><p>Alchemicy z Korony słyną z nasycania swoich dzieł energią żywiołów, co potęguje i wzmacnia ich moc. Sztuka ta wymaga znacznej wiedzy na temat żywiołów i ich możliwości. Dzięki doświadczeniom zdobytym w Koronie posiadasz niezwykłą wiedzę na temat żywiołów, ich różnych rodzajów i nieodłącznych atrybutów.</p>"
+        },
+        "Drakon": {
+            "name": "Drakon",
+            "description": "<p>@Embed[JournalEntry.emberAncestries0.JournalEntryPage.GRs2vgeVsDpWPqjh inline overview]</p>"
+        },
+        "Drakon Lineage": {
+            "name": "Rodowód Drakona",
+            "description": "<p>Jesteś niezwykle odporny na wpływ nekromancji i magii śmierci. Zaklęcia wykorzystujące <strong>Runę Śmierci</strong> mają <strong>+2 zguby</strong> do rzutów na trafienie w twoim przypadku.</p><p>Instynktownie znasz <strong>Runę Płomienia</strong> i potrafisz jej używać do rzucania podstawowych zaklęć.</p>",
+            "actions": {
+                "Drakonfire": {
+                    "name": "Ogień Drakona",
+                    "description": "<p>W chwilach wielkiego zagrożenia możesz wykorzystać tę moc, by wyrzucić płomień w kształcie stożka, spalając wszystkie stworzenia na swojej drodze. Wyrzucasz smoczy płomień w obszarze o kształcie stożka.</p><p>Ten <strong>morderczy</strong> atak skaluje się w oparciu o twoją <strong>wytrzymałość</strong> i atakuje <strong>refleks</strong> dotkniętych stworzeń. Ta akcja liczy się jako <strong>naturalna</strong> broń, w której posługiwaniu się Drakon jest co najmniej wyszkolony.</p>"
+                }
+            }
+        },
+        "Exceptional Taste": {
+            "name": "Wyjątkowy smak",
+            "description": "<p><strong>BETA TWO</strong>: Ta umiejętność nie została jeszcze dostosowana do mechaniki trybu Crucible.</p>"
+        },
+        "Explosives Training": {
+            "name": "Szkolenie z materiałów wybuchowych",
+            "description": "<p>Znasz się na materiałach wybuchowych. Korzystając z przedmiotu jednorazowego użytku typu <strong>Bomba</strong>, zawsze traktuje się cię jako posiadającego co najmniej poziom <strong>Wyszkolony</strong> w odpowiedniej umiejętności. Jeśli masz już ten poziom, zamiast tego otrzymujesz <strong>+1 korzyści</strong> do wszystkich związanych z tym rzutów.</p>"
+        },
+        "Fej": {
+            "name": "Fej",
+            "description": "<p>@Embed[JournalEntry.emberAncestries0.JournalEntryPage.fmhP7pxXIXV0BM2r inline overview]</p>"
+        },
+        "Fej Lineage": {
+            "name": "Rodowód Fej",
+            "description": "<p>Odporność twoich przodków na <strong>obrażenia od ognia</strong> jest dodatkowo zwiększana przez <strong>poziom</strong> twojej postaci. Jeśli przebywasz pod wodą dłużej niż 6 sekund lub rozpoczynasz swoją turę pod wodą, musisz sprawdzić swoją determinację, wykonując akcję <strong>Niechęć do wody</strong>.</p>",
+            "actions": {
+                "Extreme Metabolism": {
+                    "name": "Ekstremalny metabolizm",
+                    "description": "<p>Uruchamiasz swój ognisty metabolizm, aby osiągnąć nadnaturalną prędkość.</p><ul><li><p>Twój <strong>bieg</strong> wzrasta o +2.</p></li><li><p>Otrzymujesz premię do <strong>Uniku</strong> równą połowie twojej <strong>Zręczności</strong>.</p></li><li><p>Otrzymujesz +1 zarówno do aktualnej, jak i maksymalnej <strong>Akcji</strong>.</p></li></ul>",
+                    "effects": [
+                        {
+                            "name": "Ekstremalny metabolizm"
+                        }
+                    ]
+                },
+                "Water Aversion": {
+                    "name": "Niechęć do wody",
+                    "condition": "Zanurzony w wodzie przez ponad 6 sekund.",
+                    "description": "<p>W przypadku zanurzenia w wodzie na dłużej niż 6 sekund lub rozpoczęcia ruchu w stanie zanurzenia w wodzie musisz sprawdzić swoją determinację.</p><p><strong>ALPHA ONE</strong>: Ta akcja wymaga dalszego dopracowania.</p>"
+                }
+            }
+        },
+        "Flameguard Militia": {
+            "name": "Milicja Straży Płomienia",
+            "description": "<p>Walka z nieumarłymi, którzy napływają z ziem Moiran i atakują Ojczyznę Lumeków, ma wpływ na cały świat. Narody z całego świata wysyłają zdolnych wojowników i żołnierzy, by pomóc oblężonej Straży Płomienia. Być może nigdy nie brałeś udziału w walce, skupiając się zamiast tego na organizowaniu obrony i szkoleniu. Prawdopodobnie jednak stawiałeś opór niekończącym się hordom nieumarłych na linii frontu, trzymając pochodnię w jednej ręce, a tarczę w drugiej.</p><p>Posiadasz pewną wiedzę na temat różnych rodzajów nieumarłych, ich słabości oraz ogólną umiejętność sprawnego poruszania się w walce. Ze względu na kontakt z nieśmiertelnością prawdopodobnie masz również bardzo ograniczoną świadomość istnienia Otchłani.</p>"
+        },
+        "Heart Attunement": {
+            "name": "Dostrajanie Serca",
+            "description": "<p>Twoja dusza rezonuje z energią Siły Życiowej @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.0anKTKgOav9sXox1]{Serca Ember} i jego filozoficznym ideałem <strong>Witalizmu</strong>.</p><p>Zyskujesz następujące korzyści, które poprawiają się wraz z twoją rangą dostrojenia.</p><ul><li><p><strong>Ranga 1</strong>: Zyskujesz odporność na obrażenia od <strong>Zepsucia</strong> równą 2 razy twoja ranga dostrojenia.</p></li><li><p><strong>Ranga 2</strong>: Odblokowujesz akcję @Action[Compendium.ember.crucible-character.Item.emberHeartAttune heartHallow], która oznacza Nieumarłych i Przybyszów jako cele promienistej odpłaty.</p></li><li><p><strong>Ranga 3</strong>: Twoje maksymalne <strong>Zdrowie</strong> zwiększa się na każdym poziomie o 2 za każdą rangę dostrojenia powyżej 2 (+2 na Randze 3, +4 na Randze 4, +6 na Randze 5).</p></li><li><p><strong>Ranga 4</strong>: Odblokowujesz <strong>Emberową</strong> fleksję Czaroznastwa, którą można zastosować do zaklęć używających runy <strong>Życia</strong>. Runa Życia zadaje wrogom obrażenia <strong>Promieniste</strong>, jednocześnie nadal zapewniając odnowę sojusznikom.</p></li><li><p><strong>Ranga 5</strong>: Odblokowujesz akcję @Action[Compendium.ember.crucible-character.Item.emberHeartAttune heartSparkOfEmber], która może wskrzesić niedawno zmarłych albo wygnać Nieumarłych promienistym osądem.</p></li></ul>",
+            "actions": {
+                "Hallow": {
+                    "name": "Uświęcenie",
+                    "condition": "Udało ci się trafić nieumarłego lub istotę z innego wymiaru uderzeniem lub zaklęciem.",
+                    "description": "<p>Na dotkniętym stworzeniu pozostawiasz ślad siły życiowej Ember, powodując, że przez 1 rundę znajduje się ono w stanie @Condition[exposed].</p>",
+                    "effects": [
+                        {
+                            "name": "Uświęcenie"
+                        }
+                    ]
+                },
+                "Spark of Ember": {
+                    "name": "Iskra żaru",
+                    "description": "<p>Dotykasz istoty, która niedawno zginęła lub jest nieumarłą. Cel, który znajduje się w stanie @Condition[dead] i zginął w ciągu ostatnich 24 godzin, ożywa, odzyskując pełne zdrowie zarówno w zakresie <strong>Ran</strong>, jak i <strong>Zdrowia</strong>. Jeśli użyjesz tej zdolności przeciwko nieumarłemu, wykonujesz atak <strong>Morderczy</strong>, który zyskuje +6 <strong>Korzyści</strong> przeciwko jego <strong>Wytrzymałości</strong>, zadając <strong>promieniujące</strong> obrażenia.</p>"
+                }
+            }
+        },
+        "Hot Tempered": {
+            "name": "Wybuchowy",
+            "description": "<p><strong>BETA TWO</strong>: Ta umiejętność nie została jeszcze dostosowana do mechaniki trybu Crucible.</p>"
+        },
+        "Hulg'run": {
+            "name": "Hulg'run",
+            "description": "<p>@Embed[JournalEntry.emberAncestries0.JournalEntryPage.K28cb1q6tvU8FP8B inline overview]</p>"
+        },
+        "Hulg'run Lineage": {
+            "name": "Rodowód Hulg'run",
+            "description": "<p>Jesteś odporny na stan <strong>Zasypiania</strong>. </p><p>Podczas <strong>Odpoczynku</strong> możesz połączyć się z esencją Ember. Jeśli odpoczywasz na twardym podłożu, nie potrzebujesz snu i możesz pozostać przytomny. Aby czerpać korzyści z odpoczynku, nie możesz wykonywać żadnych forsownych czynności.</p>",
+            "actions": {
+                "Living Stone": {
+                    "name": "Żywy Kamień",
+                    "description": "<p>Twoja postać ulega chwilowemu zwapnieniu, co zapewnia zwiększoną ochronę przed ciosami fizycznymi.</p><ul><li><p>Zyskujesz odporność na obrażenia <strong>obuchowe</strong>, <strong>kłute</strong> i <strong>cięte</strong> równą twojemu <strong>poziomowi + 1</strong>.</p></li><li><p>Twój <strong>bieg</strong> zmniejsza się o -2. </p></li><li><p>Jesteś odporny na stan <strong>Przewrócony</strong> i nie można cię przemieścić wbrew twojej woli.</p></li></ul>",
+                    "effects": [
+                        {
+                            "name": "Żywy Kamień"
+                        }
+                    ]
+                }
+            }
+        },
+        "Human": {
+            "name": "Człowiek",
+            "description": "<p>@Embed[JournalEntry.emberAncestries0.JournalEntryPage.p7n66fVhfJCkGd4z inline overview]</p>"
+        },
+        "Human Lineage": {
+            "name": "Rodowód Człowieka",
+            "description": "<p>Kiedy wykonujesz <strong>Reakcję</strong>, która wiąże się z kosztem <strong>Skupienia</strong>, otrzymujesz <strong>+1 korzyści</strong> przy każdym powiązanym rzucie.</p>",
+            "actions": {
+                "Ember Blaze": {
+                    "name": "Płomień Ember",
+                    "condition": "Zostajesz osłabiony lub otrzymujesz obrażenia, gdy jesteś osłabiony.",
+                    "description": "<p>Gdy znajdziesz się w stanie <strong>osłabienia</strong> lub otrzymasz obrażenia, będąc w stanie <strong>osłabienia</strong>, możesz aktywować przypływ niezwykłej adrenaliny zwany Płomieniem. Natychmiast uzupełniasz swoje zasoby <strong>akcji</strong> i <strong>skupienia</strong> do maksymalnej wartości.</p>"
+                }
+            }
+        },
+        "Impassioned Revelry": {
+            "name": "Pasjonująca zabawa",
+            "description": "<p><strong>BETA TWO</strong>: Ta umiejętność nie została jeszcze dostosowana do mechaniki trybu Crucible.</p>"
+        },
+        "Imperial Ambition": {
+            "name": "Imperialne ambicje",
+            "description": "<p><strong>BETA TWO</strong>: Ta umiejętność nie została jeszcze dostosowana do mechaniki trybu Crucible.</p>"
+        },
+        "Imperial Conscript": {
+            "name": "Żołnierz cesarski",
+            "description": "<p>Wizyta lub pobyt w Imperium Tayan może być niebezpieczny, ponieważ władze tego kraju nie zwracają uwagi na pochodzenie swoich poborowych. Być może zostałeś przymusowo wcielony do wojska lub odbyłeś szkolenie wojskowe, po czym uciekłeś i jako dezerter przepłynąłeś ocean, a może zostałeś ranny i zwolniony ze służby po zaciętej bitwie. Posiadasz całą podstawową wiedzę rekruta lub żołnierza: wiesz, jak posługiwać się bronią, opracowywać strategie i przetrwać okropności pola bitwy. Być może masz również ograniczoną wiedzę na temat smoków, wynikającą z krótkich spotkań z jednym lub kilkoma tajanowskimi jeźdźcami smoków, takimi jak sama Cesarzowa lub jeden z nielicznych Rycerzy Kirargy, którym udało się nawiązać więź ze smokiem. </p><p>Posiadasz głęboką wiedzę na temat sztuki wojennej, potrafisz szybko rozpoznać problemy logistyczne i organizacyjne oraz opracowywać strategie i plany na różne sytuacje. Ponadto masz pewną wiedzę na temat smoków i znasz różne ich rodzaje oraz cechy charakterystyczne.</p>"
+        },
+        "Intrepid Sailor": {
+            "name": "Nieustraszony żeglarz",
+            "description": "<p><strong>BETA TWO</strong>: Ta umiejętność nie została jeszcze dostosowana do mechaniki trybu Crucible.</p>"
+        },
+        "Kelmezian": {
+            "name": "Kelmezianin",
+            "description": "<p>@Embed[JournalEntry.emberCultures000.JournalEntryPage.SySGCB7QdgeKowkD inline overview]</p>"
+        },
+        "Kessian": {
+            "name": "Kessianin",
+            "description": "<p>@Embed[JournalEntry.emberCultures000.JournalEntryPage.1WoH2TVw0gngrgWL inline overview]</p>"
+        },
+        "Keth": {
+            "name": "Keth",
+            "description": "<p>@Embed[JournalEntry.emberAncestries0.JournalEntryPage.bOPreM2lwc0iB46X inline overview]</p>"
+        },
+        "Keth Lineage": {
+            "name": "Rodowód Keth",
+            "description": "<p>Czerpiesz radość z nieprzewidywalności i masz talent do przekształcania niekorzystnych sytuacji w korzystne.</p><ul><li><p>Jeśli nie uda ci się wykonać akcji <strong>Umiejętności</strong>, twoja następna akcja zyskuje korzyść w postaci <strong>+1 Korzyści</strong>do początku twojej następnej <strong>Tury</strong>.</p></li><li><p>Jeśli nie trafisz podczas akcji <strong>Ataku</strong>, twoja następna akcja zyskuje <strong>+1 Korzyści</strong> do początku twojej następnej <strong>Tury</strong>.</p></li></ul>",
+            "actions": {
+                "Sudden Bite": {
+                    "name": "Nagłe ugryzienie",
+                    "description": "<p>W wyjątkowych lub desperackich sytuacjach możesz wykonać zaciekły atak swoimi ostrymi zębami. Zgrzytasz zębami, wysuwając szczękę pełną ostrych zębów, i wykonujesz <strong>Naturalny</strong> atak bronią o właściwości <strong>Morderczy</strong>, który zadaje <strong>Obrażenia kłute</strong>.</p>"
+                }
+            }
+        },
+        "Kiska": {
+            "name": "Kiska",
+            "description": "<p>@Embed[JournalEntry.emberAncestries0.JournalEntryPage.tyum0IGWIODRfitO inline overview]</p>"
+        },
+        "Kiska Lineage": {
+            "name": "Rodowód Kiski",
+            "description": "<p>Z łatwością wtapiasz się w ciemność. Stojąc w słabym świetle lub w ciemności, zyskujesz <strong>+2 korzyści</strong> do każdego użycia umiejętności <strong>Skradania</strong>.</p><p>Instynktownie znasz <strong>Runę Iluzji</strong> i możesz jej używać do rzucania zaklęć.</p>",
+            "actions": {
+                "Nimble Leap": {
+                    "name": "Zwinny skok",
+                    "description": "<p>Wykorzystujesz ograniczony zapas energii, by wykonać spektakularny skok. Możesz natychmiast <strong>Skoczyć</strong> na odległość do trzech razy większą od twojego <strong>Biegu</strong>. Ruch ten jest tak gwałtowny, że nie daje przeciwnikom szansy na <strong>wycofanie się</strong>.</p>"
+                }
+            }
+        },
+        "Kithil": {
+            "name": "Kithilczyk",
+            "description": "<p>@embed[JournalEntry.emberCultures000.JournalEntryPage.IOBQMGUigqxn3UkM inline overview]</p>"
+        },
+        "Kivahr": {
+            "name": "Kivahr",
+            "description": "<p>@Embed[JournalEntry.emberAncestries0.JournalEntryPage.rl7QgGAIaYqAxLYq inline overview]</p>"
+        },
+        "Kivahr Lineage": {
+            "name": "Rodowód Kivahr",
+            "description": "<p>Twoje ciało wzmacnia się dzięki dziedzictwu gigantów. Twój umysł i ciało działają w harmonii, pomagając ci rozwiązywać problemy i wytrzymywać fizyczne obciążenia.</p><p>Otrzymujesz premię do obrony <strong>Wytrzymałości</strong> i <strong>Woli</strong> równą twojej <strong>Poziomowi</strong> podzielonemu przez 4.</p>",
+            "actions": {
+                "Regulated Rhythm": {
+                    "name": "Rytm regulowany",
+                    "description": "<p>Wykorzystujesz swoją nadprzyrodzoną zdolność, by zharmonizować umysł i ciało. Wchodzisz w stan podobny do transu, który zapewnia następujące korzyści na początku twojej <strong>Tury</strong>.</p><ul><li><p>Zyskujesz +1 do <strong>Skupienia</strong>.</p></li><li><p>Jeśli twoja Morale jest wyższa niż twoje Zdrowie, przenosisz wartość równą twojej <strong>Prezencji</strong>, zmniejszając <strong>Morale</strong> i zyskując <strong>Zdrowie</strong>.</p></li><li><p>Jeśli twoje Zdrowie jest wyższe niż twoja Morale, przenosisz do <strong>Wytrzymałości</strong>wartość cechy, zmniejszając <strong>Zdrowie</strong> i zyskując <strong>Morale</strong>.</p></li></ul><p>Te przeniesienia nie spowodują, że jakakolwiek wartość przekroczy swoją maksymalną wartość.</p>",
+                    "effects": [
+                        {
+                            "name": "Rytm regulowany"
+                        }
+                    ]
+                }
+            }
+        },
+        "Lightsworn": {
+            "name": "Światłoprzysiężony",
+            "description": "<p>Od dzieciństwa promienne światło Luxarum wypełniało twoją duszę wspaniałymi pieśniami i być może przysiągłeś sobie, że odkryjesz jego tajemnice. Być może spotkałeś nawet jedną z lśniących istot znanych jako Tyraphem z Luxarum podczas rzadkiego, ale oślepiającego wydarzenia, które wprawiło cię w zachwyt i skłoniło do przysięgi, że będziesz im bezpośrednio służył. Po śmierci w tym śmiertelnym świecie, po spełnieniu pragnień swojego pana lub pani albo po zgłębieniu wiedzy o świetle, masz absolutną pewność, że zostaniesz nagrodzony wiecznym życiem w Złotej Krainie w niebie.</p><p>Masz ograniczoną wiedzę na temat Wewnętrznej Krainy Luxarum, rządzących nią Tyraphemów i ich sług, niebiańskich istot. Wiedza ta może być zniekształcona przez twoje własne postrzeganie lub gorliwość i może różnić się od prawdy, którą odkryjesz w świecie.</p>"
+        },
+        "Lumek": {
+            "name": "Lumekczyk",
+            "description": "<p>@embed[JournalEntry.emberCultures000.JournalEntryPage.f52WC5ZzNSK0yKOz inline overview]</p>"
+        },
+        "Lunar Empath": {
+            "name": "Księżycowy empata",
+            "description": "<p>Jesteś głęboko związany z otaczającymi cię ludźmi i potrafisz wyczuć nastrój lub emocje danej osoby już na pierwszy rzut oka. Masz tak niezwykłą umiejętność odczytywania ludzi, że niektórzy uważają, iż potrafisz odgadnąć ich najskrytsze myśli. Być może wykorzystałeś swoje zdolności, by stać się kimś w rodzaju lokalnego mistyka, na przykład wróżąc z dłoni lub kart.</p><p>Rozumiesz innych śmiertelników z empatią, potrafisz postawić się bezpośrednio w sytuacji innych ludzi i spojrzeć ich oczami. Posiadasz również pewną wiedzę na temat księżyców żywiołów oraz wpływu ich cykli i orbit na świat na powierzchni.</p>"
+        },
+        "Lunar Tattoos": {
+            "name": "Tatuaże księżycowe",
+            "description": "<p><strong>BETA TWO</strong>: Ta umiejętność nie została jeszcze dostosowana do mechaniki trybu Crucible.</p>"
+        },
+        "Luxarum Attunement": {
+            "name": "Dostrajanie Luksarum",
+            "description": "<p>Twoja dusza rezonuje z dostrojeniem do @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.pPU6VZV7WFubtcSR]{Luxarum}, Krainy Niekończącej się Wojny, i jej filozoficznego ideału <strong>Ambicji</strong>.</p><p>Zyskujesz następujące korzyści, które poprawiają się wraz z twoją rangą dostrojenia.</p><ul><li><p><strong>Ranga 1</strong>: Zyskujesz odporność na obrażenia <strong>Promieniste</strong> równą 2 razy twoja ranga dostrojenia.</p></li><li><p><strong>Ranga 2</strong>: Odblokowujesz reakcję @Action[Compendium.ember.crucible-character.Item.emberLuxarumAttu luxarumEternalVengeance], która napełnia cię prawym zapałem, gdy otrzymasz trafienie krytyczne.</p></li><li><p><strong>Ranga 3</strong>: Twoja obrona <strong>Wytrwałości</strong> wzrasta o 1 za każdą rangę dostrojenia powyżej 2.</p></li><li><p><strong>Ranga 4</strong>: Odblokowujesz <strong>Luksarańską</strong> fleksję Czaroznastwa, którą można zastosować do zaklęć używających runy <strong>Iluminacji</strong>. Każdy trafiony wróg zostaje rozświetlony i staje się @Condition[exposed] na 1 turę.</p></li><li><p><strong>Ranga 5</strong>: Odblokowujesz akcję @Action[Compendium.ember.crucible-character.Item.emberLuxarumAttu luxarumTyraphicCrusade], która wyrzuca cię w niebo, aby wyzwolić promienisty wybuch i zwrócić akcje za każdy cel, który otrzyma obrażenia.</p></li> </ul>",
+            "actions": {
+                "Eternal Vengeance": {
+                    "name": "Wieczna zemsta",
+                    "condition": "Uderzenie lub zaklęcie skierowane przeciwko tobie kończy się trafieniem krytycznym.",
+                    "description": "<p>Gdy otrzymasz trafienie krytyczne w wyniku uderzenia lub zaklęcia, ogarnia cię słuszny zapał i zyskujesz stan @Condition[hastened] do końca swojej następnej tury.</p>",
+                    "effects": [
+                        {
+                            "name": "Wieczna zemsta"
+                        }
+                    ]
+                },
+                "Tyraphic Crusade": {
+                    "name": "Tyraficzna krucjata",
+                    "description": "<p>Wyskakujesz w powietrze i lądujesz w widocznym miejscu w promieniu 120 stóp. Wszystkie istoty znajdujące się w obszarze o promieniu 10 stóp stają w obliczu <strong>wzmocnionego</strong> ataku na ich <strong>Refleks</strong>, zadającego <strong>promieniste</strong> obrażenia. Zyskujesz <strong>+1 akcję</strong> za każdy cel, który poniósł obrażenia. Cele, które otrzymały obrażenia i były już w stanie @Condition[exposed], przechodzą w stan @Condition[stunned] na 1 rundę. Ta akcja skaluje się z twoją najwyższą cechą spośród <strong>Siły</strong>, <strong>Wytrzymałości</strong> lub <strong>Zręczności</strong>.</p>"
+                }
+            }
+        },
+        "Mayis Attunement": {
+            "name": "Dostrajanie Mayis",
+            "description": "<p>Twoja dusza rezonuje z dostrojeniem do @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.RkdBtFQk7STvMbV2]{Mayis}, Burzowego Księżyca, i jego filozoficznego ideału <strong>Cierpliwości</strong>.</p><p>Zyskujesz następujące korzyści, które poprawiają się wraz z twoją rangą dostrojenia.</p><ul><li><p><strong>Ranga 1</strong>: Zyskujesz odporność na obrażenia od <strong>Zimna</strong> równą 2 razy twoja ranga dostrojenia.</p></li><li><p><strong>Ranga 2</strong>: Odblokowujesz reakcję @Action[Compendium.ember.crucible-character.Item.emberMayisAttune mayisRestorativeRedirection], która przekierowuje energię odpartego zaklęcia, aby uleczyć pobliskiego sojusznika.</p></li> <li><p><strong>Ranga 3</strong>: Twój <strong>Próg Leczenia</strong> zostaje zmniejszony o 1 za każdą rangę dostrojenia powyżej 2.</p></li><li><p><strong>Ranga 4</strong>: Odblokowujesz <strong>Mayiską</strong> fleksję Czaroznastwa, którą można zastosować do zaklęć używających runy <strong>Mrozu</strong>. Runa Mrozu zapewnia Odnowę sojusznikom, jednocześnie nadal zadając wrogom obrażenia od <strong>Zimna</strong>.</p></li><li><p><strong>Ranga 5</strong>: Odblokowujesz akcję @Action[Compendium.ember.crucible-character.Item.emberMayisAttune mayisRestorationOfTheDeep], która leczy sojuszników łukowym przypływem i oczyszcza z trwających szkodliwych efektów.</p></li> </ul>",
+            "actions": {
+                "Restorative Redirection": {
+                    "name": "Reorientacja regeneracyjna",
+                    "condition": "Odparłeś rzucane na ciebie zaklęcie.",
+                    "description": "<p>Kiedy odpierasz nadchodzące <strong>Zaklęcie</strong>, przekierowujesz część energii tego zaklęcia na sojusznika, którego widzisz w promieniu 30 stóp, zapewniając mu <strong>Osłabione</strong> przywrócenie, na które działało pierwotne zaklęcie. Siła tej akcji zależy od twojej najwyższej wartości <strong>Mądrości</strong>, <strong>Charyzmy</strong> lub <strong>Intelektu</strong>.</p>"
+                },
+                "Restoration of the Deep": {
+                    "name": "Odnowa z głębin",
+                    "description": "<p>Wypuszczasz strumień oczyszczającej wody w promieniu 30 stóp i szerokości 20 stóp. Sojusznicy w tym obszarze odzyskują <strong>Wzmocnione</strong> punkty <strong>Zdrowia</strong> i natychmiast zostają oczyszczeni z wszelkich efektów zadających obrażenia w czasie. Siła tej akcji zależy od twojej najwyższej wartości <strong>Mądrości</strong>, <strong>Prezencji</strong> lub <strong>Intelektu</strong>.</p>"
+                }
+            }
+        },
+        "Maziran": {
+            "name": "Maziran",
+            "description": "<p>@Embed[JournalEntry.emberCultures000.JournalEntryPage.cYMQIQFugpO79L9f inline overview]</p>"
+        },
+        "Mistrust of Magic": {
+            "name": "Nieufność wobec magii",
+            "description": "<p><strong>BETA TWO</strong>: Ta umiejętność nie została jeszcze dostosowana do mechaniki trybu Crucible.</p>"
+        },
+        "Monster Hunter": {
+            "name": "Łowca potworów",
+            "description": "<p>Być może kiedyś prowadziłeś proste życie, ale wszystko się zmieniło, gdy potwory z mroku przedarły się przez obronę twojej społeczności i zniszczyły wszystko, co było ci drogie. Być może teraz nienawidzisz potworów z Ember z płonącą wściekłością i polujesz na nie po całym świecie. A może od najmłodszych lat uczono cię, jak polować na potwory, i doskonale wiesz, jak je tropić i niszczyć, gdziekolwiek się pojawią. </p><p>Jesteś zdolnym specjalistą od przetrwania, spędzającym dni, a nawet tygodnie na przemierzaniu dzikich terenów i rozumiesz ślady wielu różnych stworzeń i potworów. Potrafisz rozpoznać Aberracje łatwiej niż inni, a może nawet znasz niektóre z ich słabości. </p><p><br class=\"Apple-interchange-newline\" /></p>"
+        },
+        "Natural Artisan": {
+            "name": "Naturalny artysta",
+            "description": "<p>W znanym świecie żyje wielu utalentowanych i doświadczonych rzemieślników, ale nikt nie cieszy się większym uznaniem za swoje oddanie i dziedzictwo niż Arkturianie z Płaskowyżu Arktus. Spędziłeś wiele lat, ucząc się od nich technik i tradycyjnej wiedzy. Wiesz, jak ręcznie wytwarzać przedmioty z drewna i innych naturalnych materiałów, takich jak włókna i glina, tworząc praktyczne, a jednocześnie piękne formy; ponadto rozumiesz zasady konstrukcji i sposób montażu budynków.</p><p>Wiesz, jak budować i wytwarzać przedmioty w tradycyjny sposób, wykorzystując drewno i naturalne materiały pochodzące z ziemi. Posiadasz również pewną wiedzę na temat roślin i świata przyrody.</p>"
+        },
+        "Nightwatch": {
+            "name": "Straż nocna",
+            "description": "<p>Ogromne i starożytne miasta-państwa Kalmezanu to góry stworzone przez ludzi, zbudowane warstwa po warstwie, tworząc odrębne, samowystarczalne osady zamieszkane przez ogromną liczbę mieszkańców. Większość tych warstw jest praktycznie niemożliwa do opanowania, zwłaszcza im głębiej się zapuszczasz, a jedyną nadzieją na utrzymanie porządku jest nieustanne poświęcenie Straży Nocnej, która patroluje korytarze i zaułki. Być może kiedyś trenowałeś z członkami Straży Nocnej lub pomagałeś im w niekończących się wyprawach w głąb, ucząc się, jak wtopić się w ciemność i poruszać się błyskawicznie w miejskim środowisku.</p><p>Wiesz, jak badać wszelkiego rodzaju dziwne zdarzenia, takie jak przestępstwa, lub śledzić wątki spiskowe. Być może posiadasz również wrodzoną zdolność do zbierania informacji od zwłok lub ciał śmiertelników i ustalania, co ich zabiło.</p>"
+        },
+        "Nir'ae": {
+            "name": "Nir'ae",
+            "description": "<p>@Embed[JournalEntry.emberAncestries0.JournalEntryPage.QgnKHUryvNrNqRfN inline overview]</p>"
+        },
+        "Nir'ae Lineage": {
+            "name": "Rodowód Nir'ae",
+            "description": "<p>Znasz <strong>Runę Światłości</strong> i możesz jej używać do rzucania zaklęć.</p><p>Twoje opalizujące znamiona dają ci niezwykłą zdolność unikania lub instynktownego przekierowywania wrogiej magii. Ataki zaklęciami skierowane przeciwko tobie otrzymują <strong>+2 korzyści</strong>.</p>",
+            "actions": {
+                "Prescient Reflection": {
+                    "name": "Przewidująca myśl",
+                    "condition": "Zaklęcie skierowane bezpośrednio przeciwko tobie powoduje krytyczną porażkę.",
+                    "description": "<p>Gdy zaklęcie skierowane bezpośrednio przeciwko tobie zostanie odeprze z krytyczną porażką, możesz instynktownie przekierować energię zaklęcia, powodując, że zamiast tego rozproszy się ono lub dotknie inny cel znajdujący się w zasięgu zaklęcia, inny niż jego pierwotny rzucający.</p><p>Ten inny cel musi wówczas bronić się przed zaklęciem, a wszelkie efekty zaklęcia zostaną zastosowane wobec niego. Jeśli nie zostanie wybrany żaden inny cel, energia zaklęcia rozproszy się bez szkody.</p>"
+                }
+            }
+        },
+        "Oaken": {
+            "name": "Dębowy",
+            "description": "<p>@embed[JournalEntry.emberCultures000.JournalEntryPage.k7bsL7HRGcz4P314 inline overview]</p>"
+        },
+        "Obsidian Antiquary": {
+            "name": "Obsydianowy antykwariusz",
+            "description": "<p>Odległy, skąpany w słońcu kontynent Kessia, położony daleko na południu, jest miejscem pełnym niebezpiecznych cudów i starożytnych tajemnic. Ci, którzy przemierzają smagane wiatrem głębie zepsutej Pustyni Obsydianowej, są w równym stopniu odważni, co nierozsądni. Być może fascynują cię starożytne, straszne tajemnice i artefakty odkryte w czarnych piaskach. Być może spędziłeś lata przemierzając pustynię w poszukiwaniu odpowiedzi lub zbierając i badając ją oraz jej sekrety z daleka. Prawdopodobnie odkryłeś przerażające prawdy podczas swoich badań i zostawiły one w tobie psychiczne blizny. </p><p>Masz bardzo ograniczoną wiedzę na temat Otchłani, choć prawdopodobnie nazywasz ją inaczej. Potrafisz określić właściwości niektórych starożytnych artefaktów magicznych. Wiesz również o leczniczej i promiennej energii Lantyr, która wydaje się przeciwstawiać się energiom Otchłani.<br class=\"Apple-interchange-newline\" /></p>"
+        },
+        "Orbis Attunement": {
+            "name": "Dostrajanie Orbisa",
+            "description": "<p>Twoja dusza rezonuje z dostrojeniem do @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.zkmWSB32y8Fbc4UL]{Orbisa}, Duchowego Księżyca, i jego filozoficznego ideału <strong>Spontaniczności</strong>.</p><p>Zyskujesz następujące korzyści, które poprawiają się wraz z twoją rangą dostrojenia.</p><ul><li><p><strong>Ranga 1</strong>: Zyskujesz odporność na obrażenia <strong>Psychiczne</strong> równą 2 razy twoja ranga dostrojenia.</p></li><li><p><strong>Ranga 2</strong>: Odblokowujesz akcję @Action[Compendium.ember.crucible-character.Item.emberOrbisAttune orbisChaoticRefraction], która nasyca twoją następną akcję losowymi Korzyściami i Zgubami.</p></li><li><p><strong>Ranga 3</strong>: Twoje maksymalne <strong>Morale</strong> zwiększa się na każdym poziomie o 2 za każdą rangę dostrojenia powyżej 2 (+2 na Randze 3, +4 na Randze 4, +6 na Randze 5).</p></li><li><p><strong>Ranga 4</strong>: Odblokowujesz <strong>Orbisową</strong> fleksję Czaroznastwa, którą można zastosować do zaklęć używających runy <strong>Duszy</strong>. Runa Duszy zadaje wrogom obrażenia <strong>Psychiczne</strong>, jednocześnie nadal zapewniając odnowę Morale sojusznikom.</p></li><li><p><strong>Ranga 5</strong>: Odblokowujesz akcję @Action[Compendium.ember.crucible-character.Item.emberOrbisAttune orbisPandemonium], która atakuje umysły pobliskich wrogów obłędną energią psychiczną.</p></li></ul>",
+            "actions": {
+                "Chaotic Refraction": {
+                    "name": "Chaotyczne refleksje",
+                    "description": "<p>Wykorzystujesz nieprzewidywalne duchowe prądy Orbis, by wpłynąć na swoją następną akcję przed końcem kolejnej tury za pomocą spontanicznych przypływów szczęścia lub pecha. Twoja następna akcja zyskuje <strong>+1k4 korzyści</strong> oraz <strong>+1k4-1 zgub</strong>. W przypadku użycia Chaotycznej refleksji na celach w stanie @Condition[confused], obowiązują wyłącznie korzyści, a zguby są odrzucane.</p>",
+                    "effects": [
+                        {
+                            "name": "Chaotyczne refleksje"
+                        }
+                    ]
+                },
+                "Pandemonium": {
+                    "name": "Pandemonium",
+                    "description": "<p>Zdezorientowane duchy atakują wszystkich wrogów w obszarze, atakując <strong>Wolę</strong> oraz zadając <strong>Wzmocnione</strong> obrażenia psychiczne, które obniżają <strong>Morale</strong> i powodują stan @Condition[confused]. Ta akcja skaluje się w zależności od najwyższej wartości <strong>Mądrości</strong>, <strong>Charyzmy</strong> lub <strong>Intelektu</strong>.</p>",
+                    "effects": [
+                        {
+                            "name": "Pandemonium"
+                        }
+                    ]
+                }
+            }
+        },
+        "Ordani": {
+            "name": "Ordani",
+            "description": "<p>@embed[JournalEntry.emberCultures000.JournalEntryPage.RxhlhTWqJqB1cZxY inline overview]</p>"
+        },
+        "Passionate Trader": {
+            "name": "Zapalony inwestor",
+            "description": "<p><strong>BETA TWO</strong>: Ta umiejętność nie została jeszcze dostosowana do mechaniki trybu Crucible.</p>"
+        },
+        "Personalized Crafting": {
+            "name": "Indywidualne rzemiosło",
+            "description": "<p><strong>BETA TWO</strong>: Ta umiejętność nie została jeszcze dostosowana do mechaniki trybu Crucible.</p>"
+        },
+        "Preeminent Survivalist": {
+            "name": "Wybitny specjalista od przetrwania",
+            "description": "<p>Zawsze traktuje się cię tak, jakbyś posiadał co najmniej <strong>Poziom wyszkolenia</strong> w obu umiejętnościach: <strong>Świadomość</strong> oraz <strong>Dzicz</strong>. Jeśli jesteś już wyszkolony, takie testy umiejętności będą wykonywane z <strong>+1 Korzyść</strong>.</p><p>Ponadto nie możesz zostać złapany w stanie @Condition[unaware], chyba że jesteś <strong>unieruchomiony</strong>, <strong>ogłuszony</strong> lub <strong>oślepiony</strong>.</p>"
+        },
+        "Primalist Disciple": {
+            "name": "Uczeń prymalisty",
+            "description": "<p>Głęboko pod potężnymi drzewami Lasu Jasnego Rdzenia, w samym sercu znanego świata, grasują zmiennokształtni i czczący naturę prymaliści. Być może spędziłeś trochę czasu wędrując po obrzeżach lasu i spotkałeś nawet prymalistę, który opowiedział ci o swoich wierzeniach oraz o tym, jak w pewien sposób nawiązywać kontakt ze zwierzętami. Ponadto mogłeś dowiedzieć się o licznych starożytnych lewiatanach, które wciąż rządzą rozległymi obszarami świata, a dzięki swojej więzi z naturą potrafisz je wyczuwać i rozumieć lepiej niż przeciętny śmiertelnik. </p><p>Potrafisz w pewnym stopniu rozumieć zwierzęta i bestie oraz masz wrodzoną więź ze światem przyrody. Ponadto posiadasz pewną wiedzę na temat Lewiatanów.</p><p><br class=\"Apple-interchange-newline\" /></p>"
+        },
+        "Primordis Attunement": {
+            "name": "Dostrajanie Primordisa",
+            "description": "<p>Twoja dusza rezonuje z dostrojeniem do @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.16sqn71JsCkghaTt]{Primordis}, Krainy Kapryśnego Czarodziejstwa, i jej filozoficznego ideału <strong>Przebiegłości</strong>.</p><p>Zyskujesz następujące korzyści, które poprawiają się wraz z twoją rangą dostrojenia.</p><ul><li><p><strong>Ranga 1</strong>: Zyskujesz odporność na obrażenia od <strong>Trucizny</strong> równą 2 razy twoja ranga dostrojenia.</p></li><li><p><strong>Ranga 2</strong>: Odblokowujesz akcję @Action[Compendium.ember.crucible-character.Item.emberPrimordisAt primordisSlipIntoShadow], która pozwala ci zniknąć w ciemności, gdy nie jesteś zaangażowany w walkę.</p></li><li><p><strong>Ranga 3</strong>: Twoja obrona <strong>Refleks</strong> wzrasta o 1 za każdą rangę dostrojenia powyżej 2.</p></li><li><p><strong>Ranga 4</strong>: Odblokowujesz <strong>Pierwotną</strong> fleksję Czaroznastwa, którą można zastosować do zaklęć używających runy <strong>Iluzji</strong>. Przy trafieniu krytycznym stajesz się @Condition[invisible] do początku swojej następnej tury.</p></li> <li><p><strong>Ranga 5</strong>: Odblokowujesz akcję @Action[Compendium.ember.crucible-character.Item.emberPrimordisAt primordisPredatorsShadow], która uderza z niewidzialności, zadając niszczycielskie obrażenia od trucizny.</p></li></ul>",
+            "actions": {
+                "Slip Into Shadow": {
+                    "name": "Wkroczenie w cień",
+                    "condition": "Bezpośrednio po wykonaniu akcji ruchu, gdy znajdujesz się w obszarze ciemności lub słabego światła i nie jesteś w walce z żadnym przeciwnikiem.",
+                    "description": "<p>Zaraz po wykonaniu akcji ruchu, jeśli znajdujesz się w obszarze ciemności lub słabego światła i nie jesteś w walce z żadnym przeciwnikiem, na chwilę znikasz w cieniu, uzyskując stan @Condition[invisible] do momentu wykonania akcji <strong>uderzenia</strong> lub <strong>zaklęcia</strong> albo do końca swojej tury.</p>",
+                    "effects": [
+                        {
+                            "name": "Wkroczenie w cień"
+                        }
+                    ]
+                },
+                "Predator's Shadow": {
+                    "name": "Cień drapieżcy",
+                    "condition": "Jesteś niewidzialny.",
+                    "description": "<p>Gdy masz stan @Condition[invisible], atakujesz wroga. Jeśli cię nie wykryje, twój atak ma <strong>+6 korzyści</strong> i jest <strong>Morderczy</strong>. Trafienie krytyczne powoduje nałożenie stanu @Condition[poisoned] na 6 rund.</p>",
+                    "effects": [
+                        {
+                            "name": "Cień drapieżcy"
+                        }
+                    ]
+                }
+            }
+        },
+        "Ragen Attunement": {
+            "name": "Dostrajanie Ragen",
+            "description": "<p>Twoja dusza rezonuje z dostrojeniem do @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.LKptgmc56euSOb0G]{Ragena}, Zwęglonego Księżyca, i jego filozoficznego ideału <strong>Bezpośredniości</strong>.</p><p>Zyskujesz następujące korzyści, które poprawiają się wraz z twoją rangą dostrojenia.</p><ul><li><p><strong>Ranga 1</strong>: Zyskujesz odporność na obrażenia od <strong>Ognia</strong> równą 2 razy twoja ranga dostrojenia.</p></li><li><p><strong>Ranga 2</strong>: Odblokowujesz reakcję @Action[Compendium.ember.crucible-character.Item.emberRagenAttune ragenFurnaceBlast], która odpowiada ogniem, gdy otrzymasz trafienie krytyczne.</p></li><li><p><strong>Ranga 3</strong>: Twoja <strong>Inicjatywa</strong> wzrasta o 1 za każdą rangę dostrojenia powyżej 2. </p></li><li><p><strong>Ranga 4</strong>: Odblokowujesz <strong>Rageńską</strong> fleksję Czaroznastwa, którą można zastosować do zaklęć używających runy <strong>Płomienia</strong>. Jeśli zaklęcie miałoby wywołać @Condition[burning] u dowolnego wroga, wywołuje @Condition[burning] u wszystkich wrogów.</p></li> <li><p><strong>Ranga 5</strong>: Odblokowujesz akcję @Action[Compendium.ember.crucible-character.Item.emberRagenAttune ragenImmolatingRejuvenation], która wydaje twoje pozostałe Zdrowie, aby spalić pobliskich wrogów i zapewnić ci szybką regenerację.</p></li></ul>",
+            "actions": {
+                "Furnace Blast": {
+                    "name": "Wybuch płomienia",
+                    "condition": "Zostałeś trafiony krytycznie przez uderzenie lub zaklęcie.",
+                    "description": "<p>Gdy zostaniesz trafiony krytycznie poprzez uderzenie lub zaklęcie, wybuchasz z intensywnością ognia Ragena, wykonując <strong>Osłabiony</strong> atak przeciwko <strong>Wytrzymałości</strong> wszystkich stworzeń w promieniu 3 stóp, który zadaje <strong>Ogniste</strong> obrażenia i powoduje stan @Condition[disoriented]. Podobnie jak miechy podsycające płomień, każdy cel który otrzymał obrażenia i znajduje się w stanie @Condition[burning] natychmiast otrzymuje pełną pozostałą wartość obrażeń w czasie i nie jest już w stanie @Condition[burning]. Ta akcja skaluje się z twoją najwyższą cechą spośród <strong>Siły</strong>, <strong>Wytrzymałości</strong> lub <strong>Zręczności</strong>.</p>",
+                    "effects": [
+                        {
+                            "name": "Wybuch płomienia"
+                        }
+                    ]
+                },
+                "Immolating Rejuvenation": {
+                    "name": "Ożywcze spalenie",
+                    "description": "<p>Wykorzystujesz całą swoją wewnętrzną energię, by wykonać niszczycielski atak na <strong>Refleks</strong> pobliskich stworzeń. Twoje <strong>Punkty Zdrowia</strong> spadają do 0 i otrzymujesz stan @Condition[weakened]. Ilość utraconych punktów zdrowia zostaje równo podzielona między wszystkie cele w obszarze; każdy cel, który odniósł obrażenia, otrzymuje tę część jako dodatkowe obrażenia i otrzymuje stan @Condition[burning]. Otrzymujesz stan @Condition[mending] na 10 rund. Ta akcja skaluje się z twoją najwyższą cechą spośród <strong>Siły</strong>, <strong>Wytrzymałości</strong> lub <strong>Zręczności</strong>.</p>",
+                    "effects": [
+                        {
+                            "name": "Regenerujący"
+                        }
+                    ]
+                }
+            }
+        },
+        "Railen": {
+            "name": "Railen",
+            "description": "<p>@Embed[JournalEntry.emberCultures000.JournalEntryPage.y4WHE3TEr6Of13SL inline overview]</p>"
+        },
+        "Resolute Legacy": {
+            "name": "Nieugięta spuścizna",
+            "description": "<p><strong>BETA TWO</strong>: Ta umiejętność nie została jeszcze dostosowana do mechaniki trybu Crucible.</p>"
+        },
+        "Rhivan": {
+            "name": "Rhivan",
+            "description": "<p>@Embed[JournalEntry.emberCultures000.JournalEntryPage.emFVgDaCDq0lWY2b inline overview]</p>"
+        },
+        "Ritual Cooking": {
+            "name": "Kuchnia rytualna",
+            "description": "<p><strong>BETA TWO</strong>: Ta umiejętność nie została jeszcze dostosowana do mechaniki trybu Crucible.</p>"
+        },
+        "Scion of Darkness": {
+            "name": "Potomek ciemności",
+            "description": "<p>Niektórzy twierdzą, że ciemność to po prostu brak światła, ale ci ludzie są głupcami, a ty wiesz lepiej. Ciemność jest siłą równie potężną i uwodzicielską jak każda inna, a ciebie pociąga świat bez światła. Poszukując zrozumienia, być może odkryłeś sposoby na przywołanie demona i zawarcie z nim paktu w zamian za wiedzę i moc, i jesteś zdecydowany służyć jego celom, przemierzając świat śmiertelników. Twój pakt oznacza, że po śmierci otrzymasz wieczne życie w mrocznej krainie Signary i będziesz mógł zgłębiać tajemnice lub angażować się w niekończące się waśnie i gry do woli. </p><p>Masz ograniczoną wiedzę na temat Wewnętrznej Krainy Signary, demonów rządzących jej mrocznymi salami oraz ich sług, potworów. Wiedza ta może być zniekształcona przez twoje własne postrzeganie lub wypaczone rozumienie i może różnić się od prawdy, którą odkrywasz w świecie.</p><p><br class=\"Apple-interchange-newline\" /></p>"
+        },
+        "Shadow Walker": {
+            "name": "Cienisty wędrowiec",
+            "description": "<p>Gdziekolwiek istnieje światło i ciemność, tam pojawiają się cienie, a od najmłodszych lat poruszanie się w ciszy między drzewami lub budynkami było dla ciebie tak naturalne jak oddychanie. Szczególny spokój odczuwasz o zmierzchu i o świcie, kiedy światło półmroku jest kojące i kuszące. Być może w pewnym momencie swojego życia natknąłeś się na inną istotę w cieniu, tajemniczą Fae, która nauczyła cię jeszcze większych umiejętności w zamian za szeptaną służbę, albo znalazłeś się przed migoczącym portalem, przez który nie mogłeś przejść pomimo swoich desperackich błagań. Niemniej jednak wierzysz, że po śmierci otrzymasz dostęp do Krain Cienia i zostaniesz nagrodzony wiecznym życiem. </p><p>Masz ograniczoną wiedzę na temat Wewnętrznej Krainy Primordis, gdzie w gęstwinach cieni grasują Casia i ich słudzy, Fae. Wiedza ta może być zniekształcona przez twoje własne postrzeganie lub iluzje i może różnić się od prawdy, którą odkryjesz w świecie.</p>"
+        },
+        "Shard God Devotee": {
+            "name": "Wyznawca Boga Odłamków",
+            "description": "<p>Zafascynowany opowieściami o Bogach Odłamków, którzy przemierzają świat wraz ze swoimi wyznawcami, od dawna marzysz o tym, by pewnego dnia stać się sługą bogów. Być może jesteś głęboko wierzący i wyznajesz dogmaty oraz nauki konkretnego bóstwa, wywodząc się ze wspólnoty odległego Boga Odłamka lub jednej z jego świątyń. Możesz też po prostu chcieć czcić konkretnego Boga Odłamków bezpośrednio i spotkać go osobiście, szukając sensu i wiary w niebezpiecznym świecie.</p><p>Twoja wiara dała ci wiedzę o wielu różnych bóstwach, boskich istotach i potężnych byciach, a także o ich różnorodnych praktykach religijnych.</p>"
+        },
+        "Signara Attunement": {
+            "name": "Dostrajanie Signara",
+            "description": "<p>Twoja dusza rezonuje z dostrojeniem do @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.3OvueRrGcFnwtnmw]{Signary}, Krainy Nienasyconej Ciekawości, i jej filozoficznego ideału <strong>Ciekawości</strong>.</p><p>Zyskujesz następujące korzyści, które poprawiają się wraz z twoją rangą dostrojenia.</p><ul><li><p><strong>Ranga 1</strong>: Zyskujesz odporność na obrażenia <strong>Obuchowe</strong> równą 2 razy twoja ranga dostrojenia.</p></li><li><p><strong>Ranga 2</strong>: Odblokowujesz akcję @Action[Compendium.ember.crucible-character.Item.emberSignaraAttu signaraStudiousCounter], która nakłada Zgubę na każdą akcję, którą znany wróg podejmuje przeciwko tobie.</p></li> <li><p><strong>Ranga 3</strong>: Twoja obrona <strong>Woli</strong> wzrasta o 1 za każdą rangę dostrojenia powyżej 2.</p></li><li><p><strong>Ranga 4</strong>: Odblokowujesz <strong>Signarańską</strong> fleksję Czaroznastwa, którą można zastosować do zaklęć używających runy <strong>Kontroli</strong>. Przy trafieniu krytycznym natychmiast zyskujesz <strong>+2 Akcji</strong>, raz na turę.</p></li><li><p><strong>Ranga 5</strong>: Odblokowujesz akcję @Action[Compendium.ember.crucible-character.Item.emberSignaraAttu signaraImpartTruth], która przywraca jasność umysłu szalonemu stworzeniu albo rozbija Morale stworzenia zdrowego na umyśle.</p></li></ul>",
+            "actions": {
+                "Studious Counter": {
+                    "name": "Analityczna kontra",
+                    "condition": "Posiadasz wiedzę na temat typu docelowego stworzenia.",
+                    "description": "<p>Skupiasz swoją uwagę na konkretnym przeciwniku, starając się przeciwdziałać każdemu jego ruchowi. Jeśli posiadasz <strong>Wiedzę</strong> o typie tej istoty, każda jej akcja skierowana przeciwko tobie, wykonana do początku twojej następnej tury, otrzymuje <strong>+1 zguby</strong>. Dodatkowo, podczas gdy istota ta jest badana, twoje zaklęcia z efektem <strong>Signaran</strong> oraz akcja <strong>Objawienie prawdy</strong> zyskują <strong>+1 korzści</strong> przeciwko temu celowi.</p>",
+                    "effects": [
+                        {
+                            "name": "Analityczna kontra"
+                        }
+                    ]
+                },
+                "Impart Truth": {
+                    "name": "Objawienie prawdy",
+                    "description": "<p>Łączysz się z umysłem istoty, która znajduje się w stanie @Condition[insane], a ta odzyskuje pełną świadomość, otrzymując przywrócenie <strong>Obłędu</strong> oraz <strong>Morale</strong>, co ustawia każdy z tych zasobów na połowę jego maksymalnej wartości. Jeśli twój cel nie był w stanie @Condition[insane], otrzymuje atak na swoją <strong>Wolę</strong>, który w przypadku powodzenia obniża jego Morale do 0 i pozostawia go w stanie @Condition[broken]. Ta akcja skaluje się z twoją najwyższą umiejętnością <strong>Mądrości</strong>, <strong>Prezencji</strong> lub <strong>Intelektu</strong> i zyskuje <strong>+1 Błogosławieństwo</strong>, gdy zostanie użyta na celu twojej  <strong>Analitycznej kontry</strong>.</p>"
+                }
+            }
+        },
+        "Signborn": {
+            "name": "Znakorodny",
+            "description": "<p>@Embed[JournalEntry.emberAncestries0.JournalEntryPage.p6DGVnaLHZfLvGem inline overview]</p>"
+        },
+        "Signborn Lineage": {
+            "name": "Rodowód Znakorodnego",
+            "description": "<p>Oprócz fizycznych kończyn posiadasz dwie eteryczne ręce. Ręce te nie mogą dzierżyć broni, tarcz ani innego wyposażenia. Można ich jednak używać do szybkiego manipulowania przedmiotami jako uzupełnienie zwykłych kończyn. Raz na <strong>rundę</strong> możesz wyposażyć się w przedmiot ze swojego ekwipunku bez wydawania na to żadnych <strong>punktów akcji</strong>.</p><p>Wykorzystując specjalny język i fizjologię Znakorodnych, synchronizujesz swoje eteryczne kończyny z tkanką magii, aby bez wysiłku wykonywać magiczne wyczyny. Znasz unikalną fleksję <strong>Glifomowa</strong>, którą można dodać do zaklęć. Zaklęcie wzbogacone o Glifomowę kosztuje <strong>+1 Heroizm</strong> do rzucenia, ale można je wykonać przy obniżonym koszcie <strong>-2 Akcji</strong>.</p>"
+        },
+        "Sky Wanderer": {
+            "name": "Wędrowiec niebios",
+            "description": "<p>Nieustannie pędzi cię naprzód, by odkrywać odległe horyzonty; potężne poczucie wolności i bezkresne niebo wypełniają twoją duszę. Jesteś kupcem o wyjątkowych umiejętnościach, zdolnym do pokonywania ogromnych odległości bez obaw i zmartwień, a także masz wrodzone wyczucie i zrozumienie dla przedmiotów materialnych oraz ich wartości. Być może swoją swobodę ducha czerpiesz ze starożytnych legend i mitów o Vaznorach oraz ich latających miastach z chmur i żagli.</p><p>Twoja wiedza na temat zaginionej kultury Vaznorów jest bardzo ograniczona. Jesteś również utalentowanym handlarzem, który potrafi wymienić niemal każdy dostępny towar, a ponadto masz wrodzone wyczucie pogody.<br class=\"Apple-interchange-newline\" /></p>"
+        },
+        "Soulbound": {
+            "name": "Związani duszą",
+            "description": "<p>Umarłeś i jesteś teraz Związany duszą — dotknięty magiczną więzią zwaną Znamieniem Duszy, która uniemożliwia twojemu duchowi odejście zgodnie z typowym Cyklem Dusz Ember. Nie jesteś nieumarły i zachowujesz cechy, które miałeś za życia, lecz twoje dalsze istnienie podlega dodatkowym zasadom, których konsekwencje pogarszają się wraz ze wzrostem siły twojego Znamienia Duszy.</p><p>Istnieją trzy rangi Związanych duszą, które nakładają kolejno następujące Znamiona Duszy: „Pomniejsze”, „Większe” i „Mordercze”. Każda ranga nakłada coraz poważniejsze efekty.</p><p>Twoja maksymalna wartość <strong>Obłędu</strong> zostaje zmniejszona, ponieważ jesteś bardziej podatny na pochłaniający umysł wpływ nieumarłości.</p><ul><li><p><strong>Pomniejsze Znamię Duszy:</strong> zmniejszona o 2 za każdy Poziom</p></li><li><p><strong>Większe Znamię Duszy:</strong> zmniejszona o 4 za każdy Poziom</p></li><li><p><strong>Mordercze Znamię Duszy:</strong> zmniejszona o 6 za każdy Poziom</p></li></ul><p>Twoje obrony <strong>Próg Morale</strong> i <strong>Próg Leczenia</strong> wzrastają, przez co trudniej cię leczyć.</p><ul><li><p><strong>Pomniejsze Znamię Duszy:</strong> zwiększone o 2</p></li><li><p><strong>Większe Znamię Duszy:</strong> zwiększone o 4</p></li><li><p><strong>Mordercze Znamię Duszy:</strong> zwiększone o 6</p></li></ul><p>Istoty typu <strong>Zewnętrzny</strong>, <strong>Nieumarły</strong> i <strong>Potworność</strong> otrzymują Korzyści do testów <strong>Świadomości</strong>, aby cię wyczuć.</p><ul><li><p><strong>Pomniejsze Znamię Duszy:</strong> 1 Korzyść</p></li><li><p><strong>Większe Znamię Duszy:</strong> 2 Korzyści i możesz zostać dostrzeżony, gdy jesteś @Condition[invisible]</p></li><li><p><strong>Mordercze Znamię Duszy:</strong> 3 Korzyści i możesz zostać dostrzeżony, gdy jesteś @Condition[invisible]</p></li></ul><p>Wszystkie akcje <strong>Umiejętności</strong>, które obierają za cel istotę typu <strong>Bestia</strong>, otrzymują Zguby, ponieważ zwierzęta instynktownie okazują ci ostrożność i nieufność.</p><ul><li><p><strong>Pomniejsze Znamię Duszy:</strong> 1 Zguba</p></li><li><p><strong>Większe Znamię Duszy:</strong> 2 Zguby</p></li><li><p><strong>Mordercze Znamię Duszy:</strong> 3 Zguby</p></li></ul><p>Użycie umiejętności <strong>Dyplomacja</strong> wobec istot typu <strong>Humanoid</strong> otrzymuje Zguby wynikające z twojej upiornej natury:</p><ul><li><p><strong>Pomniejsze Znamię Duszy:</strong> 1 Zguba</p></li><li><p><strong>Większe Znamię Duszy:</strong> 2 Zguby</p></li><li><p><strong>Mordercze Znamię Duszy:</strong> 3 Zguby</p></li></ul><p>Gdy umierasz, twoja Ranga Związanego duszą wzrasta o jeden, przechodząc z Pomniejszej na Większą albo z Większej na Morderczą. Jeśli umrzesz, nosząc <strong>Mordercze Znamię Duszy</strong>, stajesz się nieumarłą istotą pod kontrolą Mistrza Gry.</p>"
+        },
+        "Star Dreamer": {
+            "name": "Gwiezdny marzyciel",
+            "description": "<p>Zawsze fascynowały cię światy snów, w których trafiasz podczas snu. Morze Gwiazd wyciąga do ciebie ramiona, by cię ogarnąć, a same lśniące gwiazdy szepczą cicho dziwne opowieści, obdarowując cię wizjami odległych miejsc, czasów i wydarzeń. Być może w tych snach prowadziły cię nawet gigantyczne postacie, które przekazywały ci tajemnicze znaki lub wróżby, rysując w otaczającym je powietrzu piękne, lśniące runy. Być może poświęciłeś czas na studiowanie tych snów i odkryłeś, że te gigantyczne postacie mogą być pozostałością starożytnych wspomnień Shentów, zaginionego ludu, który przestał istnieć tysiące lat temu. </p><p>Twoje sny i badania dały ci pewną wiedzę o starożytnej kulturze Shentów, a także doskonałą znajomość gwiazd na nocnym niebie i ich układów. Być może posiadasz również pewną wiedzę o przepowiedniach i sam masz ograniczoną zdolność widzenia przyszłości.<br class=\"Apple-interchange-newline\" /></p>"
+        },
+        "Strider": {
+            "name": "Wędrowiec",
+            "description": "<p>@Embed[JournalEntry.emberCultures000.JournalEntryPage.VHQNztu45XEHuvtY inline overview]</p>"
+        },
+        "Sunfire Descendant": {
+            "name": "Potomek Słonecznego Ognia",
+            "description": "<p>Twoja rodzina od niepamiętnych czasów skrywa długą i haniebną tajemnicę; jesteś potomkiem niesławnego dziedzictwa starożytnych Aedirów. Być może twoja rodzina służyła niegdyś Aedirom lub była w jakiś sposób związana z ich kulturą, a może twoi przodkowie w niezwykły sposób przetrwali wydarzenia związane z Wielkim Rozłamem. Obecnie znasz starożytne sekrety Imperium Słonecznego Ognia Aedirów, które niegdyś rządziło światem Ember, i potrafisz rozpoznać ruiny oraz artefakty pozostawione po jego upadku. Być może posiadasz rodzinną pamiątkę lub nauczono cię starożytnego sekretnego hasła.</p><p>Masz ograniczoną wiedzę na temat zaginionej kultury Aedirów, potrafisz określić właściwości niektórych starożytnych artefaktów magicznych i jesteś mistrzem w utrzymywaniu tajemnic oraz intryg. </p><p><br class=\"Apple-interchange-newline\" /></p>"
+        },
+        "Tactical Planner": {
+            "name": "Taktyk",
+            "description": "<p><strong>BETA TWO</strong>: Ta umiejętność nie została jeszcze dostosowana do mechaniki trybu Crucible.</p>"
+        },
+        "Tayan": {
+            "name": "Tayanczyk",
+            "description": "<p>@embed[JournalEntry.emberCultures000.JournalEntryPage.bG3kuSiwqMnIHSrH inline overview]</p>"
+        },
+        "Thornling": {
+            "name": "Cierniak",
+            "description": "<p>@Embed[JournalEntry.emberAncestries0.JournalEntryPage.3s9YujjWpwPJntGa inline overview]</p>"
+        },
+        "Thornling Lineage": {
+            "name": "Rodowód Cierniaka",
+            "description": "<p>Biologia włóknista Cierniaków charakteryzuje się niezwykłą odpornością, zapewniając następujące korzyści:</p><ul><li><p>Twój <strong>Pancerz</strong> nie może spaść poniżej 6, niezależnie od rodzaju noszonego wyposażenia.</p></li><li><p>Otrzymane obrażenia od <strong>upadku</strong> zostają zmniejszone o połowę, zanim zostaną zastosowane inne odporności.</p></li></ul>",
+            "actions": {
+                "Thornbark": {
+                    "name": "Cierniowa kora",
+                    "condition": "Jesteś celem ataku wręcz.",
+                    "description": "<p>Gdy zostaniesz zaatakowany w walce wręcz, możesz sprawić, że z twojego ciała wyrosną kolczaste wyrostki. Przez jedną minutę zyskujesz następujące korzyści.</p><ul><li><p>Ataki wręcz, które <strong>trafiają</strong> lub powodują <strong>otarcie</strong>, sprawiają, że w odwecie zadajesz atakującemu obrażenia równe twojej wartości cechy <strong>Wytrzymałości</strong>.</p></li><li><p>Próby <strong>Chwytu</strong> lub <strong>Odepchnięcia</strong> powodują, że otrzymujesz <strong>+2 Zguby</strong>.</p></li></ul><p>Efekty tej akcji dotyczą ataku, który wywołał reakcję.</p><p><strong>ALPHA ONE</strong>: Efekty Cierniowej kory nie są jeszcze w pełni zautomatyzowane.</p>",
+                    "effects": [
+                        {
+                            "name": "Cierniowa kora"
+                        }
+                    ]
+                }
+            }
+        },
+        "Undaunted Warrior": {
+            "name": "Nieustraszony wojownik",
+            "description": "<p>Cechuje cię niezwykła odwaga i jesteś doskonale wytrenowany do walki z potwornymi przeciwnikami. Otrzymujesz <strong>+1 korzyść</strong> do każdego ataku na wrogów typu <strong>Potworność</strong>.</p>"
+        },
+        "Underworld Mechanic": {
+            "name": "Mechanik podziemia",
+            "description": "<p>Przeżyłeś lub spędziłeś czas w mrocznych zakamarkach jednej z największych tajemnic świata – kolosalnej miejskiej struktury znanej jako Sfera. Nauczyłeś się naprawiać, konserwować i konstruować wszelkiego rodzaju maszyny, urządzenia i mechanizmy. Obejmuje to konstrukcje, ale także urządzenia wytwarzające energię lub dokonujące cudownych wyczynów inżynieryjnych, przypominających magię. Niestety, być może prowadziłeś również przestępcze życie, robiąc wszystko, by przetrwać politykę gangów, która nęka mroczną ciemność, którą kiedyś nazywałeś domem, i po drodze nauczyłeś się kilku bardziej wątpliwych umiejętności.<br /><br />Posiadasz wiedzę na temat wielu różnych rodzajów maszyn i potrafisz je naprawiać, konserwować lub utrzymywać w dobrym stanie łatwiej niż inni śmiertelnicy. Ponadto potrafisz rozpoznawać pułapki i masz wrodzoną umiejętność radzenia sobie w niebezpiecznych sytuacjach.</p>"
+        },
+        "Urban Resourcefulness": {
+            "name": "Miejska zaradność",
+            "description": "<p><strong>BETA TWO</strong>: Ta umiejętność nie została jeszcze dostosowana do mechaniki trybu Crucible.</p>"
+        },
+        "Vrjnhar": {
+            "name": "Vrinhar",
+            "description": "<p>@Embed[JournalEntry.emberAncestries0.JournalEntryPage.0YvoRkcs1BxtRiQz inline overview]</p>"
+        },
+        "Vrjnhar Lineage": {
+            "name": "Rodowód Vrinhar",
+            "description": "<p>Gdy atak skierowany przeciwko tobie kończy się <strong>otarciem</strong>, chronisz się, przyjmując cios na swoją wspaniałą brodę, która w pełni zabezpiecza cię przed obrażeniami, jakie w innym przypadku zadałoby ci otarcie.</p>",
+            "actions": {
+                "Formidable Stamina": {
+                    "name": "Niezwykła wytrzymałość",
+                    "description": "<p>Czerpiesz z niesamowitych rezerw energii, by walczyć dalej, nawet gdy jesteś już wyczerpany. Przez pewien czas, za każdym razem, gdy wyczerpiesz swój zapas <strong>punktów akcji</strong>, masz 25% szansy na natychmiastowe odzyskanie jednego <strong>punktu akcji</strong>.</p>",
+                    "effects": [
+                        {
+                            "name": "Niezwykła wytrzymałość"
+                        }
+                    ]
+                }
+            }
+        },
+        "Waerd": {
+            "name": "Waerdczyk",
+            "description": "<p>@embed[JournalEntry.emberCultures000.JournalEntryPage.MsiM0222IPxjGTQQ inline overview]</p>"
+        },
+        "Wardcall": {
+            "name": "Strażnik zewu",
+            "description": "<p>@Embed[JournalEntry.emberCultures000.JournalEntryPage.xImbz6Nf4mMxtKF1 inline overview]</p>"
+        },
+        "Wirrun": {
+            "name": "Wirrun",
+            "description": "<p>@Embed[JournalEntry.emberAncestries0.JournalEntryPage.PYCLsQgKclg5toxT inline overview]</p>"
+        },
+        "Wirrun Lineage": {
+            "name": "Rodowód Wirruna",
+            "description": "<p>Jesteś odporny na działanie ekstremalnego zimna. Twoje widzenie nie jest ograniczone przez mgłę, zamglenie, śnieg ani inne zjawiska atmosferyczne.</p><p><strong>Alpha One:</strong> Ten efekt widzenia nie został jeszcze zautomatyzowany.</p>",
+            "actions": {
+                "Implacable Hunter": {
+                    "name": "Nieustępliwy łowca",
+                    "description": "<p>Wybierasz jedną widoczną dla ciebie istotę jako swój cel.</p><ul><li><p>Otrzymujesz <strong>+2 korzyści </strong>do każdego rzutu <strong>Świadomości</strong>lub <strong>Dziczy</strong>, który dotyczy ustalenia jej lokalizacji.</p></li><li><p>Kiedy w swojej turze zbliżysz się do swojej ofiary, zyskujesz <strong>+2 korzyści</strong> do następnego rzutu ataku wykonanego przeciwko ofierze w tej samej turze.</p></li></ul>",
+                    "effects": [
+                        {
+                            "name": "Nieustępliwy łowca"
+                        }
+                    ]
+                }
+            }
+        },
+        "Zeph": {
+            "name": "Zef",
+            "description": "<p>@Embed[JournalEntry.emberAncestries0.JournalEntryPage.eyvVaX4c1rMos0ws inline overview]</p>"
+        },
+        "Zeph Lineage": {
+            "name": "Rodowód Zefa",
+            "description": "<p>Znasz <strong>Runę Błyskawicy</strong> i potrafisz jej używać do tworzenia zaklęć.</p><p>Maska Zefa posiada ograniczoną zdolność do nadprzyrodzonej plastyczności. Możesz nieznacznie zmieniać swoją maskę, aby ułatwić komunikację i wyrazić emocje. Po śmierci pozostaje tylko twoja maska. Twoja maska traktowana jest jako twoje szczątki fizyczne w przypadku zaklęć lub efektów magicznych skierowanych przeciwko zmarłej istocie.</p><p>Niezgłębiona natura twojej maski utrudnia odgadnięcie twoich intencji. Podczas wyzwań społecznych, <strong>testy Świadomości</strong> mające na celu odgadnięcie twoich motywów otrzymują <strong>+2 zguby</strong>.</p>",
+            "actions": {
+                "Inscrutable Visage": {
+                    "name": "Niezgłębiona twarz",
+                    "description": "<p>Twoja maska przybiera nieodgadniony wyraz twarzy.</p><ul><li><p>Zyskujesz <strong>+2 korzyści</strong> do wszystkich zastosowań umiejętności <strong>Oszustwa</strong>.</p></li><li><p>Twój <strong>refleks</strong> wzrasta o +2.</p></li></ul><p>W danym momencie możesz mieć aktywny tylko jeden wyraz twarzy maski.</p>",
+                    "effects": [
+                        {
+                            "name": "Niezgłębiona twarz"
+                        }
+                    ]
+                },
+                "Menacing Visage": {
+                    "name": "Groźne spojrzenie",
+                    "description": "<p>Twoja maska przybiera groźny wyraz twarzy.</p><ul><li><p>Zyskujesz <strong>+2 korzyści</strong> do wszystkich zastosowań umiejętności <strong>Zastraszania</strong>.</p></li><li><p>Twoja <strong>Wytrwałość</strong> wzrasta o +2.</p></li></ul><p>W danym momencie możesz mieć aktywny tylko jeden wyraz twarzy maski.</p>",
+                    "effects": [
+                        {
+                            "name": "Groźne spojrzenie"
+                        }
+                    ]
+                },
+                "Beguiling Visage": {
+                    "name": "Urzekająca twarz",
+                    "description": "<p>Twoja maska przybiera urzekający wyraz twarzy.</p><ul><li><p>Zyskujesz <strong>+2 korzyści</strong> do wszystkich zastosowań umiejętności <strong>Perswazja</strong>.</p></li><li><p>Twoja <strong>Wola</strong> wzrasta o +2.</p></li></ul><p>W danym momencie możesz mieć aktywny tylko jeden wyraz twarzy maski.</p>",
+                    "effects": [
+                        {
+                            "name": "Urzekająca twarz"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "mapping": {
+        "description": "system.description",
+        "actions": {
+            "path": "system.actions",
+            "converter": "actions_converter"
+        }
+    }
+}
