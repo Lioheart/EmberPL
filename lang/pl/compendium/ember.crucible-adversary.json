@@ -1,0 +1,492 @@
+{
+    "label": "Opcje przeciwników",
+    "folders": {
+        "Fey": "Fey",
+        "Oozes": "Śluzy",
+        "Beasts": "Bestie",
+        "Undead": "Nieumarli",
+        "Archetypes": "Archetypy",
+        "Constructs": "Konstrukty",
+        "Beast": "Bestia",
+        "Elementals": "Żywiołaki",
+        "Fiend": "Demon",
+        "Humanoid": "Humanoid",
+        "Dragon": "Smok",
+        "Humanoids": "Humanoidy",
+        "Taxonomies": "Taksonomie",
+        "Monstrosity": "Potworność",
+        "Monstrosities": "Potworności",
+        "Abyssal": "Otchłanny",
+        "Abyssals": "Otchłanni",
+        "Celestials": "Niebianie",
+        "Talents": "Talenty",
+        "Dragons": "Smoki",
+        "Celestial": "Niebianin"
+    },
+    "entries": {
+        "Aburyx": {
+            "name": "Aburyks",
+            "description": "<p>Aburyksy są czasem opisywani jako żołnierze ognia i światła; wzmianki o nich można znaleźć w wielu tekstach historycznych i mitologicznych z całego Emberu. Na podstawie badań naukowców poświęconych tym stworzeniom uważa się, że ich rola (czy to rzeczywista, czy metaforyczna) polega przede wszystkim na pełnieniu funkcji piechoty w większych bitwach na Luksarum, jednak opisy przedstawiające ich jako wsparcie i posłańców sugerują, że mają oni możliwość podniesienia swojego statusu poprzez wyróżnianie się zarówno na polu bitwy, jak i poza nim.</p>"
+        },
+        "Abyssal Harbinger": {
+            "name": "Herold otchłanny",
+            "description": "<p>Stworzenia z otchłani, które specjalizują się w manipulacji psychiczną i torturach umysłowych.</p>"
+        },
+        "Abyssal Protection": {
+            "name": "Otchłanna ochrona",
+            "description": "<p>Stworzenie otrzymuje premię +2 do swojego <strong>pancerza</strong> i znajduje się w stanie @Condition[guarded].</p>",
+            "effects": [
+                {
+                    "name": "Otchłanna ochrona",
+                    "description": "<p>Stworzenie otrzymuje premię +2 do swojego <strong>pancerza</strong> i znajduje się w stanie @Condition[guarded].</p>"
+                }
+            ]
+        },
+        "Abyssal Remains": {
+            "name": "Otchłanne szczątki",
+            "description": "<p>Po śmierci @ref[actor.name]{stworzenie} rozpływa się w gęstą ciecz, często opisywana jako „stopiony cień”, która rozlewa się strumieniem z miejsca, w którym zginęła, zalewając otaczający obszar otchłanną zgnilizną.</p>",
+            "actions": {
+                "Abyssal Remains": {
+                    "name": "Otchłanne szczątki",
+                    "condition": "Natychmiast po śmierci",
+                    "description": "<p>Po śmierci @ref[actor.name]{stworzenie} rozpływa się w kałużę stopionego cienia, rozprzestrzeniającą się w promieniu 4 stóp od miejsca, w którym się znajdowało. Pozostałości te utrzymują się w tym miejscu przez miesiąc lub do momentu ich usunięcia.</p><p>Każda istota znajdująca się w tym obszarze lub wchodząca do niego w kolejnej turze musi wytrzymać atak na swój <strong>Refleks</strong> lub odnieść obrażenia od <strong>Zepsucia</strong>, które dodatkowo dotkną ją Przeklętym Wzrokiem.</p><p>Pod wpływem Przeklętego wzroku nie są w stanie dostrzec źródeł słabego światła, a źródła jasnego światła wydają się im słabe.</p><p><strong>Uwagi z testów</strong>: Przeklęty wzrok nie jest jeszcze zautomatyzowany, ale zostanie to zrobione wkrótce po ustabilizowaniu się wersji 14 Foundry VTT.</p>",
+                    "effects": [
+                        {
+                            "name": "Przeklęty wzrok"
+                        }
+                    ]
+                }
+            }
+        },
+        "Abyssal Whip": {
+            "name": "Bicz otchłani",
+            "description": "<p>Przerażająco wydłużona macka ciemności wyrasta ze @ref[actor.name]{stworzenia} i uderza w odległy cel.</p>",
+            "actions": {
+                "Abyssal Whip": {
+                    "name": "Bicz otchłani",
+                    "description": "<p>Wydłużony bicz ciemności uderza w istotę, którą można wyczuć i do której można fizycznie dotrzeć. Zadaje obrażenia od <strong>zimna</strong>, jeśli nie zostanie zablokowany, a następnie chwyta cel, powodując stan @Condition[prone] i przyciągając go o maksymalnie 30 stóp bliżej siebie.</p>",
+                    "effects": [
+                        {
+                            "name": "Bicz otchłani"
+                        }
+                    ]
+                }
+            }
+        },
+        "Abyssal Whispers": {
+            "name": "Szepty z otchłani",
+            "description": "<p>@ref[actor.name]{Stworzenie} wkracza telepatycznie do umysłu innej istoty i zalewa go myślami oraz obrazami z Otchłani. Musi być w stanie wyczuć tę istotę i nie może być unieruchomiona, aby to zrobić.</p>",
+            "actions": {
+                "Abyssal Whispers": {
+                    "name": "Szepty z otchłani",
+                    "description": "<p>Stworzenie przenika umysł swojej ofiary, zadając <strong>psychiczne</strong> obrażenia <strong>morale</strong> oraz nakładając stan @Condition[disoriented].</p><p>W przypadku <strong>trafienia krytycznego</strong> ofiara jest zmuszona do natychmiastowego przemieszczenia się w kierunku @ref[actor.name]{stworzenia} na początku swojej następnej tury, poświęcając na to 2 punkty akcji.</p>",
+                    "effects": [
+                        {
+                            "name": "Szepty z otchłani"
+                        },
+                        {
+                            "name": "Ruch wymuszony"
+                        }
+                    ]
+                }
+            }
+        },
+        "Aedir Sentinel": {
+            "name": "Strażnik Aedir",
+            "description": "<p>Potężne, czterorękie konstrukty, które służyły Aedirom jako straszliwi wojownicy w czołówce ich imperialnych armii.</p>"
+        },
+        "Afflicted Pallid Drake": {
+            "name": "Zarażone blade smoczydło",
+            "description": "<p>Stworzenia te pojawiły się na Ember dopiero niedawno, a ich pochodzenie pozostaje całkowicie nieznane. Pomimo bliskiego podobieństwa do Nikczemnych Smoków nie posiadają one tych samych zdolności, a ich podobieństwa biologiczne są ograniczone. Wydają się być chimeryczną mieszanką węża i smoka, co może wskazywać na ich magiczne pochodzenie. Ta nowo odkryta obecność wzbudziła spore zainteresowanie i niepokój zarówno wśród badaczy, jak i poszukiwaczy przygód, ponieważ te nowe stworzenia mogą oznaczać zmianę normy oraz pojawienie się nowych, niebezpiecznych, smoczych wrogów.</p>"
+        },
+        "Alchemical Recharge": {
+            "name": "Alchemiczne doładowanie",
+            "description": "<p>@ref[actor.name] łączy się z alchemiczną stacją ładującą, aby uzupełnić zapasy wewnętrznego płynu alchemicznego.</p>",
+            "actions": {
+                "Alchemical Recharge": {
+                    "name": "Alchemiczne doładowanie",
+                    "description": "<p>Strażnik łączy się z alchemiczną stacją ładującą, która jest zasilana i działa. Po nawiązaniu połączenia konstrukt przechodzi w stan @Condition[restrained], ale na początku swojej następnej tury odzyska do 4 <strong>Skupienia</strong>, o ile proces ładowania nie zostanie przerwany.</p>",
+                    "effects": [
+                        {
+                            "name": "Alchemiczne doładowanie"
+                        }
+                    ]
+                }
+            }
+        },
+        "Baradom": {
+            "name": "Baradom",
+            "description": "<p>Baradom to potężny, ospały jaszczur, budzący zarówno podziw, jak i dziwną sympatię dzięki swoim ogromnym rozmiarom i spokojnemu usposobieniu. Często wylegiwa się w ciemnościach korytarzy, a jego ogromny, wydatny brzuch unosi się i opada wraz z każdym leniwym oddechem. Jego ciemne, grube łuski wydają się niemal nieprzenikalne – każda z nich przypomina raczej płytę pancerza niż typową skórę gada.</p>"
+        },
+        "Bewildering Gaze": {
+            "name": "Dezorientujące spojrzenie",
+            "description": "<p>@ref[actor.name]{Stworzenie} potrafi zahipnotyzować i zdezorientować swoją ofiarę swoim spojrzeniem.</p>",
+            "actions": {
+                "Bewildering Gaze": {
+                    "name": "Dezorientujące spojrzenie",
+                    "description": "<p>Stworzenie kieruje swoje nadprzyrodzone spojrzenie na jeden cel w zasięgu 60 stóp, który znajduje się w zasięgu jego wzroku i który również je widzi.</p><p>Cel musi stawić czoła rzutowi na <strong>Wolę</strong>, który zadaje obrażenia od<strong>Pustki</strong> wobec <strong>Morale</strong> oraz powoduje stan @Condition[confused].</p>",
+                    "effects": [
+                        {
+                            "name": "Dezorientujące spojrzenie"
+                        }
+                    ]
+                }
+            }
+        },
+        "Bewildering Gleam": {
+            "name": "Dezorientujący blask",
+            "description": "<p>@ref[actor.name]{Śluz} rozlewa się, tworząc galaretowatą warstwę pokrywającą każdą pobliską powierzchnię.</p>",
+            "actions": {
+                "Bewildering Gleam": {
+                    "name": "Dezorientujący blask",
+                    "description": "<p>Śluz szybko rozprzestrzenia się, pokrywając każdą powierzchnię w promieniu 15 stóp. Stworzenia inne niż śluz w tym obszarze muszą zdać test <strong>Woli</strong>; w przeciwnym razie ogarnie je oszałamiające ospałość, zadająca obrażenia od <strong>Świetlistości</strong> wobec <strong>Morale</strong> i powodująca stan <strong>Zdezorientowany</strong>.</p>",
+                    "effects": [
+                        {
+                            "name": "Dezorientujący blask"
+                        }
+                    ]
+                }
+            }
+        },
+        "Call Skither": {
+            "name": "Wezwanie Skithera",
+            "description": "<p>@ref[actor.name]{Stworzenie} dowodzi pobliskimi Skitherami, którzy pełnią rolę jej wiernych sług.</p>",
+            "actions": {
+                "Call Skither": {
+                    "name": "Wezwanie Skithera",
+                    "description": "<p>@ref[actor.name]{Stworzenie} przywołuje sługę Skithera, który przylatuje z pobliskiego miejsca, sprowadzając stworzenie w promieniu 10 stóp od miejsca, w którym się znajduje.</p>"
+                }
+            }
+        },
+        "Cheliceraeth": {
+            "name": "Szczękoczuł",
+            "description": "<p>Potworna pajęczakowa istota pochodząca z pokrytych kryształami podziemi Ember, przypominająca gigantycznego pająka z fioletowego kamienia księżycowego o szlifowanych ściankach.</p>"
+        },
+        "Cindaric Initiate": {
+            "name": "Adept z Cindaru",
+            "description": "<p>Uzdrowiciele i uczeni, którzy należą do grona Mędrców z Cindaru w Ordain, ale sami nie są jeszcze pełnoprawnymi mędrcami.</p>"
+        },
+        "Cindaric Sage": {
+            "name": "Mędrzec z Cindaru",
+            "description": "<p>Uzdrowiciele i uczeni należący do Zakonu Mędrców z Cindaru w Ordain, którzy osiągnęli w tym zakonie najwyższy stopień Mędrca.</p>"
+        },
+        "Corrupted Cadrithor": {
+            "name": "Skorumpowany Cadrithor",
+            "description": "<p>Znany potocznie jako „Psy zmierzchu”, skorumpowani Cadrithorowie to okrutne, widmowe drapieżniki stworzone z czystego cienia. Te odrażające, czworookie stworzenia przypominają zgniłe psy z potwornymi rogami, otoczone straszliwą zasłoną czarnego płomienia.</p>"
+        },
+        "Crevvet": {
+            "name": "Krewet",
+            "description": "<section class=\"block readaloud\"><p>Ten malutki, sześcionożny gryzoń pokryty jest jasnoszarym futrem i ma cztery błyszczące oczka w kolorze lśniących szmaragdów. Jego przednie kończyny zakończone są dość potężnymi pazurami (zwłaszcza jak na jego rozmiar), których używa do kopania w tę i z powrotem w kruchej ziemi.</p></section>"
+        },
+        "Echo": {
+            "name": "Echo",
+            "description": "<p>Echa Otchłani to potwory czystego zła, istoty przepełnione wypaczoną nienawiścią, pochodzące spoza świata Ember. Dysponują one okrutną, prymitywną inteligencją, która pozwala im tropić i polować na naturalne stworzenia zamieszkujące Ember, zasadzając się na nie w ciemnościach i rozrywając je na strzępy.</p>"
+        },
+        "Electrified Pseudopod": {
+            "name": "Zelektryfikowana nibynóżka",
+            "description": "<p>W tym @ref[actor.name]{śluzie} płyną prądy elektryczne, które może on wyzwolić w postaci gwałtownego wyładowania elektrycznego.</p>",
+            "actions": {
+                "Electrified Pseudopod": {
+                    "name": "Zelektryfikowana nibynóżka",
+                    "description": "<p>Atak skierowany przeciwko <strong>Wytrzymałości</strong>, który przebiega łukiem między maksymalnie trzema celami znajdującymi się w odległości do 3 stóp od siebie. Atak ten zadaje <strong>obrażenia od elektryczności</strong> w <strong>Morale</strong>.</p><p>W przypadku trafienia krytycznego nakłada stan <strong>@Condition[shocked]</strong> na 2 tury.</p>"
+                }
+            }
+        },
+        "Elemental Summoning": {
+            "name": "Przywoływanie żywiołaka",
+            "description": "<p>@ref[actor.name]{Stworzenie} potrafi przywołać inne, słabsze żywiołaki, by dołączyły do niego jako sojusznicy.</p>",
+            "actions": {
+                "Summon Sprite": {
+                    "name": "Przywołanie ducha",
+                    "description": "<p>@ref[actor.name]{Stworzenie} przywołuje @UUID[Actor.sVnMPbEj5P18Yo8V]{Ducha wody} w dostrzegalnym przez siebie obszarze o promieniu 60 stóp, który zawiera wodę lub sąsiaduje z nią.</p><p>@ref[actor.name]{Stworzenie} może w danym momencie mieć przywołanego w ten sposób tylko jednego ducha.</p>",
+                    "effects": [
+                        {
+                            "name": "Przywołanie ducha"
+                        }
+                    ]
+                },
+                "Summon Visitor": {
+                    "name": "Przywołanie przybysza",
+                    "description": "<p>@ref[actor.name]{Stworzenie} przywołuje @UUID[Actor.cIX3WXHAZ0gAXCNS]{Przybysza wody} w dostrzegalnym przez siebie obszarze o promieniu 60 stóp, który zawiera wodę lub sąsiaduje z nią.</p><p>@ref[actor.name]{Stworzenie} może w danym momencie mieć przywołanego w ten sposób tylko jednego przybysza.</p>",
+                    "effects": [
+                        {
+                            "name": "Przywołanie przybysza"
+                        }
+                    ]
+                }
+            }
+        },
+        "Enhanced Shielding": {
+            "name": "Wzmocnione osłony",
+            "description": "<p>@ref[actor.name] kieruje płyn alchemiczny przez swoje płyty osłonowe, powodując ich chwilowe przegrzanie i wzmacniając je przed uszkodzeniami fizycznymi.</p>",
+            "actions": {
+                "Enhanced Shielding": {
+                    "name": "Wzmocnione osłony",
+                    "description": "<p>Zyskujesz stan @Condition[guarded], a twoja obrona <strong>Pancerza</strong> wzrasta o +3 do początku twojej następnej tury.</p>",
+                    "effects": [
+                        {
+                            "name": "Wzmocnione osłony"
+                        }
+                    ]
+                }
+            }
+        },
+        "Extrude Tendril": {
+            "name": "Wysunięcie macki",
+            "description": "<p>@ref[actor.name]{Stworzenie} potrafi sięgać przez przestrzeń i wyciągać niezależną kopię jednej ze swoich macek, która oddziela się od ciała swojego pierwowzoru.</p>",
+            "actions": {
+                "Extrude Tendril": {
+                    "name": "Wysunięcie macki",
+                    "description": "<p>@ref[actor.name]{Stworzenie} przywołuje @UUID[Actor.UXpL07GsaMzGCUVh]{Wić wijącego szeptacza}, które pojawia się w wolnym miejscu w promieniu 60 stóp. </p><p>@ref[actor.name]{Stworzenie} może posiadać maksymalnie 3 wysunięte macki w danym momencie i może w ramach darmowej akcji usunąć dowolną liczbę swoich macek w swojej turze.</p>",
+                    "effects": [
+                        {
+                            "name": "Wysunięcie macki"
+                        }
+                    ]
+                }
+            }
+        },
+        "Frenzied Claws": {
+            "name": "Szaleńcze pazury",
+            "description": "<p>@ref[actor.name]{Stworzenie} atakuje błyskawicznie swoimi pazurami, zadając wiele ciosów w kierunku jednego celu.</p>",
+            "actions": {
+                "Frenzied Claws": {
+                    "name": "Szaleńcze pazury",
+                    "description": "<p>@ref[actor.name]{Stworzenie} atakuje w szaleńczym natarciu ostrymi pazurami. Wykonuje trzy uderzenia pazurami. Jeśli którekolwiek z nich zakończy się trafieniem krytycznym, powoduje stan @Condition[bleeding].</p>",
+                    "effects": [
+                        {
+                            "name": "Szaleńcze pazury"
+                        }
+                    ]
+                }
+            }
+        },
+        "Garganthus": {
+            "name": "Gargantus",
+            "description": "<p>Złośliwe, potężne, czworonożne drapieżniki z Pathways, znane ze swojej mrocznej, łuskowatej skóry, sześciu kończyn, okrutnych pazurów i kłów przypominających włócznie.</p>"
+        },
+        "Gore Bird": {
+            "name": "Ptak posoki",
+            "description": "<p>Szybkie, mięsożerne ptaki padlinożerne występujące na całym terytorium Ember. Chociaż żywią się głównie padliną, znane są z tego, że w czasach niedoboru pożywienia agresywnie polują na ofiary w wielkich stadach.</p>"
+        },
+        "Grasping Form": {
+            "name": "Chwytna forma",
+            "description": "<p>@ref[actor.name]{Stworzenie} sprawia, że z otaczającej go ziemi wyrastają niezliczone, owijające się i splatające macki cienia, które potykają i spowalniają pobliskie stworzenia.</p>",
+            "actions": {
+                "Grasping Form": {
+                    "name": "Chwytna forma",
+                    "description": "<p>Stworzenie chwyta wszystkie pobliskie istoty niezliczoną ilością macków, których dotyk wypełnia cię straszliwą rozpaczą, zadając <strong>Zimne</strong> obrażenia <strong>Morale</strong>. Każdy cel musi wykonać rzut na <strong>Refleks</strong>, aby wyrwać się z uścisku, albo zostanie @Condition[restrained]] (ucieczka: 4 akcje lub [[/skillCheck athletics 17]]). </p><p>Jeśli stworzenie porusza się, mając w ten sposób unieruchomione cele, cele te również zostają przesunięte tak, aby pozostały w odległości do 15 stóp od stworzenia.</p>",
+                    "effects": [
+                        {
+                            "name": "Chwytna forma"
+                        }
+                    ]
+                }
+            }
+        },
+        "Grave Mark": {
+            "name": "Grobowy znak",
+            "description": "<p>Gdy @ref[actor.name]{Stworzenie} zadaje trafienie krytyczne atakiem wręcz, pozostawia na swoim celu złowieszczy Grobowy znak.</p>",
+            "actions": {
+                "Grave Mark": {
+                    "name": "Grobowy znak",
+                    "condition": "W przypadku trafienia krytycznego przy ataku wręcz.",
+                    "description": "<p>Po zadaniu <strong>trafienia krytycznego</strong> atakiem wręcz, @ref[actor.name]{Stworzenie} atakuje <strong>Wolę</strong> celu, a w przypadku sukcesu pozostawia na nim Grobowy znak, który nakłada stan @Condition[exhausted], utrzymujący się do momentu, gdy cel wykona <strong>Odpoczynek</strong>. </p><p>Jeśli humanoidalna istota nosząca Grobowy znak zginie pod wpływem tego znaku, w następnej turze powróci z martwych jako straszliwy @UUID[Actor.e67w5IOBScYtJKXr]{Horrendor}.</p>",
+                    "effects": [
+                        {
+                            "name": "Grobowy znak"
+                        }
+                    ]
+                },
+                "Horrendor Transformation": {
+                    "name": "Transformacja horrendora",
+                    "description": "<p>Istota humanoidalna, która zginęła pod wpływem Grobowego znaku, powstaje w swojej następnej turze jako Horrendor.</p>"
+                }
+            }
+        },
+        "Horrendor": {
+            "name": "Horrendor",
+            "description": "<p>Horrendor, rodzaj @UUID[Compendium.crucible.taxonomy.Item.ghoul00000000000]{Ghula}, to okrutne, nieśmiertelne stworzenia powołane do życia przez nikczemną, tajemniczą magię. Horrendor nie jest zwykłym ożywionym szkieletem ani chwiejnym zombie – kieruje nim nieustanne pragnienie siania straszliwego spustoszenia, a samo jego istnienie wydaje się obrazą życia na Ember. Rzeczywiście, złośliwe słowa Horrendora mogą być często równie zabójcze, jak jego zębaty ugryzienie czy potężne pazury.</p>"
+        },
+        "Hydroxol": {
+            "name": "Hydroksol",
+            "description": "<p>Wielkie bestie wodno-lądowe, występujące w wodnych obszarach Ember.</p>"
+        },
+        "Inscrutable": {
+            "name": "Niezgłębiony",
+            "description": "<p>@ref[actor.name]{Stworzenie} to niepoznawalna istota z otchłani. Jest odporna na wszelkie efekty i zaklęcia, które miałyby na celu wyczucie jej emocji lub odczytanie jej myśli. Każdy test umiejętności mający na celu ustalenie intencji tej istoty wykonuje się z premią +4 <strong>zgub</strong>.</p>"
+        },
+        "Jahud": {
+            "name": "Jahud",
+            "description": "<p>Niebiańscy łowcy i wysłannicy, wyhodowani przez biomantów z Signaran w warunkach laboratoryjnych, a ich fizyczne przemiany mają charakter genetyczny.</p>"
+        },
+        "Jurtak": {
+            "name": "Jurtak",
+            "description": "<p>Ludzkopodobne gady, które uległy straszliwemu zniekształceniu pod wpływem energii otchłani. Posiadają sześć oczu doskonale przystosowanych do życia w ciemności, a ich smukłe ciała pokryte są łuskami, dzięki którym z łatwością wtapiają się w cienie otoczenia.</p>"
+        },
+        "Magnetic Disarm": {
+            "name": "Magnetyczne rozbrojenie",
+            "description": "<p>@ref[actor.name]{Śluz} wykorzystuje swoje naładowane magnetycznie ciało, by pozbawić napastnika metalowej broni.</p>",
+            "actions": {
+                "Magnetic Disarm": {
+                    "name": "Magnetyczne rozbrojenie",
+                    "condition": "Został trafiony w walce wręcz metalową bronią.",
+                    "description": "<p>Gdy śluz zostanie trafiony w walce wręcz metalową bronią, może zareagować, wyrywając broń z rąk przeciwnika za pomocą swojego namagnesowanego ciała. Wykonuje on atak umiejętności <strong>Atletyka</strong> przeciwko <strong>Wytrzymałości</strong> celu. W przypadku sukcesu broń zostaje upuszczona i wchłonięta przez ciało śluza. </p><p>Śluz zyskuje wartość <strong>Punktów Zdrowia</strong> w ilości <strong>Wytrzymałości</strong>, a broni nie da się odzyskać, dopóki śluz nie zostanie pokonany.</p>"
+                }
+            }
+        },
+        "Metallic Ooze": {
+            "name": "Metaliczny śluz",
+            "description": "<p>Metaliczne śluzy, należące do rodziny szlamów, charakteryzują się wysoką zawartością metali ciężkich w swoim składzie.</p>"
+        },
+        "Mootap": {
+            "name": "Mootap",
+            "description": "<p>Ciekawe wodne potwory zamieszkujące baseny w Głębinach Lejów pod Arcturelem oraz inne podziemne obszary Pathways.</p>"
+        },
+        "Mutagenic Affliction": {
+            "name": "Mutagenna dolegliwość",
+            "description": "<p>@ref[actor.name]{Stworzenie} cierpi na wyniszczającą mutację, która powoduje, że zachowuje się nieprzewidywalnie. Jest silniejsza i bardziej agresywna, ale ma stan @Condition[blinded].</p>",
+            "effects": [
+                {
+                    "name": "Ślepota mutageniczna"
+                }
+            ]
+        },
+        "Mutagenic Blindness": {
+            "name": "Ślepota mutageniczna"
+        },
+        "Pallid Drake": {
+            "name": "Blade smoczydło",
+            "description": "<p>Stworzenia te pojawiły się na Ember dopiero niedawno, a ich pochodzenie pozostaje całkowicie nieznane. Pomimo bliskiego podobieństwa do Nikczemnych Smoków nie posiadają one tych samych zdolności, a ich podobieństwa biologiczne są ograniczone. Wydają się być chimeryczną mieszanką węża i smoka, co może wskazywać na ich magiczne pochodzenie. Ta nowo odkryta obecność wzbudziła spore zainteresowanie i niepokój zarówno wśród badaczy, jak i poszukiwaczy przygód, ponieważ te nowe stworzenia mogą oznaczać zmianę normy oraz pojawienie się nowych, niebezpiecznych, smoczych wrogów.</p>"
+        },
+        "Pestilent Retch": {
+            "name": "Morowy wymiot",
+            "description": "<p>@ref[actor.name]{Stworzenie} potrafi wypluwać zaraźliwą żółć na cele znajdujące się przed nim.</p>",
+            "actions": {
+                "Pestilent Retch": {
+                    "name": "Morowy wymiot",
+                    "description": "<p>@ref[actor.name]{Stworzenie} wypluwa cuchnącą żółć, która pokrywa stworzenia przed nim plamą zepsucia i rozkładu.</p><p>W przypadku <strong>trafienia krytycznego</strong> atak ten powoduje nałożenie stanu @Condition[decaying] na <strong>3 tury</strong>.</p>",
+                    "effects": [
+                        {
+                            "name": "Morowy wymiot"
+                        }
+                    ]
+                }
+            }
+        },
+        "Powered Spin": {
+            "name": "Napędzany obrót",
+            "description": "<p>@ref[actor.name] wykonuje napędzaną alchemią atak obrotowy, który trafia wszystkich pobliskich wrogów.</p>",
+            "actions": {
+                "Powered Spin": {
+                    "name": "Napędzany obrót",
+                    "description": "<p>Strażnik wykonuje błyskawiczny ruch mieczem wielkim po łuku, uderzając wszystkich pobliskich wrogów.</p>"
+                }
+            }
+        },
+        "Primordial Guardian": {
+            "name": "Pierwotny strażnik",
+            "description": "<p>Strażnicy Primordis i słudzy Casii.</p>"
+        },
+        "Rask": {
+            "name": "Rask",
+            "description": "<p>To smukłe ssaki o cechach zarówno psowatych, jak i kotowatych. Te potężne stworzenia wyróżniają się piórkowatymi kępkami futra i sprawiają wrażenie równie silnych, co zwinnych. Pasiaste futro zdobi ich dostojną głowę, a krótki, puszysty ogon kołysze się za nimi z wdziękiem.</p><p>@ref[name] to udomowione czworonożne ssaki, które często występują w różnych biomach Płaskowyżu Arctus. Często wykorzystywane jako zwierzęta towarzyszące i juczne, @ref[name] są znane jako jedne z najbardziej lubianych i zręcznych wierzchowców w regionie. Uważane są za szlachetne bestie, zarówno o wielkim sercu, jak i bezpośrednich intencjach.</p>"
+        },
+        "Repelling Kick": {
+            "name": "Odrzucające kopnięcie",
+            "description": "<p>@ref[actor.name] zadaje kopnięcie napędzane alchemią z bezlitosną siłą uderzeniową.</p>",
+            "actions": {
+                "Repelling Kick": {
+                    "name": "Odrzucające kopnięcie",
+                    "description": "<p>Strażnik uderza pojedynczy cel mocnym kopnięciem, zadając <strong>obuchowe obrażenia</strong>, odrzucając cel do 15 stóp do tyłu i powodując u niego stan @Condition[staggered].</p>",
+                    "effects": [
+                        {
+                            "name": "Odrzucające kopnięcie"
+                        }
+                    ]
+                }
+            }
+        },
+        "Searing Stare": {
+            "name": "Przenikliwe spojrzenie",
+            "description": "<p>@ref[actor.name] skupia tajemniczą moc swojego jedynego oka w przenikliwą wiązkę, która zadaje obrażenia i chwilowo oślepia ofiarę.</p>",
+            "actions": {
+                "Searing Stare": {
+                    "name": "Przenikliwe spojrzenie",
+                    "description": "<p>Suarrok wpatruje się intensywnie w jeden cel, który znajduje się w zasięgu 60 stóp. To spojrzenie atakuje <strong>Wytrwałość</strong> celu, zadając <strong>Ogniste</strong> obrażenia i powodując stan @Condition[blinded], który trwa przez 6 rund lub do momentu, gdy Suarrok skieruje swoje spojrzenie na inny cel.</p>",
+                    "effects": [
+                        {
+                            "name": "Przenikliwe spojrzenie"
+                        }
+                    ]
+                }
+            }
+        },
+        "Sight Without": {
+            "name": "Widzenie bez oczu",
+            "description": "<p>@ref[actor.name]{Stworzenie} nie ma oczu, uszu ani ust. Nie można jej objąć stanami @Condition[blinded], @Condition[silenced] ani @Condition[deafened]. Posiada zasięg ślepowidzenia wynoszący 60 stóp i może porozumiewać się telepatycznie z dowolną jedną lub wszystkimi istotami znajdującymi się w promieniu 120 stóp od niej.</p>"
+        },
+        "Sitherian": {
+            "name": "Sitherian",
+            "description": "<p>@ref[name] to pajęczak wywodzący się od swojej imienniczki — Sitheery, Strażniczki. Sitherianie, których obecność zwiastują drgania ich skomplikowanej sieci, potrafią wstrzykiwać silny jad za pomocą kłów chelicerów oraz wydzielać jedwab z przędzarek znajdujących się w tylnej części ich ogromnych, jajowatych odwłoków.</p>"
+        },
+        "Skither": {
+            "name": "Skither",
+            "description": "<p>Często wykorzystywane jako wyjątkowo niszczycielska odmiana posłańców wśród tyraphemów, którzy wysyłają je, by pozostawiały płonące wiadomości na mieniu i ciałach swoich wrogów, skithery wykorzystują swoje niewielkie rozmiary i zdolność do kamuflowania się, ustawiając się w miejscach, w których wybrany przez nie cel nie będzie w stanie się bronić. Poświęceni tworzeniu rzezi wszędzie tam, gdzie tylko mogą, dla potężniejszych stworzeń, którym służą, skithery znane są z tego, że śledzą cel przez wiele kilometrów i przeładowują swoje ciała energią promieniującą, gdy uznają, że przegrali walkę, zdeterminowani, by skrzywdzić cel, nawet jeśli w trakcie tego procesu będą musieli poświęcić własne życie.</p>"
+        },
+        "Suarrok": {
+            "name": "Suarrok",
+            "description": "<p>Potworne, skrzydlate drapieżniki, które gniazdują na wysokich, skalistych urwiskach. Suarroki to niezwykle dziwne stworzenia, obdarzone pojedynczym okiem, piórami, skrzydłami podobnymi do nietoperzych, dwoma ogonami oraz długim, kłutym dziobem. Pomimo swojej dziwnej postaci są zaskakująco zwinne, a ich oczy posiadają znaczną moc magiczną, pozwalającą im wyrządzać krzywdę innym stworzeniom samym tylko spojrzeniem.</p>"
+        },
+        "Swallowed Screams": {
+            "name": "Pochłonięte krzyki",
+            "description": "<p>@ref[actor.name]{Stworzenie} skupia się na konkretnym celu, pozbawiając go zdolności mówienia i słyszenia.</p>",
+            "actions": {
+                "Swallowed Screams": {
+                    "name": "Pochłonięte krzyki",
+                    "description": "<p>@ref[actor.name]{Stworzenie} wykonuje atak <strong>Występów</strong> na <strong>Wolę</strong> pojedynczego celu znajdującego się w promieniu 30 stóp; jeśli cel nie oprze się atakowi, zostaje objęty stanem @Condition[silenced] na 1 minutę.</p>",
+                    "effects": [
+                        {
+                            "name": "Pochłonięte krzyki"
+                        }
+                    ]
+                }
+            }
+        },
+        "Tyraphem": {
+            "name": "Tyraphem",
+            "description": "<p>Tyraphemy to potężne istoty zamieszkujące Wewnętrzną Krainę Luksarum. Tyraphemy są nie tylko potężni, ale także niezwykle liczni, a w połączeniu z ich niezwykle wojowniczą i wojskową naturą mogą stać się poważnym zagrożeniem dla całego Kosmosu. Na szczęście od momentu Stworzenia są zaangażowani w niekończącą się wojnę.</p>"
+        },
+        "Tyraphic Asset": {
+            "name": "Tyraficzny agent",
+            "description": "<p>@ref[actor.name] zawiera runy i symbole kontroli wbudowane w jego najgłębsze warstwy, co sprawia, że jest podatny na sterowanie. Niebiańskie istoty z Luksarum, które potrafią mówić lub w inny sposób komunikować się z tym konstruktem, mogą wydawać mu polecenia, których będzie się starał wykonywać najlepiej, jak potrafi. </p><p>Jeśli musi wybierać między wieloma sprzecznymi rozkazami, zawsze opowiada się po stronie tych, które postrzega jako pochodzące z Luksarumu lub cieszących się większym autorytetem wśród nich.</p>"
+        },
+        "Vanexis": {
+            "name": "Vaneksis",
+            "description": "<p>Jako potomkowie Casii z Primordis, strażnicy ci zostali stworzeni, by pełnić rolę najwyższych obrońców wiedzy. Wśród istot z Primordis powszechnie uważa się, że mają one najbystrzejsze umysły, najostrzejsze zmysły i najzdrowszy osąd. Chociaż są mniej otwarcie dociekliwi i skłonni do fantazjowania niż inne Casia, nie mniej pragną wiedzy i często uczą się wszystkiego, co tylko mogą, o miejscu, które mają chronić, stając się ekspertami w zakresie jego układu i historii. </p>"
+        },
+        "Vorg": {
+            "name": "Vorg",
+            "description": "<p>Vorg to stworzenia przypominające stonogi, których metalowy pancerz otacza nieustannie świecące, promienne światło. Są gorące w dotyku i potrafią wspinać się po ścianach, wkopywać się w ziemię oraz czołgać się po powierzchni; często stanowią niepożądaną niespodziankę dla tych, którzy natrafiają na nie w jaskiniach, grotach i innych podziemnych miejscach.</p>"
+        },
+        "Whisperer": {
+            "name": "Szeptacz",
+            "description": "<p>Wirująca masa żywej ciemności i cienia, która w niepokojąco niemożliwy sposób wije się i skręca, wślizgując się w samą siebie i wokół siebie.</p>"
+        },
+        "Yarnac": {
+            "name": "Yarnak",
+            "description": "<p>Ogromne stworzenia z rogami na głowach, znane jako Yarnaki, są jednymi z najbardziej niezawodnych zwierząt jucznych na Płaskowyżu Arctus.</p>"
+        }
+    },
+    "mapping": {
+        "description": "system.description",
+        "effects": {
+            "path": "effects",
+            "converter": "embeddedEffectsConverter"
+        },
+        "actions": {
+            "path": "system.actions",
+            "converter": "actions_converter"
+        }
+    }
+}
