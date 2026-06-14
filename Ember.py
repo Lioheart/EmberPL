@@ -51,6 +51,85 @@ CAPTION_ACTOR_MAPPING = {
     }
 }
 
+EMBER_JOURNAL_SYSTEM_HTML_FIELD_KEYS = {
+    "overview": "system.overview",
+    "exposition": "system.exposition",
+    "summary": "system.summary",
+    "developmentSecrets": "system.development.secrets",
+}
+
+
+def get_nested_value(source: dict, dotted_path: str):
+    current = source
+    for part in dotted_path.split("."):
+        if not isinstance(current, dict):
+            return None
+        current = current.get(part)
+    return current
+
+
+def collect_ember_journal_page_fields(page: dict) -> dict:
+    """
+    Zbiera dodatkowe pola tekstowe stron JournalEntryPage używane przez Ember.
+
+    Foundry/Babele standardowo obsługuje JournalEntryPage.name oraz
+    JournalEntryPage.text.content jako `name` i `text`. Ember dodaje jednak
+    własne HTML pola w `system`, m.in. overview, exposition i summary.
+    """
+    collected = {}
+
+    text_content = get_nested_value(page, "text.content")
+    if isinstance(text_content, str) and text_content.strip():
+        collected["text"] = " ".join(text_content.split())
+
+    system_data = page.get("system", {})
+    if not isinstance(system_data, dict):
+        return collected
+
+    for output_key, source_path in EMBER_JOURNAL_SYSTEM_HTML_FIELD_KEYS.items():
+        value = get_nested_value(page, source_path)
+        if isinstance(value, str) and value.strip():
+            collected[output_key] = " ".join(value.split())
+
+    return collected
+
+def build_adventure_journals_mapping() -> dict:
+    """
+    Zagnieżdżone mapowanie dla dzienników osadzonych w Adventure.
+
+    Babele 2.8+ obsługuje embedded dokumenty przez converter `document`.
+    Inline `mapping` rozszerza mapowanie JournalEntry/JournalEntryPage o pola
+    specyficzne dla Ember, bez potrzeby custom convertera w babele-register.js.
+    """
+    return {
+        "path": "journal",
+        "converter": "document",
+        "documentType": "JournalEntry",
+        "cardinality": "many",
+        "mapping": {
+            "name": "name",
+            "pages": {
+                "path": "pages",
+                "converter": "document",
+                "documentType": "JournalEntryPage",
+                "cardinality": "many",
+                "mapping": {
+                    "name": "name",
+                    "text": "text.content",
+                    "overview": "system.overview",
+                    "exposition": "system.exposition",
+                    "summary": "system.summary",
+                    "developmentSecrets": "system.development.secrets",
+                }
+            }
+        }
+    }
+
+
+def ensure_adventure_journals_mapping(transifex_dict: dict) -> None:
+    transifex_dict.setdefault("mapping", {})
+    transifex_dict["mapping"]["journals"] = build_adventure_journals_mapping()
+
 def remove_unwanted_result_files() -> None:
     search_paths = (
         RESULTS_FOLDER,
@@ -510,24 +589,64 @@ def is_item_like_record(record: dict) -> bool:
 
     return isinstance(record.get("system"), dict)
 
+def build_item_reference_candidates(all_records: list[dict]) -> dict[str, list[dict]]:
+    """
+    Buduje pomocniczy indeks wyłącznie dla referencji Actor.items.
+
+    Nie zastępuje globalnego id_index. Jeżeli w packu kilka dokumentów Item ma
+    ten sam _id, zachowujemy wszystkie w kolejności z pliku. Dzięki temu
+    kolejne użycia tego samego klucza przez aktorów mogą dostać kolejne rekordy:
+    1. aktor -> 1. rekord Item o tym _id,
+    2. aktor -> 2. rekord Item o tym _id, itd.
+    """
+    candidates: dict[str, list[dict]] = {}
+
+    for record in all_records:
+        if not isinstance(record, dict):
+            continue
+
+        record_id = record.get("_id")
+        if not isinstance(record_id, str) or not record_id:
+            continue
+
+        if not is_item_like_record(record):
+            continue
+
+        candidates.setdefault(record_id, []).append(record)
+
+    return candidates
 
 def resolve_item_reference(
         item_ref,
         all_records: list[dict],
-        id_index: dict
+        id_index: dict,
+        item_reference_candidates: dict[str, list[dict]] | None = None,
+        item_reference_cursor: dict[str, int] | None = None
 ) -> dict | None:
-    """
-    Rozwiązuje referencję do Item bez przebudowy globalnego id_index.
-
-    Niektóre packi zawierają Item i jego ActiveEffect z identycznym _id.
-    Dla aktorów trzeba wybrać dokument Item, a nie ostatni rekord zapisany
-    pod tym identyfikatorem w zwykłym słowniku.
-    """
     if isinstance(item_ref, dict):
         return item_ref if is_item_like_record(item_ref) else None
 
     if not isinstance(item_ref, str) or not item_ref:
         return None
+
+    candidates = []
+    if isinstance(item_reference_candidates, dict):
+        candidates = item_reference_candidates.get(item_ref, [])
+
+    if candidates:
+        if len(candidates) == 1:
+            return candidates[0]
+
+        if item_reference_cursor is None:
+            item_reference_cursor = {}
+
+        cursor = item_reference_cursor.get(item_ref, 0)
+        item_reference_cursor[item_ref] = cursor + 1
+
+        if cursor < len(candidates):
+            return candidates[cursor]
+
+        return candidates[-1]
 
     for candidate in all_records:
         if (
@@ -547,7 +666,9 @@ def resolve_item_reference(
 def resolve_item_reference_list(
         ref_list,
         all_records: list[dict],
-        id_index: dict
+        id_index: dict,
+        item_reference_candidates: dict[str, list[dict]] | None = None,
+        item_reference_cursor: dict[str, int] | None = None
 ) -> list[dict]:
     resolved = []
 
@@ -559,7 +680,13 @@ def resolve_item_reference_list(
         references = []
 
     for item_ref in references:
-        record = resolve_item_reference(item_ref, all_records, id_index)
+        record = resolve_item_reference(
+            item_ref=item_ref,
+            all_records=all_records,
+            id_index=id_index,
+            item_reference_candidates=item_reference_candidates,
+            item_reference_cursor=item_reference_cursor
+        )
         if record:
             resolved.append(record)
 
@@ -600,7 +727,9 @@ def populate_reference_bucket(
         source_value,
         id_index: dict,
         transifex_dict: dict,
-        all_records: list[dict] | None = None
+        all_records: list[dict] | None = None,
+        item_reference_candidates: dict[str, list[dict]] | None = None,
+        item_reference_cursor: dict[str, int] | None = None
 ) -> None:
     if all_records is None:
         all_records = []
@@ -609,7 +738,9 @@ def populate_reference_bucket(
         resolved_records = resolve_item_reference_list(
             ref_list=source_value,
             all_records=all_records,
-            id_index=id_index
+            id_index=id_index,
+            item_reference_candidates=item_reference_candidates,
+            item_reference_cursor=item_reference_cursor
         )
     else:
         resolved_records = resolve_reference_list(source_value, id_index)
@@ -724,7 +855,9 @@ def populate_prototype_fields(
         id_index: dict,
         transifex_dict: dict,
         items_source=None,
-        all_records: list[dict] | None = None
+        all_records: list[dict] | None = None,
+        item_reference_candidates: dict[str, list[dict]] | None = None,
+        item_reference_cursor: dict[str, int] | None = None
 ) -> None:
     mapping_data = {
         "items": ("items", "adventure_items_converter"),
@@ -767,7 +900,9 @@ def populate_prototype_fields(
         source_value=items_source,
         id_index=id_index,
         transifex_dict=transifex_dict,
-        all_records=all_records
+        all_records=all_records,
+        item_reference_candidates=item_reference_candidates,
+        item_reference_cursor=item_reference_cursor
     )
 
     # ancestry/background/biography/archetype/taxonomy
@@ -996,26 +1131,35 @@ def populate_caption_entry(
 
     # Dzienniki
     if "journal" in new_data and isinstance(new_data["journal"], list):
+        ensure_adventure_journals_mapping(transifex_dict)
         entry.setdefault("journals", {})
+
         for journal in new_data["journal"]:
+            if not isinstance(journal, dict):
+                continue
+
             journal_name = (journal.get("name") or "").strip()
             if not journal_name:
                 continue
 
             entry["journals"].setdefault(journal_name, {})
-            entry["journals"][journal_name]["name"] = journal_name
-            entry["journals"][journal_name].setdefault("pages", {})
+            journal_entry = entry["journals"][journal_name]
+            journal_entry["name"] = journal_name
+            journal_entry.setdefault("pages", {})
 
             for page in journal.get("pages", []):
+                if not isinstance(page, dict):
+                    continue
+
                 page_name = (page.get("name") or "").strip()
                 if not page_name:
                     continue
 
-                entry["journals"][journal_name]["pages"].setdefault(page_name, {})
-                entry["journals"][journal_name]["pages"][page_name]["name"] = page_name
-                entry["journals"][journal_name]["pages"][page_name]["text"] = (
-                    " ".join(page.get("text", {}).get("content", "").split())
-                )
+                journal_entry["pages"].setdefault(page_name, {})
+                page_entry = journal_entry["pages"][page_name]
+                page_entry["name"] = page_name
+
+                page_entry.update(collect_ember_journal_page_fields(page))
 
     # Sceny
     if "scenes" in new_data and isinstance(new_data["scenes"], list):
@@ -1567,6 +1711,9 @@ def process_files(
             id_index.update(folder_id_index)
             id_index.update(build_id_index(data))
 
+            item_reference_candidates = build_item_reference_candidates(data)
+            item_reference_cursor: dict[str, int] = {}
+
             try:
                 compendium = data[0]
             except (KeyError, AttributeError, IndexError, TypeError):
@@ -1739,7 +1886,9 @@ def process_files(
                         new_data=new_data,
                         id_index=id_index,
                         transifex_dict=transifex_dict,
-                        all_records=data
+                        all_records=data,
+                        item_reference_candidates=item_reference_candidates,
+                        item_reference_cursor=item_reference_cursor
                     )
 
             transifex_dict = remove_empty_keys(transifex_dict)
