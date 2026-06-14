@@ -2,8 +2,8 @@ import json
 import os
 import pathlib
 import shutil
-import plyvel
 
+import plyvel
 
 SOURCE_PACKAGE_FOLDER = pathlib.Path("ember")
 RESULTS_FOLDER = pathlib.Path("results")
@@ -93,6 +93,7 @@ def collect_ember_journal_page_fields(page: dict) -> dict:
 
     return collected
 
+
 def build_adventure_journals_mapping() -> dict:
     """
     Zagnieżdżone mapowanie dla dzienników osadzonych w Adventure.
@@ -130,6 +131,7 @@ def ensure_adventure_journals_mapping(transifex_dict: dict) -> None:
     transifex_dict.setdefault("mapping", {})
     transifex_dict["mapping"]["journals"] = build_adventure_journals_mapping()
 
+
 def remove_unwanted_result_files() -> None:
     search_paths = (
         RESULTS_FOLDER,
@@ -143,11 +145,13 @@ def remove_unwanted_result_files() -> None:
                 file_path.unlink()
                 print(f"Usunięto zbędny plik: {file_path}")
 
+
 def remove_temp_folder() -> None:
     return
     if TEMP_FOLDER.exists():
         shutil.rmtree(TEMP_FOLDER)
         print(f"Usunięto folder tymczasowy: {TEMP_FOLDER}")
+
 
 def find_local_package_root(source_folder: pathlib.Path) -> pathlib.Path:
     source_folder = source_folder.resolve()
@@ -181,9 +185,9 @@ def load_local_manifest(package_root: pathlib.Path) -> dict:
 
 
 def prepare_local_ember_source(
-    source_folder: pathlib.Path = SOURCE_PACKAGE_FOLDER,
-    results_folder: pathlib.Path = RESULTS_FOLDER,
-    temp_json_folder: pathlib.Path = TEMP_JSON_FOLDER
+        source_folder: pathlib.Path = SOURCE_PACKAGE_FOLDER,
+        results_folder: pathlib.Path = RESULTS_FOLDER,
+        temp_json_folder: pathlib.Path = TEMP_JSON_FOLDER
 ) -> tuple[pathlib.Path, pathlib.Path, dict, str]:
     package_root = find_local_package_root(source_folder)
 
@@ -217,9 +221,9 @@ def prepare_local_ember_source(
 
     manifest = load_local_manifest(package_root)
     package_id = (
-        manifest.get("id")
-        or manifest.get("name")
-        or package_root.name
+            manifest.get("id")
+            or manifest.get("name")
+            or package_root.name
     )
 
     return package_root, temp_json_folder, manifest, package_id
@@ -485,6 +489,7 @@ def extract_description_text(record: dict) -> str:
 
     return ""
 
+
 def extract_biography_public(record: dict) -> str:
     if not isinstance(record, dict):
         return ""
@@ -501,6 +506,7 @@ def extract_biography_public(record: dict) -> str:
         return public_bio.strip()
 
     return ""
+
 
 def ensure_nested_mapping(transifex_dict: dict, key: str, path: str, converter: str) -> None:
     transifex_dict.setdefault("mapping", {})
@@ -589,6 +595,7 @@ def is_item_like_record(record: dict) -> bool:
 
     return isinstance(record.get("system"), dict)
 
+
 def build_item_reference_candidates(all_records: list[dict]) -> dict[str, list[dict]]:
     """
     Buduje pomocniczy indeks wyłącznie dla referencji Actor.items.
@@ -615,6 +622,7 @@ def build_item_reference_candidates(all_records: list[dict]) -> dict[str, list[d
         candidates.setdefault(record_id, []).append(record)
 
     return candidates
+
 
 def resolve_item_reference(
         item_ref,
@@ -650,9 +658,9 @@ def resolve_item_reference(
 
     for candidate in all_records:
         if (
-            isinstance(candidate, dict)
-            and candidate.get("_id") == item_ref
-            and is_item_like_record(candidate)
+                isinstance(candidate, dict)
+                and candidate.get("_id") == item_ref
+                and is_item_like_record(candidate)
         ):
             return candidate
 
@@ -720,7 +728,6 @@ def fill_translated_object_from_record(
     )
 
 
-
 def populate_reference_bucket(
         parent_entry: dict,
         bucket_name: str,
@@ -782,6 +789,7 @@ def populate_reference_bucket(
                 add_mapping=False
             )
 
+
 def populate_single_reference_object(
         parent_entry: dict,
         field_name: str,
@@ -807,7 +815,6 @@ def populate_single_reference_object(
     )
 
 
-
 def build_embedded_items_mapping() -> dict:
     """
     Deklaratywne mapowanie Babele 2.8+ dla Itemów osadzonych w Actorach.
@@ -824,7 +831,12 @@ def build_embedded_items_mapping() -> dict:
         "mapping": {
             "description": {
                 "path": "system.description",
-                "converter": "crucible_description_converter"
+                "converter": "structured",
+                "cardinality": "one",
+                "mapping": {
+                    "public": "public",
+                    "private": "private"
+                }
             },
             "actions": {
                 "path": "system.actions",
@@ -848,6 +860,7 @@ def build_embedded_items_mapping() -> dict:
             }
         }
     }
+
 
 def populate_prototype_fields(
         entry: dict,
@@ -1216,14 +1229,41 @@ def populate_caption_entry(
 
     # Przedmioty
     if "items" in new_data and isinstance(new_data["items"], list):
+        ensure_items_mapping_for_caption(transifex_dict)
         entry.setdefault("items", {})
+
         for item in new_data["items"]:
+            if not isinstance(item, dict):
+                continue
+
             item_name = (item.get("name") or "").strip()
             if not item_name:
                 continue
 
             entry["items"].setdefault(item_name, {})
-            entry["items"][item_name]["name"] = item_name
+            item_entry = entry["items"][item_name]
+            item_entry["name"] = item_name
+
+            item_description = extract_description_value(item)
+            if item_description not in ("", {}, None):
+                item_entry["description"] = item_description
+
+            add_actions_from_record(
+                target_entry=item_entry,
+                source_record=item,
+                fallback_name=item_name,
+                transifex_dict=transifex_dict,
+                add_mapping=False
+            )
+
+            populate_effects_object_from_refs(
+                entry=item_entry,
+                source_record=item,
+                all_records=all_records or [],
+                id_index=id_index,
+                transifex_dict=transifex_dict,
+                add_mapping=False
+            )
 
     # Playlisty
     if "playlists" in new_data and isinstance(new_data["playlists"], list):
@@ -1314,6 +1354,7 @@ def populate_rules_entry(entry: dict, new_data: dict, id_index: dict, transifex_
             entry["pages"].setdefault(page_name, {})
             entry["pages"][page_name]["name"] = page_name
             entry["pages"][page_name]["text"] = text_content
+
 
 def add_actions_from_record_by_id(target_entry: dict, source_record: dict) -> None:
     actions = source_record.get("system", {}).get("actions", [])
@@ -1433,7 +1474,8 @@ def is_effect_like_record(record: dict, source_record: dict | None = None) -> bo
     return False
 
 
-def resolve_effect_reference(effect_ref, all_records: list[dict], id_index: dict, source_record: dict | None = None) -> dict | None:
+def resolve_effect_reference(effect_ref, all_records: list[dict], id_index: dict,
+                             source_record: dict | None = None) -> dict | None:
     """
     Rozwiązuje effects bez przebudowywania id_index na listę rekordów.
     Najpierw skanuje oryginalne dane i wybiera rekord wyglądający jak ActiveEffect,
@@ -1448,8 +1490,8 @@ def resolve_effect_reference(effect_ref, all_records: list[dict], id_index: dict
     candidates = [
         record for record in all_records
         if isinstance(record, dict)
-        and record.get("_id") == effect_ref
-        and record is not source_record
+           and record.get("_id") == effect_ref
+           and record is not source_record
     ]
 
     for candidate in candidates:
@@ -1477,9 +1519,9 @@ def extract_effect_changes(effect_obj: dict):
             key: value.strip()
             for key, value in changes.items()
             if isinstance(key, str)
-            and key.strip()
-            and isinstance(value, str)
-            and value.strip()
+               and key.strip()
+               and isinstance(value, str)
+               and value.strip()
         }
 
     if isinstance(changes, list):
@@ -1502,6 +1544,7 @@ def extract_effect_changes(effect_obj: dict):
         return result
 
     return {}
+
 
 def build_effect_translation(effect_obj: dict) -> dict:
     if not isinstance(effect_obj, dict):
@@ -1569,10 +1612,10 @@ def populate_effects_object_from_refs(
             continue
 
         effect_key = (
-            effect_obj.get("name")
-            or effect_obj.get("label")
-            or effect_obj.get("_id")
-            or (effect_ref if isinstance(effect_ref, str) else "")
+                effect_obj.get("name")
+                or effect_obj.get("label")
+                or effect_obj.get("_id")
+                or (effect_ref if isinstance(effect_ref, str) else "")
         )
 
         if not isinstance(effect_key, str) or not effect_key.strip():
@@ -1644,7 +1687,6 @@ def collect_pack_labels(module_meta: dict) -> dict:
             labels[pack_name] = pack_label
 
     return labels
-
 
 
 def build_simple_global_id_index(folder: str) -> dict:
@@ -1805,15 +1847,12 @@ def process_files(
                     populate_caption_entry(entry, new_data, id_index, transifex_dict, all_records=data)
 
                 # zwykłe opisy
-                if 'prototypeToken' not in keys and pack_name not in ['weapon']:
+                if 'prototypeToken' not in keys:
                     if 'caption' not in keys:
                         flag.append('description')
 
-                    description = new_data.get("system", {}).get("description")
-                    if description is None:
-                        description = new_data.get("description", "")
-
-                    if description:
+                    description = extract_description_value(new_data)
+                    if description not in ("", {}, None):
                         entry["description"] = description
 
                     if pack_name != "equipment":
@@ -1898,8 +1937,6 @@ def process_files(
                 json.dump(transifex_dict, outfile, ensure_ascii=False, indent=4)
 
             dict_key.append(f'{compendium.keys()}')
-
-
 
 
 if __name__ == '__main__':
