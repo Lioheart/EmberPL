@@ -1,5 +1,5 @@
 {
-    "label": "Opcje postaci",
+    "label": "Opcje postaci Ember",
     "folders": {
         "Ancestries": "Pochodzenia",
         "Ancestry Features": "Zdolności pochodzenia",
@@ -93,7 +93,7 @@
         },
         "Ashka Lineage": {
             "name": "Rodowód Ashki",
-            "description": "<p>Twój <strong>bieg</strong> nie ulega zmniejszeniu, gdy znajdujesz się w wodzie. Pod wodą możesz wstrzymywać oddech nawet przez dwadzieścia minut.</p><p>Potrafisz precyzyjnie wykrywać subtelne różnice temperatur, co pozwala ci zlokalizować stworzenia ciepłokrwiste lub w inny sposób emitujące ciepło w odległości do 60 stóp, o ile nie znajdują się one za całkowitą osłoną, a ty nie jesteś <strong>oślepiony</strong> ani <strong>obezwładniony</strong>. Stworzenie wykryte za pomocą widzenia termicznego traktuje się jako widoczne dla celów akcji wymagających dostrzeżenia celu.</p><p><strong>ALPHA ONE: </strong>Ta funkcja nie jest jeszcze zautomatyzowana.</p>"
+            "description": "<p>Twój <strong>bieg</strong> nie podlega obniżeniu, gdy znajdujesz się w wodzie. Pod wodą możesz wstrzymywać oddech nawet przez dwadzieścia minut.</p><p>Postrzegasz świat z niezwykłą precyzją dzięki różnicom temperatur, co pozwala ci lokalizować stworzenia, których temperatura ciała odbiega od norm otoczenia. Dzięki temu możesz wykrywać stworzenia, których temperatura ciała jest <strong>Lodowata</strong>, <strong>Chłodna</strong>, <strong>Ciepła</strong> lub <strong>Gorąca</strong> w odległości do 60 stóp, o ile nie znajdują się one za całkowitą osłoną, a ty nie jesteś w stanie @Condition[blinded] ani @Condition[incapacitated]. Stworzenie wykryte w ten sposób jest traktowane jako widoczne dla celów akcji wymagających dostrzeżenia celu.</p>"
         },
         "Aster": {
             "name": "Aster",
@@ -101,7 +101,7 @@
         },
         "Aura Attunement": {
             "name": "Dostrajanie Aury",
-            "description": "<p>Twoja dusza rezonuje z dostrojeniem do @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.smc0OuMxsxfcSdhR]{Aury}, Pustego Księżyca, i jej filozoficznego ideału <strong>Indywidualizmu</strong>.</p><p>Zyskujesz następujące korzyści, które poprawiają się wraz z twoją rangą dostrojenia.</p><ul><li><p><strong>Ranga 1</strong>: Zyskujesz odporność na obrażenia od <strong>Elektryczności</strong> równą 2 razy twoja ranga dostrojenia.</p></li><li><p><strong>Ranga 2</strong>: Odblokowujesz akcję @Action[Compendium.ember.crucible-character.Item.emberAuraAttunem auraSlipstream], która po ruchu otacza cię powietrznym przemieszczeniem.</p></li><li><p><strong>Ranga 3</strong>: Twój <strong>Bieg</strong> wzrasta o 2 za każdą rangę dostrojenia powyżej 2.</p></li><li><p><strong>Ranga 4</strong>: Odblokowujesz <strong>Auryczną</strong> fleksję Czaroznastwa, którą można zastosować do zaklęć używających runy <strong>Błyskawicy</strong>. Po rzuceniu zaklęcia odzyskujesz swój <strong>Darmowy Ruch</strong>.</p></li><li><p><strong>Ranga 5</strong>: Odblokowujesz akcję @Action[Compendium.ember.crucible-character.Item.emberAuraAttunem auraBoundless], która zapewnia lot oraz niewrażliwość na szereg stanów ograniczających ruch.</p></li> </ul>",
+            "description": "<p>Twoja dusza rezonuje z dostrojeniem do @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.smc0OuMxsxfcSdhR]{Aury}, Pustego Księżyca, i jej filozoficznego ideału <strong>Indywidualizmu</strong>.</p><p>Zyskujesz następujące korzyści, które poprawiają się wraz z twoją rangą dostrojenia.</p><ul><li><p><strong>Ranga 1</strong>: Zyskujesz odporność na obrażenia od <strong>Elektryczności</strong> równą 2 razy twoja ranga dostrojenia.</p></li><li><p><strong>Ranga 2</strong>: Odblokowujesz akcję @Action[Compendium.ember.crucible-character.Item.emberAuraAttunem auraSlipstream], która po ruchu otacza cię powietrznym przemieszczeniem.</p></li><li><p><strong>Ranga 3</strong>: Twój <strong>Bieg</strong> wzrasta o 2 za każdą rangę dostrojenia powyżej 2.</p></li><li><p><strong>Ranga 4</strong>: Odblokowujesz <strong>Auryczną</strong> fleksję Czaroznastwa, którą można zastosować do zaklęć używających runy <strong>Burzy</strong>. Po rzuceniu zaklęcia odzyskujesz swój <strong>Darmowy Ruch</strong>.</p></li><li><p><strong>Ranga 5</strong>: Odblokowujesz akcję @Action[Compendium.ember.crucible-character.Item.emberAuraAttunem auraBoundless], która zapewnia lot oraz niewrażliwość na szereg stanów ograniczających ruch.</p></li> </ul>",
             "actions": {
                 "Slipstream": {
                     "name": "Struga powietrza",
@@ -115,7 +115,7 @@
                 },
                 "Boundless": {
                     "name": "Bezgraniczny",
-                    "description": "<p>Przez 6 rund możesz latać i nie podlegasz stanom @Condition[slowed], @Condition[prone], @Condition[restrained], @Condition[staggered], @Condition[stunned] ani @Condition[paralyzed]. Gdy zdolność Bezgraniczny jest aktywna, wszystkie zaklęcia rzucane z użyciem runy <strong>Błyskawica</strong> są <strong>Wzmocnione</strong>.</p>",
+                    "description": "<p>Przez 6 rund możesz latać i nie podlegasz stanom @Condition[slowed], @Condition[prone], @Condition[restrained], @Condition[staggered], @Condition[stunned] ani @Condition[paralyzed]. Gdy zdolność Bezgraniczny jest aktywna, wszystkie zaklęcia rzucane z użyciem runy <strong>Burzy</strong> są <strong>Wzmocnione</strong>.</p>",
                     "effects": [
                         {
                             "name": "Bezgraniczny"
@@ -218,7 +218,7 @@
         },
         "Exceptional Taste": {
             "name": "Wyjątkowy smak",
-            "description": "<p><strong>BETA TWO</strong>: Ta umiejętność nie została jeszcze dostosowana do mechaniki trybu Crucible.</p>"
+            "description": "<p>Twój strój jest potężniejszym narzędziem w radzeniu sobie w sytuacjach społecznych niż jakiekolwiek ostrze czy zaklęcie. Gdy nosisz ubranie o jakości co najmniej <strong>Dobrej</strong>, które nie jest <strong>zniszczone</strong>, zyskujesz <strong>+2 korzyści</strong> do testów umiejętności <strong>Oszustwa</strong>, <strong>Dyplomacji</strong> oraz <strong>Zastraszania</strong>.</p>"
         },
         "Explosives Training": {
             "name": "Szkolenie z materiałów wybuchowych",
@@ -399,7 +399,7 @@
         },
         "Lunar Tattoos": {
             "name": "Tatuaże księżycowe",
-            "description": "<p><strong>BETA TWO</strong>: Ta umiejętność nie została jeszcze dostosowana do mechaniki trybu Crucible.</p>"
+            "description": "<p>Twoje świetliste tatuaże rezonują z energią księżyców żywiołów Ember. Gdy jeden lub więcej księżyców jest w pełni, otrzymujesz <strong>+2 odporności</strong> na obrażenia odpowiadającego im typu:</p><ul><li><p><strong>Aura</strong> - odporność na <strong>Elektryczność</strong></p></li><li><p><strong>Cora</strong> - odporność na <strong>Kwas</strong></p></li><li><p><strong>Mayis</strong> - odporność na <strong>Zimno</strong></p></li><li><p><strong>Ragen</strong> - odporność na <strong>Ogień</strong></p></li><li><p><strong>Akon</strong> - odporność na <strong>Kłute</strong></p></li><li><p><strong>Orbis</strong> - odporność na <strong>Psychiczne</strong></p></li></ul>"
         },
         "Luxarum Attunement": {
             "name": "Dostrajanie Luksarum",
@@ -442,7 +442,7 @@
         },
         "Mistrust of Magic": {
             "name": "Nieufność wobec magii",
-            "description": "<p><strong>BETA TWO</strong>: Ta umiejętność nie została jeszcze dostosowana do mechaniki trybu Crucible.</p>"
+            "description": "<p>Twoja czujność wobec wpływów magicznych pozwala ci lepiej oprzeć się złowrogim skutkom. Ataki zaklęciami skierowane przeciwko tobie, które mają na cel twoją obronę <strong>Wolę</strong>, ponoszą karę <strong>+2 Zgub</strong>.</p>"
         },
         "Monster Hunter": {
             "name": "Łowca potworów",
@@ -742,7 +742,7 @@
         },
         "Zeph Lineage": {
             "name": "Rodowód Zefa",
-            "description": "<p>Znasz <strong>Runę Błyskawicy</strong> i potrafisz jej używać do tworzenia zaklęć.</p><p>Maska Zefa posiada ograniczoną zdolność do nadprzyrodzonej plastyczności. Możesz nieznacznie zmieniać swoją maskę, aby ułatwić komunikację i wyrazić emocje. Po śmierci pozostaje tylko twoja maska. Twoja maska traktowana jest jako twoje szczątki fizyczne w przypadku zaklęć lub efektów magicznych skierowanych przeciwko zmarłej istocie.</p><p>Niezgłębiona natura twojej maski utrudnia odgadnięcie twoich intencji. Podczas wyzwań społecznych, <strong>testy Świadomości</strong> mające na celu odgadnięcie twoich motywów otrzymują <strong>+2 zguby</strong>.</p>",
+            "description": "<p>Znasz <strong>Runę Burzy</strong> i potrafisz jej używać do tworzenia zaklęć.</p><p>Maska Zefa posiada ograniczoną zdolność do nadprzyrodzonej plastyczności. Możesz nieznacznie zmieniać swoją maskę, aby ułatwić komunikację i wyrazić emocje. Po śmierci pozostaje tylko twoja maska. Twoja maska traktowana jest jako twoje szczątki fizyczne w przypadku zaklęć lub efektów magicznych skierowanych przeciwko zmarłej istocie.</p><p>Niezgłębiona natura twojej maski utrudnia odgadnięcie twoich intencji. Podczas wyzwań społecznych, <strong>testy Świadomości</strong> mające na celu odgadnięcie twoich motywów otrzymują <strong>+2 zguby</strong>.</p>",
             "actions": {
                 "Inscrutable Visage": {
                     "name": "Niezgłębiona twarz",
