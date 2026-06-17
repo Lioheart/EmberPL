@@ -1,10 +1,11 @@
 {
-    "label": "Adversary Options",
+    "label": "Ember Adversary Options",
     "folders": {
         "Fey": "Fey",
         "Oozes": "Oozes",
         "Beasts": "Beasts",
         "Undead": "Undead",
+        "Elemental": "Elemental",
         "Archetypes": "Archetypes",
         "Constructs": "Constructs",
         "Beast": "Beast",
@@ -178,6 +179,10 @@
             "name": "Crevvet",
             "description": "<section class=\"block readaloud\"><p>This tiny, six-legged rodent is covered in light gray fur and has four beady eyes the color of glittering emeralds. Its front limbs end in rather prodigious claws (especially for its size), which it uses to burrow to and fro through the crumbling earth.</p></section>"
         },
+        "Crystallath": {
+            "name": "Crystallath",
+            "description": "<p>Towering crystalline elementals of dark stone threaded with veins of living gem: intelligent, patient, and rare. A Crystallath has no true anatomy, only mineral, and the magical energy held in its facets blunts incoming spells. It bends earth and gravity to hurl stone, hold foes, and crush them from afar.</p>"
+        },
         "Echo": {
             "name": "Echo",
             "description": "<p>Abyssal Echoes are monsters of pure evil, beings of twisted hatred from beyond the world of Ember. They possess a cruel basic intelligence that enables them to seek out and hunt natural creatures of Ember, ambushing them in the darkness and tearing them apart.</p>"
@@ -264,6 +269,10 @@
         "Garganthus": {
             "name": "Garganthus",
             "description": "<p>Malicious, hulking, quadrupedal Pathways predators known for their tenebrous, scaly flesh, six limbs, vicious claws, and spear-like fangs.</p>"
+        },
+        "Globlin": {
+            "name": "Globlin",
+            "description": "<p>Small, chaotic elementals of loose dirt, mud, or gravel held together by elemental magic from Cora. Among the weakest of Cora's host, but crafty, mischievous, and genuinely dangerous in large packs.</p>"
         },
         "Gore Bird": {
             "name": "Gore Bird",
@@ -355,6 +364,29 @@
         "Mutagenic Blindness": {
             "name": "Mutagenic Blindness"
         },
+        "Obsidian Brood": {
+            "name": "Obsidian Brood",
+            "description": "<p>The towering vine seeds the battlefield with lesser offshoots of itself and goads them to lash out as an extension of its own will.</p>",
+            "actions": {
+                "Spawn Offshoot": {
+                    "name": "Spawn Offshoot",
+                    "description": "<p>The @ref[actor.name]{vine} forces a lesser <strong>Obsidian Outgrowth</strong> to erupt from the earth within 30 feet. The offshoot fights as a bound servitor and persists until destroyed.</p>"
+                },
+                "Direct the Brood": {
+                    "name": "Direct the Brood",
+                    "description": "<p>The @ref[actor.name]{vine} sends a commanding pulse through the earth. Each allied <strong>Obsidian Outgrowth</strong> within 20 feet gains the @Condition[hastened] condition until the start of the vine's next turn, spurred to strike and reposition with unnatural speed.</p>",
+                    "effects": [
+                        {
+                            "name": "Directed"
+                        }
+                    ]
+                }
+            }
+        },
+        "Obsidian Vine": {
+            "name": "Obsidian Vine",
+            "description": "<p>A mindless, towering tendril of black volcanic glass that bursts from the earth, studded down its length with razor obsidian thorns. It has no eyes, no breath, and no mind: only the instinct to whip, wrap, and crush. Hard but brittle, it shatters under a heavy enough blow, yet shrugs off acid and poison entirely.</p>"
+        },
         "Pallid Drake": {
             "name": "Pallid Drake",
             "description": "<p>These creatures have only recently been encountered on Ember, and their origins are wholly unknown. Despite their close resemblance to Vile Dragons, they do not possess the same abilities, and only limited biological similarities. They appear to be a chimerical blend of snake and dragon, perhaps indicating they are of magical origin. This newfound presence has stirred considerable intrigue and concern among researchers and adventurers alike, as these new creatures could indicate a change in the norm, and a rise of new, dangerous, draconic foes.</p>"
@@ -434,9 +466,29 @@
             "name": "Skither",
             "description": "<p>Often used as a particularly destructive breed of messengers among tyraphem, who deploy them to leave burning messages on the property and bodies of their enemies, skithers use their small size and ability to camouflage themselves, putting themselves into positions where their chosen target will not be able to put up a defense. Dedicated to creating carnage where they can for the more powerful creatures they serve, skithers have known to follow a target for miles and will overload their bodies with radiant energy when they believe they have lost a fight, determined to harm the target even if they have to give up their own lives in the process.</p>"
         },
+        "Stalagmaw": {
+            "name": "Stalagmaw",
+            "description": "<p>Hulking quadrupedal colossi of living cave-stone, their crumbling skeletons bound together by fields of elemental gravity. A Stalagmaw drags its vast bulk through the deep earth and erupts to crush and devour whatever crosses its path.</p>"
+        },
         "Suarrok": {
             "name": "Suarrok",
             "description": "<p>Monstrous winged predators that nest in high, rocky crags. Suarrok are exceeding strange creatures, with singular eye, feathers, bat-like wings, two tails, and a long, piercing beak. They are surprisingly agile despite their strange form, and their eyes possess considerable magical power, capable of harming creatures through simple stares alone.</p>"
+        },
+        "Subterranean Vine": {
+            "name": "Subterranean Vine",
+            "description": "<p>While entombed beneath the surface the great vine knits its shattered glass back together and surges through the earth to erupt anew from one of its own offshoots.</p>",
+            "actions": {
+                "Subterranean Regrowth": {
+                    "name": "Subterranean Regrowth",
+                    "condition": "While burrowing.",
+                    "description": "<p>While @Condition[burrowing], the @ref[actor.name]{vine} draws raw material from the surrounding earth to mend its fractured length, recovering a substantial amount of <strong>Health</strong>.</p>"
+                },
+                "Eruptive Recall": {
+                    "name": "Eruptive Recall",
+                    "condition": "Reaction: an Obsidian Outgrowth is destroyed while you are burrowing.",
+                    "description": "<p>When one of its <strong>Obsidian Outgrowths</strong> is destroyed while the @ref[actor.name]{vine} is @Condition[burrowing], the vine is wrenched through the earth to the fallen offshoot, surging across elevations and levels as needed and erupting from the ground in its place. The destroyed offshoot is consumed and the vine emerges, ending the @Condition[burrowing] condition.</p>"
+                }
+            }
         },
         "Swallowed Screams": {
             "name": "Swallowed Screams",

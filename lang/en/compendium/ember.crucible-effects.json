@@ -1,0 +1,65 @@
+{
+    "label": "Ember Effects",
+    "folders": {
+        "Attunement": "Attunement",
+        "Blessings": "Blessings",
+        "Curses": "Curses"
+    },
+    "entries": {
+        "Blessing of Abyss": {
+            "name": "Blessing of Abyss",
+            "description": "<p>You are blessed by the power of Abyss. While this blessing endures, your attunement to Abyss is heightened, granting <strong>+5</strong> attunement points toward your effective rank, which may temporarily elevate your Abyss attunement to a higher rank.</p>"
+        },
+        "Blessing of Akon": {
+            "name": "Blessing of Akon",
+            "description": "<p>You are blessed by the power of Akon. While this blessing endures, your attunement to Akon is heightened, granting <strong>+5</strong> attunement points toward your effective rank, which may temporarily elevate your Akon attunement to a higher rank.</p>"
+        },
+        "Blessing of Aura": {
+            "name": "Blessing of Aura",
+            "description": "<p>You are blessed by the power of Aura. While this blessing endures, your attunement to Aura is heightened, granting <strong>+5</strong> attunement points toward your effective rank, which may temporarily elevate your Aura attunement to a higher rank.</p>"
+        },
+        "Blessing of Cora": {
+            "name": "Blessing of Cora",
+            "description": "<p>You are blessed by the power of Cora. While this blessing endures, your attunement to Cora is heightened, granting <strong>+5</strong> attunement points toward your effective rank, which may temporarily elevate your Cora attunement to a higher rank.</p>"
+        },
+        "Blessing of Heart": {
+            "name": "Blessing of Heart",
+            "description": "<p>You are blessed by the power of Heart. While this blessing endures, your attunement to Heart is heightened, granting <strong>+5</strong> attunement points toward your effective rank, which may temporarily elevate your Heart attunement to a higher rank.</p>"
+        },
+        "Blessing of Luxarum": {
+            "name": "Blessing of Luxarum",
+            "description": "<p>You are blessed by the power of Luxarum. While this blessing endures, your attunement to Luxarum is heightened, granting <strong>+5</strong> attunement points toward your effective rank, which may temporarily elevate your Luxarum attunement to a higher rank.</p>"
+        },
+        "Blessing of Mayis": {
+            "name": "Blessing of Mayis",
+            "description": "<p>You are blessed by the power of Mayis. While this blessing endures, your attunement to Mayis is heightened, granting <strong>+5</strong> attunement points toward your effective rank, which may temporarily elevate your Mayis attunement to a higher rank.</p>"
+        },
+        "Blessing of Orbis": {
+            "name": "Blessing of Orbis",
+            "description": "<p>You are blessed by the power of Orbis. While this blessing endures, your attunement to Orbis is heightened, granting <strong>+5</strong> attunement points toward your effective rank, which may temporarily elevate your Orbis attunement to a higher rank.</p>"
+        },
+        "Blessing of Primordis": {
+            "name": "Blessing of Primordis",
+            "description": "<p>You are blessed by the power of Primordis. While this blessing endures, your attunement to Primordis is heightened, granting <strong>+5</strong> attunement points toward your effective rank, which may temporarily elevate your Primordis attunement to a higher rank.</p>"
+        },
+        "Blessing of Ragen": {
+            "name": "Blessing of Ragen",
+            "description": "<p>You are blessed by the power of Ragen. While this blessing endures, your attunement to Ragen is heightened, granting <strong>+5</strong> attunement points toward your effective rank, which may temporarily elevate your Ragen attunement to a higher rank.</p>"
+        },
+        "Blessing of Signara": {
+            "name": "Blessing of Signara",
+            "description": "<p>You are blessed by the power of Signara. While this blessing endures, your attunement to Signara is heightened, granting <strong>+5</strong> attunement points toward your effective rank, which may temporarily elevate your Signara attunement to a higher rank.</p>"
+        },
+        "Luminous Crystallization": {
+            "name": "Luminous Crystallization",
+            "description": "<p>The afflicted creature's flesh is slowly transmuted into a luminous, crystalline substance by the touch of an Uncanny Relic. The transformation is painful and spreading, hardening the limbs and creeping inexorably toward the core.</p><ul><li><p>The afflicted suffers the @Condition[slowed] condition as crystalline rigidity takes hold of their body.</p></li><li><p>The brittle crystal is easily shattered and corroded: the afflicted is <strong>Vulnerable</strong> to <strong>Bludgeoning</strong> and <strong>Acid</strong> damage, suffering -5 resistance to each.</p></li><li><p>Conversely, the luminous crystal drinks in light, granting +10 <strong>Radiant</strong> resistance.</p></li></ul>"
+        },
+        "The Bewilderment": {
+            "name": "The Bewilderment",
+            "description": "<p>The afflicted creature's mind is gripped by @UUID[JournalEntry.pod4PApXHuZgXwHo.JournalEntryPage.jw0mOUcqhJPRajUY]{The Bewilderment}, a creeping arcane confusion that does not relent.</p><ul><li><p>The afflicted suffers the @Condition[disoriented] condition for as long as the curse persists.</p></li><li><p>The afflicted creature's maximum <strong>Morale</strong> is reduced by half.</p></li><li><p>The mind's fraying defenses leave the afflicted <strong>Vulnerable</strong> to <strong>Corruption</strong> damage, suffering -5 resistance.</p></li></ul>"
+        }
+    },
+    "mapping": {
+        "description": "description"
+    }
+}

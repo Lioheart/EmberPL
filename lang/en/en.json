@@ -114,6 +114,7 @@
   "Tab": "Attunements",
   "Type": "Attunement Type",
   "Rank": "Rank",
+  "BoostChangeType": "Attunement Boost",
   "CurrentTooltip": "Attunement points gained",
   "NextTooltip": "Required for next rank"
 },
@@ -128,6 +129,8 @@
   "COLLAPSE": "Collapse Calendar",
   "PARTY": "Party Sheet",
   "CODEX": "Codex",
+  "TIME_FORMAT_12": "12-Hour (e.g. 4:00pm)",
+  "TIME_FORMAT_24": "24-Hour (e.g. 16:00)",
   "SEASONS": {
     "STILLING": "Stilling",
     "SEEDING": "Seeding",
@@ -234,6 +237,7 @@
 "EMBER.EventActionComplete": "Complete Event",
 "EMBER.EventActionDiscoveryComplete": "Complete Discovery",
 "EMBER.EventActionDiscoveryDecline": "Decline Discovery",
+"EMBER.ReadaloudSendToChat": "Send to Chat",
 
 "EMBER.EmberStorylineLegend.Title": "Storylines",
 "EMBER.EmberStorylineLegend.StateNone": "Hidden",
@@ -832,6 +836,10 @@
       "label": "Quest ID",
       "hint": "A required unique identifier for the quest. The quest ID should be alphanumeric, camel-case, and begin with a lowercase letter. For example \"specialQuest3\"."
     },
+    "chapter": {
+      "label": "Campaign Chapter",
+      "hint": "Specify a campaign chapter to which this quest belongs."
+    },
     "regionId": {
       "label": "Region ID",
       "hint": "Configure which region of the game world this Quest is primarily associated with."
@@ -848,6 +856,26 @@
   "SECTIONS": {
     "basic": "Basic Configuration"
   }
+},
+
+"EMBER.CHAPTERS": {
+  "PROLOGUE": "Prologue",
+  "CHAPTER": "Chapter {n}",
+  "LEVEL": "Level {x}",
+  "LEVELS": "Levels {x}-{y}",
+  "LEVEL_PLUS": "Level {x}+",
+  "UNASSIGNED": "Unassigned"
+},
+
+"EMBER.CONTENT_CONFIG": {
+  "TITLE": "Configure Enabled Content",
+  "MENU_NAME": "Enabled Game Content",
+  "MENU_LABEL": "Configure Content",
+  "MENU_HINT": "Choose which quests are enabled for this campaign. Disabled quests and their events are removed from gameplay until re-enabled.",
+  "HINT": "Customize which Ember quests are currently active. All quests are active by default, but the user may selectively disable quests in order to play a specific subset of the campaign as a more limited experience.",
+  "ALL_QUESTS": "All Quests",
+  "SAVE": "Save Configuration",
+  "RESET": "Reset"
 },
 
 "EMBER.CONST": {

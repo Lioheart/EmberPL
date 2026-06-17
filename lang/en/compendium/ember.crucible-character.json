@@ -1,5 +1,5 @@
 {
-    "label": "Character Options",
+    "label": "Ember Character Options",
     "folders": {
         "Ancestries": "Ancestries",
         "Ancestry Features": "Ancestry Features",
@@ -93,7 +93,7 @@
         },
         "Ashka Lineage": {
             "name": "Ashka Lineage",
-            "description": "<p>Your <strong>Stride</strong> is not penalized while in water. You can hold your breath while underwater for up to twenty minutes.</p><p>You can detect subtle differences in temperature with precision, allowing you to locate creatures which are warm-blooded or otherwise emit heat up to 60 feet away as long as they are not behind total cover and you are not <strong>Blinded</strong> or <strong>Incapacitated</strong>. A creature detected using Thermal Vision is treated as visible for the purposes of actions which require you to see your target.</p><p><strong>ALPHA ONE: </strong>This feature is not yet automated.</p>"
+            "description": "<p>Your <strong>Stride</strong> is not penalized while in water. You can hold your breath while underwater for up to twenty minutes.</p><p>You perceive the world through differences in temperature with precision, allowing you to locate creatures whose bodily temperature deviates from ambient norms. This allows you to detect creatures whose body temperatures are <strong>Gelid</strong>, <strong>Cool</strong>, <strong>Warm</strong>, or <strong>Boiling</strong> up to 60 feet away as long as they are not behind total cover and you are not @Condition[blinded] or @Condition[incapacitated]. A creature detected in this way is treated as visible for the purposes of actions which require you to see your target.</p>"
         },
         "Aster": {
             "name": "Aster",
@@ -101,7 +101,7 @@
         },
         "Aura Attunement": {
             "name": "Aura Attunement",
-            "description": "<p>Your soul resonates with attunement to @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.smc0OuMxsxfcSdhR]{Aura}, The Hollow Moon, and its philosophical ideal of <strong>Individualism</strong>.</p><p>You gain the following benefits which improve with your attunement rank.</p><ul><li><p><strong>Rank 1</strong>: You gain resistance to <strong>Electricity</strong> damage equal to 2 times your attunement rank.</p></li><li><p><strong>Rank 2</strong>: You unlock the @Action[Compendium.ember.crucible-character.Item.emberAuraAttunem auraSlipstream] action which surrounds you with airy displacement after you move.</p></li><li><p><strong>Rank 3</strong>: Your <strong>Stride</strong> is increased by 2 per attunement rank above 2.</p></li><li><p><strong>Rank 4</strong>: You unlock the <strong>Auric</strong> spellcraft inflection which may be applied to spells that use the <strong>Lightning</strong> rune. After casting, you recover your <strong>Free Move</strong>.</p></li><li><p><strong>Rank 5</strong>: You unlock the @Action[Compendium.ember.crucible-character.Item.emberAuraAttunem auraBoundless] action which grants flight and immunity to a range of movement-impairing conditions.</p></li> </ul>",
+            "description": "<p>Your soul resonates with attunement to @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.smc0OuMxsxfcSdhR]{Aura}, The Hollow Moon, and its philosophical ideal of <strong>Individualism</strong>.</p><p>You gain the following benefits which improve with your attunement rank.</p><ul><li><p><strong>Rank 1</strong>: You gain resistance to <strong>Electricity</strong> damage equal to 2 times your attunement rank.</p></li><li><p><strong>Rank 2</strong>: You unlock the @Action[Compendium.ember.crucible-character.Item.emberAuraAttunem auraSlipstream] action which surrounds you with airy displacement after you move.</p></li><li><p><strong>Rank 3</strong>: Your <strong>Stride</strong> is increased by 2 per attunement rank above 2.</p></li><li><p><strong>Rank 4</strong>: You unlock the <strong>Auric</strong> spellcraft inflection which may be applied to spells that use the <strong>Storm</strong> rune. After casting, you recover your <strong>Free Move</strong>.</p></li><li><p><strong>Rank 5</strong>: You unlock the @Action[Compendium.ember.crucible-character.Item.emberAuraAttunem auraBoundless] action which grants flight and immunity to a range of movement-impairing conditions.</p></li> </ul>",
             "actions": {
                 "Slipstream": {
                     "name": "Slipstream",
@@ -115,7 +115,7 @@
                 },
                 "Boundless": {
                     "name": "Boundless",
-                    "description": "<p>You can fly and cannot be afflicted by the @Condition[slowed], @Condition[prone], @Condition[restrained], @Condition[staggered], @Condition[stunned], or @Condition[paralyzed] conditions for 6 Rounds. While Boundless is active, all spells you cast with the <strong>Lightning</strong> rune are <strong>Empowered</strong>.</p>",
+                    "description": "<p>You can fly and cannot be afflicted by the @Condition[slowed], @Condition[prone], @Condition[restrained], @Condition[staggered], @Condition[stunned], or @Condition[paralyzed] conditions for 6 Rounds. While Boundless is active, all spells you cast with the <strong>Storm</strong> rune are <strong>Empowered</strong>.</p>",
                     "effects": [
                         {
                             "name": "Boundless"
@@ -218,7 +218,7 @@
         },
         "Exceptional Taste": {
             "name": "Exceptional Taste",
-            "description": "<p><strong>BETA TWO</strong>: This talent is not updated with Crucible mechanics yet.</p>"
+            "description": "<p>Your attire is more powerful a tool in your handling of social situations than any blade or spell. When you are wearing clothing of at least <strong>Fine</strong> quality that is not <strong>Broken</strong>, you gain <strong>+2 Boons</strong> to <strong>Deception</strong>, <strong>Diplomacy</strong>, and <strong>Intimidation</strong> skill checks.</p>"
         },
         "Explosives Training": {
             "name": "Explosives Training",
@@ -399,7 +399,7 @@
         },
         "Lunar Tattoos": {
             "name": "Lunar Tattoos",
-            "description": "<p><strong>BETA TWO</strong>: This talent is not updated with Crucible mechanics yet.</p>"
+            "description": "<p>Your luminous tattoos resonate with the energy of Ember's elemental moons. When one or more moons are full, you gain <strong>+2 resistance</strong> to damage of their corresponding type:</p><ul><li><p><strong>Aura</strong> - <strong>Electricity </strong>resistance</p></li><li><p><strong>Cora</strong> - <strong>Acid </strong>resistance</p></li><li><p><strong>Mayis</strong> - <strong>Cold </strong>resistance</p></li><li><p><strong>Ragen</strong> - <strong>Fire </strong>resistance</p></li><li><p><strong>Akon</strong> - <strong>Piercing </strong>resistance</p></li><li><p><strong>Orbis</strong> - <strong>Psychic </strong>resistance</p></li></ul>"
         },
         "Luxarum Attunement": {
             "name": "Luxarum Attunement",
@@ -442,7 +442,7 @@
         },
         "Mistrust of Magic": {
             "name": "Mistrust of Magic",
-            "description": "<p><strong>BETA TWO</strong>: This talent is not updated with Crucible mechanics yet.</p>"
+            "description": "<p>Your watchfulness for magical influence allows you to help yourself resist malign effects. Spell attacks against you which target your <strong>Willpower</strong> defense suffer from <strong>+2 Banes</strong>.</p>"
         },
         "Monster Hunter": {
             "name": "Monster Hunter",
@@ -742,7 +742,7 @@
         },
         "Zeph Lineage": {
             "name": "Zeph Lineage",
-            "description": "<p>You know the <strong>Rune of Lightning</strong> and can use it to weave Spellcraft.</p><p>A Zeph’s mask is capable of a limited amount of supernatural malleability. You can alter your mask slightly for regular communication and emotional expressiveness. When you die, only your mask remains. Your mask counts as your physical remains for the purposes of spells or magical effects which target a deceased creature.</p><p>The inscrutable nature of your mask makes reading your intentions difficult. During social challenges, <strong>Awareness</strong> checks to read your motives suffer <strong>+2 Banes</strong>.</p>",
+            "description": "<p>You know the <strong>Rune of Storm</strong> and can use it to weave Spellcraft.</p><p>A Zeph’s mask is capable of a limited amount of supernatural malleability. You can alter your mask slightly for regular communication and emotional expressiveness. When you die, only your mask remains. Your mask counts as your physical remains for the purposes of spells or magical effects which target a deceased creature.</p><p>The inscrutable nature of your mask makes reading your intentions difficult. During social challenges, <strong>Awareness</strong> checks to read your motives suffer <strong>+2 Banes</strong>.</p>",
             "actions": {
                 "Inscrutable Visage": {
                     "name": "Inscrutable Visage",
