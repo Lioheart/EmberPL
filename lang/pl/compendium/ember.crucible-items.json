@@ -1,0 +1,13 @@
+{
+    "label": "Przedmioty Ember",
+    "folders": {
+        "Armor": "Pancerz",
+        "Consumables": "Przedmioty eksploatacyjne",
+        "Equipment": "Wyposażenie",
+        "Ingredients": "Składniki",
+        "Plot Items": "Elementy fabuły",
+        "Tools": "Narzędzia",
+        "Treasure": "Skarb",
+        "Weapons": "Bronie"
+    }
+}
