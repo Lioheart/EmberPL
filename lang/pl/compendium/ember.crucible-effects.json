@@ -1,0 +1,65 @@
+{
+    "label": "Efekty Ember",
+    "folders": {
+        "Attunement": "Dostrajanie",
+        "Blessings": "Błogosławieństwa",
+        "Curses": "Klątwy"
+    },
+    "entries": {
+        "Blessing of Abyss": {
+            "name": "Błogosławieństwo Otchłani",
+            "description": "<p>Zostałeś obdarzony mocą Otchłani. Dopóki trwa to błogosławieństwo, twoje dostosowanie do Otchłani ulega wzmocnieniu, zapewniając <strong>+5</strong> punktów dostosowania do twojej efektywnej rangi, co może tymczasowo podnieść twoje dostosowanie do Otchłani do wyższej rangi.</p>"
+        },
+        "Blessing of Akon": {
+            "name": "Błogosławieństwo Akona",
+            "description": "<p>Zostałeś obdarzony mocą Akona. Dopóki trwa to błogosławieństwo, twoje dostosowanie do Akona ulega wzmocnieniu, zapewniając <strong>+5</strong> punktów dostosowania do twojej efektywnej rangi, co może tymczasowo podnieść twoje dostosowanie do Akona do wyższej rangi.</p>"
+        },
+        "Blessing of Aura": {
+            "name": "Błogosławieństwo Aury",
+            "description": "<p>Zostałeś obdarzony mocą Aury. Dopóki trwa to błogosławieństwo, twoje dostosowanie do Aury ulega wzmocnieniu, zapewniając <strong>+5</strong> punktów dostosowania do twojej efektywnej rangi, co może tymczasowo podnieść twoje dostosowanie do Aury do wyższej rangi.</p>"
+        },
+        "Blessing of Cora": {
+            "name": "Błogosławieństwo Cory",
+            "description": "<p>Zostałeś obdarzony mocą Cory. Dopóki trwa to błogosławieństwo, twoje dostosowanie do Cory ulega wzmocnieniu, zapewniając <strong>+5</strong> punktów dostosowania do twojej efektywnej rangi, co może tymczasowo podnieść twoje dostosowanie do Cory do wyższej rangi.</p>"
+        },
+        "Blessing of Heart": {
+            "name": "Błogosławieństwo Serca",
+            "description": "<p>Zostałeś obdarzony mocą Serca. Dopóki trwa to błogosławieństwo, twoje dostosowanie do Serca ulega wzmocnieniu, zapewniając <strong>+5</strong> punktów dostosowania do twojej efektywnej rangi, co może tymczasowo podnieść twoje dostosowanie do Serca do wyższej rangi.</p>"
+        },
+        "Blessing of Luxarum": {
+            "name": "Błogosławieństwo Luksarumu",
+            "description": "<p>Zostałeś obdarzony mocą Luksarumu. Dopóki trwa to błogosławieństwo, twoje dostosowanie do Luksarumu ulega wzmocnieniu, zapewniając <strong>+5</strong> punktów dostosowania do twojej efektywnej rangi, co może tymczasowo podnieść twoje dostosowanie do Luksarumu do wyższej rangi.</p>"
+        },
+        "Blessing of Mayis": {
+            "name": "Błogosławieństwo Mayis",
+            "description": "<p>Zostałeś obdarzony mocą Mayis. Dopóki trwa to błogosławieństwo, twoje dostosowanie do Mayis ulega wzmocnieniu, zapewniając <strong>+5</strong> punktów dostosowania do twojej efektywnej rangi, co może tymczasowo podnieść twoje dostosowanie do Mayis do wyższej rangi.</p>"
+        },
+        "Blessing of Orbis": {
+            "name": "Błogosławieństwo Orbis",
+            "description": "<p>Zostałeś obdarzony mocą Orbis. Dopóki trwa to błogosławieństwo, twoje dostosowanie do Orbis ulega wzmocnieniu, zapewniając <strong>+5</strong> punktów dostosowania do twojej efektywnej rangi, co może tymczasowo podnieść twoje dostosowanie do Orbis do wyższej rangi.</p>"
+        },
+        "Blessing of Primordis": {
+            "name": "Błogosławieństwo Primordisa",
+            "description": "<p>Zostałeś obdarzony mocą Primordisa. Dopóki trwa to błogosławieństwo, twoje dostosowanie do Primordisa ulega wzmocnieniu, zapewniając <strong>+5</strong> punktów dostosowania do twojej efektywnej rangi, co może tymczasowo podnieść twoje dostosowanie do Primordisa do wyższej rangi.</p>"
+        },
+        "Blessing of Ragen": {
+            "name": "Błogosławieństwo Ragena",
+            "description": "<p>Zostałeś obdarzony mocą Ragena. Dopóki trwa to błogosławieństwo, twoje dostosowanie do Ragena ulega wzmocnieniu, zapewniając <strong>+5</strong> punktów dostosowania do twojej efektywnej rangi, co może tymczasowo podnieść twoje dostosowanie do Ragena do wyższej rangi.</p>"
+        },
+        "Blessing of Signara": {
+            "name": "Błogosławieństwo Signary",
+            "description": "<p>Zostałeś obdarzony mocą Signary. Dopóki trwa to błogosławieństwo, twoje dostosowanie do Signary ulega wzmocnieniu, zapewniając <strong>+5</strong> punktów dostosowania do twojej efektywnej rangi, co może tymczasowo podnieść twoje dostosowanie do Signary do wyższej rangi.</p>"
+        },
+        "Luminous Crystallization": {
+            "name": "Świetlista krystalizacja",
+            "description": "<p>Ciało dotkniętej istoty powoli przekształca się w świecącą, krystaliczną substancję pod wpływem dotyku Tajemniczej Relikwii. Przemiana ta jest bolesna i postępująca – powoduje twardnienie kończyn i nieubłaganie rozprzestrzenia się w kierunku rdzenia.</p><ul><li><p>Osoba dotknięta tym efektem cierpi z powodu stanu @Condition[slowed], gdy krystaliczna sztywność ogarnia jej ciało.</p></li><li><p>Kruchy kryształ łatwo ulega rozbiciu i korozji: osoba dotknięta tym efektem jest <strong>Podatna</strong> na obrażenia <strong>obuchowe</strong> i <strong>kwasowe</strong>, a jej odporność na każde z nich wynosi -5.</p></li><li><p>Z drugiej strony świecący kryształ pochłania światło, zapewniając +10 Odporności na <strong>promieniowanie</strong>.</p></li></ul>"
+        },
+        "The Bewilderment": {
+            "name": "Zdezorientowanie",
+            "description": "<p>Umysł dotkniętej istoty ogarnia @UUID[JournalEntry.pod4PApXHuZgXwHo.JournalEntryPage.jw0mOUcqhJPRajUY]{Zdezorientowanie} – pełzający, tajemniczy zamęt, który nie ustępuje.</p><ul><li><p>Osoba dotknięta klątwą cierpi na stan @Condition[disoriented] tak długo, jak długo trwa klątwa.</p></li><li><p>Maksymalne <strong>Morale</strong> dotkniętej istoty zostaje zmniejszona o połowę.</p></li><li><p>Osłabione mechanizmy obronne umysłu sprawiają, że dotknięta istota staje się <strong>Podatna</strong> na obrażenia od <strong>Zepsucia</strong>, tracąc -5 do odporności.</p></li></ul>"
+        }
+    },
+    "mapping": {
+        "description": "description"
+    }
+}
