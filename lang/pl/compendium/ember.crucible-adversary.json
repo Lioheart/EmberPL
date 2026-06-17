@@ -1,10 +1,11 @@
 {
-    "label": "Opcje przeciwników",
+    "label": "Opcje przeciwników Ember",
     "folders": {
         "Fey": "Fey",
         "Oozes": "Śluzy",
         "Beasts": "Bestie",
         "Undead": "Nieumarli",
+        "Elemental": "Żywiołak",
         "Archetypes": "Archetypy",
         "Constructs": "Konstrukty",
         "Beast": "Bestia",
@@ -178,6 +179,10 @@
             "name": "Krewet",
             "description": "<section class=\"block readaloud\"><p>Ten malutki, sześcionożny gryzoń pokryty jest jasnoszarym futrem i ma cztery błyszczące oczka w kolorze lśniących szmaragdów. Jego przednie kończyny zakończone są dość potężnymi pazurami (zwłaszcza jak na jego rozmiar), których używa do kopania w tę i z powrotem w kruchej ziemi.</p></section>"
         },
+        "Crystallath": {
+            "name": "Crystallath",
+            "description": "<p>Górujące krystaliczne żywiołaki z ciemnego kamienia, przecięte żyłami żywego klejnotu: inteligentne, cierpliwe i rzadkie. Crystallath nie ma prawdziwej anatomii, jedynie minerał, a magiczna energia uwięziona w jego fasetach osłabia nadchodzące zaklęcia. Ugina ziemię i grawitację, aby miotać kamieniem, unieruchamiać wrogów i miażdżyć ich z dystansu.</p>"
+        },
         "Echo": {
             "name": "Echo",
             "description": "<p>Echa Otchłani to potwory czystego zła, istoty przepełnione wypaczoną nienawiścią, pochodzące spoza świata Ember. Dysponują one okrutną, prymitywną inteligencją, która pozwala im tropić i polować na naturalne stworzenia zamieszkujące Ember, zasadzając się na nie w ciemnościach i rozrywając je na strzępy.</p>"
@@ -265,6 +270,10 @@
             "name": "Gargantus",
             "description": "<p>Złośliwe, potężne, czworonożne drapieżniki z Pathways, znane ze swojej mrocznej, łuskowatej skóry, sześciu kończyn, okrutnych pazurów i kłów przypominających włócznie.</p>"
         },
+        "Globlin": {
+            "name": "Globlin",
+            "description": "<p>Małe, chaotyczne żywiołaki złożone z luźnej ziemi, błota lub żwiru, spajane magią żywiołów pochodzącą od Cory. Należą do najsłabszych spośród zastępów Cory, ale są przebiegłe, psotne i naprawdę niebezpieczne, gdy występują w dużych stadach.</p>"
+        },
         "Gore Bird": {
             "name": "Ptak posoki",
             "description": "<p>Szybkie, mięsożerne ptaki padlinożerne występujące na całym terytorium Ember. Chociaż żywią się głównie padliną, znane są z tego, że w czasach niedoboru pożywienia agresywnie polują na ofiary w wielkich stadach.</p>"
@@ -285,16 +294,16 @@
             }
         },
         "Grave Mark": {
-            "name": "Grobowy znak",
+            "name": "Trupi znak",
             "description": "<p>Gdy @ref[actor.name]{Stworzenie} zadaje trafienie krytyczne atakiem wręcz, pozostawia na swoim celu złowieszczy Grobowy znak.</p>",
             "actions": {
                 "Grave Mark": {
-                    "name": "Grobowy znak",
+                    "name": "Trupi znak",
                     "condition": "W przypadku trafienia krytycznego przy ataku wręcz.",
                     "description": "<p>Po zadaniu <strong>trafienia krytycznego</strong> atakiem wręcz, @ref[actor.name]{Stworzenie} atakuje <strong>Wolę</strong> celu, a w przypadku sukcesu pozostawia na nim Grobowy znak, który nakłada stan @Condition[exhausted], utrzymujący się do momentu, gdy cel wykona <strong>Odpoczynek</strong>. </p><p>Jeśli humanoidalna istota nosząca Grobowy znak zginie pod wpływem tego znaku, w następnej turze powróci z martwych jako straszliwy @UUID[Actor.e67w5IOBScYtJKXr]{Horrendor}.</p>",
                     "effects": [
                         {
-                            "name": "Grobowy znak"
+                            "name": "Trupi znak"
                         }
                     ]
                 },
@@ -354,6 +363,29 @@
         },
         "Mutagenic Blindness": {
             "name": "Ślepota mutageniczna"
+        },
+        "Obsidian Brood": {
+            "name": "Obsydianowe potomstwo",
+            "description": "<p>Strzelista winorośl rozsiewa po polu bitwy swoje mniejsze odgałęzienia i pobudza je do ataku, tak jakby były przedłużeniem jej własnej woli.</p>",
+            "actions": {
+                "Spawn Offshoot": {
+                    "name": "Wypuszczenie odrośli",
+                    "description": "<p>@ref[actor.name]{Pnącze} zmusza pomniejszy <strong>Obsydianowy wykwit</strong> do wyłonienia się z ziemi w obrębie 30 stóp. Odrośl walczy jako związany sługa i istnieje, dopóki nie zostanie zniszczona.</p>"
+                },
+                "Direct the Brood": {
+                    "name": "Kierowanie potomstwem",
+                    "description": "<p>@ref[actor.name]{Winorośl} wysyła przez ziemię impuls rozkazujący. Każdy sojuszniczy <strong>Obsydianowy wykwit</strong> w promieniu 20 stóp zyskuje stan @Condition[hastened] do początku następnej tury pnącza, co pobudza go do ataku i zmiany pozycji z nienaturalną szybkością.</p>",
+                    "effects": [
+                        {
+                            "name": "Kierowany"
+                        }
+                    ]
+                }
+            }
+        },
+        "Obsidian Vine": {
+            "name": "Obsydianowe pnącze",
+            "description": "<p>Bezmyślna, strzelista łodyga z czarnego szkła wulkanicznego, wyłaniająca się z ziemi, usiana na całej długości ostrymi jak brzytwa obsydianowymi kolcami. Nie ma oczu, nie oddycha i nie posiada umysłu: kieruje nią jedynie instynkt, by biczować, owijać i miażdżyć. Twarda, ale krucha, pęka pod wpływem wystarczająco silnego uderzenia, jednak całkowicie odporna jest na kwas i truciznę.</p>"
         },
         "Pallid Drake": {
             "name": "Blade smoczydło",
@@ -434,9 +466,29 @@
             "name": "Skither",
             "description": "<p>Często wykorzystywane jako wyjątkowo niszczycielska odmiana posłańców wśród tyraphemów, którzy wysyłają je, by pozostawiały płonące wiadomości na mieniu i ciałach swoich wrogów, skithery wykorzystują swoje niewielkie rozmiary i zdolność do kamuflowania się, ustawiając się w miejscach, w których wybrany przez nie cel nie będzie w stanie się bronić. Poświęceni tworzeniu rzezi wszędzie tam, gdzie tylko mogą, dla potężniejszych stworzeń, którym służą, skithery znane są z tego, że śledzą cel przez wiele kilometrów i przeładowują swoje ciała energią promieniującą, gdy uznają, że przegrali walkę, zdeterminowani, by skrzywdzić cel, nawet jeśli w trakcie tego procesu będą musieli poświęcić własne życie.</p>"
         },
+        "Stalagmaw": {
+            "name": "Stalagmaw",
+            "description": "<p>Potężne czworonożne kolosy z żywego kamienia jaskiniowego, których kruszejące szkielety są spojone polami żywiołowej grawitacji. Stalagmaw ciągnie swoje ogromne cielsko przez głębiny ziemi i wyłania się, by miażdżyć oraz pożerać wszystko, co stanie mu na drodze.</p>"
+        },
         "Suarrok": {
             "name": "Suarrok",
             "description": "<p>Potworne, skrzydlate drapieżniki, które gniazdują na wysokich, skalistych urwiskach. Suarroki to niezwykle dziwne stworzenia, obdarzone pojedynczym okiem, piórami, skrzydłami podobnymi do nietoperzych, dwoma ogonami oraz długim, kłutym dziobem. Pomimo swojej dziwnej postaci są zaskakująco zwinne, a ich oczy posiadają znaczną moc magiczną, pozwalającą im wyrządzać krzywdę innym stworzeniom samym tylko spojrzeniem.</p>"
+        },
+        "Subterranean Vine": {
+            "name": "Podziemna winorośl",
+            "description": "<p>Gdy wielka winorośl spoczywa pod powierzchnią ziemi, łączy swoje rozbite fragmenty i przebija się przez glebę, by ponownie wyrosnąć z jednego ze swoich odgałęzień.</p>",
+            "actions": {
+                "Subterranean Regrowth": {
+                    "name": "Podziemne odrastanie",
+                    "condition": "Podczas kopania",
+                    "description": "<p>Gdy aktywne jest @Condition[burrowing], @ref[actor.name]{winorośl} czerpie surowiec z otaczającej ziemi, aby naprawić swoje pęknięte odcinki, odzyskując w ten sposób znaczną ilość <strong>Zdrowia</strong>.</p>"
+                },
+                "Eruptive Recall": {
+                    "name": "Erupcyjne wspomnienie",
+                    "condition": "Reakcja: Obsydianowy wyrost zostaje zniszczony, podczas kopania.",
+                    "description": "<p>Gdy jeden z jej <strong>obsydianowych odrostów</strong> zostanie zniszczony, a @ref[actor.name]{pnącze} znajduje się w stanie @Condition[burrowing], pnącze zostaje wyrwane z ziemi i przeniesione do miejsca, w którym leży zniszczony odrost, pokonując w razie potrzeby różnice wysokości i poziomów, by w końcu wyłonić się z ziemi w tym miejscu. Zniszczony odrost zostaje pochłonięty, a pnącze wyłania się na powierzchnię, co kończy stan @Condition[burrowing]. </p>"
+                }
+            }
         },
         "Swallowed Screams": {
             "name": "Pochłonięte krzyki",
