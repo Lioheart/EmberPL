@@ -285,16 +285,16 @@
             }
         },
         "Grave Mark": {
-            "name": "Grobowy znak",
+            "name": "Trupi znak",
             "description": "<p>Gdy @ref[actor.name]{Stworzenie} zadaje trafienie krytyczne atakiem wręcz, pozostawia na swoim celu złowieszczy Grobowy znak.</p>",
             "actions": {
                 "Grave Mark": {
-                    "name": "Grobowy znak",
+                    "name": "Trupi znak",
                     "condition": "W przypadku trafienia krytycznego przy ataku wręcz.",
                     "description": "<p>Po zadaniu <strong>trafienia krytycznego</strong> atakiem wręcz, @ref[actor.name]{Stworzenie} atakuje <strong>Wolę</strong> celu, a w przypadku sukcesu pozostawia na nim Grobowy znak, który nakłada stan @Condition[exhausted], utrzymujący się do momentu, gdy cel wykona <strong>Odpoczynek</strong>. </p><p>Jeśli humanoidalna istota nosząca Grobowy znak zginie pod wpływem tego znaku, w następnej turze powróci z martwych jako straszliwy @UUID[Actor.e67w5IOBScYtJKXr]{Horrendor}.</p>",
                     "effects": [
                         {
-                            "name": "Grobowy znak"
+                            "name": "Trupi znak"
                         }
                     ]
                 },
