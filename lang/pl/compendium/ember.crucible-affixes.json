@@ -1,0 +1,19 @@
+{
+    "label": "Afiksy Ember",
+    "entries": {
+        "Bewilderment": {
+            "name": "Zdezorientowanie",
+            "description": "<p>Ten przedmiot jest obciążony ukrytą klątwą. Podczas noszenia umysł nosiciela ogarnia @UUID[JournalEntry.pod4PApXHuZgXwHo.JournalEntryPage.jw0mOUcqhJPRajUY]{Zdezorientowanie} – pełzające zmieszanie, które nie ustępuje.</p><ul><li><p>Nosiciel cierpi na stan @Condition[disoriented] tak długo, jak długo przedmiot pozostaje zainwestowany.</p></li><li><p>Maksymalne <strong>Morale</strong> nosiciela zostaje zmniejszona o 25% na każdy poziom tego afiksu.</p></li></ul><h4 class=\"divider\">Testowanie gry</h4><p>Przedrostki przeklęte nie posiadają jeszcze mechanizmu pozwalającego ukryć ich naturę przed graczami. Dopóki klątwa nie zostanie ujawniona w trakcie rozgrywki, gracz noszący przedmiot powinien udawać, że nie wie o jej istnieniu i skutkach.</p>",
+            "adjective": "Zdezorientowanie"
+        },
+        "Lunar Shield": {
+            "name": "Księżycowa Tarcza",
+            "description": "<p>Po zainwestowaniu otacza cię ochronna tarcza zasilana energią wszechświata, której intensywność zmienia się w zależności od faz księżyców żywiołów Ember. Za każdy księżyc zyskujesz odporność równą <strong>Stopniowi</strong> tego przyroska I, gdy księżyc ten jest w fazie <strong>przybywającej</strong> lub <strong>ubywającej</strong>, lub dwukrotność <strong>Stopnia</strong>, gdy jest w fazie <strong>pełni</strong>:</p><ul><li><p>@UUID[JournalEntry.emberCosmos00000.JournalEntryPage.smc0OuMxsxfcSdhR]{Aura} – Błyskawica</p></li><li><p>@UUID[JournalEntry.emberCosmos00000.JournalEntryPage.5pD8lxiilJJXOgoa]{Cora} – Kwas</p></li><li><p>@UUID[JournalEntry.emberCosmos00000.JournalEntryPage.LKptgmc56euSOb0G]{Ragen} – Ogień</p></li><li><p>@UUID[JournalEntry.emberCosmos00000.JournalEntryPage.RkdBtFQk7STvMbV2]{Mayis} – Zimno</p></li><li><p>@UUID[JournalEntry.emberCosmos00000.JournalEntryPage.zkmWSB32y8Fbc4UL]{Orbis} – Psychiczne</p></li><li><p>@UUID[JournalEntry.emberCosmos00000.JournalEntryPage.3Oywe0peo57dQT9j]{Akon} – Kłute</p></li></ul>",
+            "adjective": "Księżycowy"
+        }
+    },
+    "mapping": {
+        "adjective": "system.adjective",
+        "description": "description"
+    }
+}
